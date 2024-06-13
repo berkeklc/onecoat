@@ -5,7 +5,9 @@
       <div class="standard_center1">
         <div class="grid">
           <div class="s s1">
-            <div class="bos"></div>
+            <div class="bos">
+              <div class="text">Nature is the best artist.</div>
+            </div>
           </div>
           <div class="s s2">
             <form id="form_mail_abonelik" action="" method="POST">
@@ -139,7 +141,14 @@ a {
 #footer1 .sect30 .grid .s.s1 .bos {
   height: 50px;
   background: #272727;
+  color: white;
 }
+
+#footer1 .sect30 .grid .s.s1 .bos .text {
+  text-align: center;
+  font: normal normal normal 37px/51px Avenir;
+}
+
 #footer1 .sect30 .grid .s.s2 {
 }
 #footer1 .sect30 .grid .s.s2 form {
