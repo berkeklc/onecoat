@@ -19,7 +19,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
 
 const macbookImage = '/m1.png'
-const slides = ['/mb1.jpg', '/lad1.jpg', '/lad2.jpg']
+const slides = ['/mac1.jpg', '/mac2.jpg', '/mac3.jpg', '/mac4.jpg']
 </script>
 
 <style scoped>
