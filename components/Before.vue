@@ -1,7 +1,10 @@
 <template>
   <div class="slider-wrapper">
     <div class="wrapper">
-      <span id="before" class="btn">Natura <br />Clear </span>
+      <span id="before" class="btn"
+        >Natura <br />
+        <span>Clear</span>
+      </span>
 
       <div class="gallery">
         <div class="gallery__resize">
@@ -35,6 +38,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.btn {
+  font-family: 'Avenir Book';
+  font-size: 14px;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+.btn span {
+  font-size: 24px;
+  font-family: 'Avenir Book';
+  font: normal normal medium 24px/33px Avenir;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
 .img-after {
   width: 95% !important;
 }
@@ -93,16 +111,14 @@ onMounted(() => {
 #before {
   position: absolute;
   z-index: 100;
-  font-size: 16px;
   padding: 10px 20px;
-  bottom: 30px;
+  bottom: -30px;
   text-align: left;
   transform: translateY(-50%);
   cursor: pointer;
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
   border-radius: 2px;
-  right: 0;
+  right: 10px;
 }
 
 @media (max-width: 768px) {
