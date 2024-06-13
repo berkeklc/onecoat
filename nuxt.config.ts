@@ -17,6 +17,16 @@ export default {
           href: 'https://fonts.googleapis.com/css2?family=Arial:wght@100&display=swap',
         },
       ],
+      script: [
+        {
+          src: 'https://static.elfsight.com/platform/platform.js',
+          'data-use-service-core': true,
+          defer: true,
+        },
+      ],
     },
+  },
+  build: {
+    transpile: ['swiper'],
   },
 }

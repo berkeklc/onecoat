@@ -31,5 +31,6 @@ export default {
 
 <style scoped>
 .a {
+  text-align: center;
 }
 </style>

@@ -16,7 +16,27 @@
   font-weight: bold;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Avenir Book';
+  src:
+    url('~/assets/fonts/Avenir-Book.woff2') format('woff2'),
+    url('~/assets/fonts/Avenir-Book.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Roman';
+  src:
+    url('~/assets/fonts/Avenir-Roman.woff2') format('woff2'),
+    url('~/assets/fonts/Avenir-Roman.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Heavy';
+  src:
+    url('~/assets/fonts/Avenir-Heavy.woff2') format('woff2'),
+    url('~/assets/fonts/Avenir-Heavy.woff') format('woff');
+  font-style: normal;
+}
 ul {
   display: flex;
   list-style: none;
@@ -84,11 +104,16 @@ ul li a.active {
 .large-text {
   text-align: left;
   font-style: normal;
-  font-weight: 100; /* Ultra Light */
+  font-weight: 100;
   font-size: 302px;
-  line-height: 365px;
-  font-family: 'Helvetica Neue', sans-serif; /* Alternatif font ailesi */
+  line-height: 243px;
+  font-family: 'Helvetica Neue', sans-serif;
   letter-spacing: -18.12px;
   color: #0e112c;
   opacity: 1;
+  margin-top: 75px;
+}
+
+.bg {
+  background: #f8f8f8;
 }

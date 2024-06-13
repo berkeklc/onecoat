@@ -5,15 +5,9 @@
 
       <div class="gallery">
         <div class="gallery__resize">
-          <img
-            src="~/assets/img/b1.png"
-            alt=""
-            class="img img-before blend-mode-luminosity"
-          />
+          <img src="~/assets/img/BW.jpg" alt="" class="img img-before" />
         </div>
-        <div id="myDIV">
-          <img src="~/assets/img/b1.png" alt="" class="img img-after" />
-        </div>
+        <img src="~/assets/img/b1.png" alt="" class="img img-after" />
       </div>
     </div>
   </div>
@@ -33,17 +27,16 @@ onMounted(() => {
     galleryResize.style.width = x + 'px'
     galleryResize.classList.remove('tr')
   })
-
-  // Diğer fonksiyonları da buraya taşıyabilirsiniz.
+  gallery.addEventListener('mouseleave', () => {
+    galleryResize.classList.add('tr')
+    galleryResize.style.width = '50%'
+  })
 })
 </script>
 
 <style scoped>
-#myDIV {
-  background: white;
-}
-#myDIV img {
-  mix-blend-mode: luminosity;
+.img-after {
+  width: 95% !important;
 }
 .slider-wrapper {
   width: 100%;
@@ -57,7 +50,7 @@ onMounted(() => {
 .wrapper,
 .gallery,
 .img {
-  height: auto;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -118,12 +111,6 @@ onMounted(() => {
     padding: 8px 16px;
   }
 
-  .blend-mode-luminosity {
-    mix-blend-mode: luminosity;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   .gallery {
     width: 350px;
   }
