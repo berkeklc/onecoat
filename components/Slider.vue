@@ -69,7 +69,6 @@ const slides = ['/mac1.jpg', '/mac2.jpg', '/mac3.jpg', '/mac4.jpg']
 .screen img {
   width: 116%;
   height: 100%;
-  border-radius: 10px;
   object-fit: cover;
 }
 </style>
