@@ -76,6 +76,10 @@
   width: 21%;
   flex: 1 1 auto;
 }
+.col-md-3 h1 {
+  position: relative;
+  top: -25px;
+}
 .social {
   margin-bottom: 50px;
   border-top: 1px solid #000000;

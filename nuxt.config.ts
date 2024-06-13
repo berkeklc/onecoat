@@ -1,5 +1,12 @@
 export default {
   devtools: { enabled: true },
+  modules: ['nuxt-swiper'],
+  swiper: {
+    // Swiper options
+    //----------------------
+    // prefix: 'Swiper',
+    // styleLang: 'css',
+  },
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     'bootstrap-icons/font/bootstrap-icons.css',
@@ -25,8 +32,5 @@ export default {
         },
       ],
     },
-  },
-  build: {
-    transpile: ['swiper'],
   },
 }

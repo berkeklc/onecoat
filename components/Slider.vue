@@ -3,12 +3,29 @@
     <div class="macbook">
       <img :src="macbookImage" alt="MacBook" />
       <div class="screen">
-        <swiper :slides-per-view="1" :loop="true">
-          <swiper-slide v-for="(slide, index) in slides" :key="index">
+        <Swiper
+          :modules="[SwiperAutoplay, SwiperEffectCreative]"
+          :slides-per-view="1"
+          :loop="true"
+          :autoplay="{
+            delay: 8000,
+            disableOnInteraction: true,
+          }"
+          :creative-effect="{
+            prev: {
+              shadow: false,
+              translate: ['-20%', 0, -1],
+            },
+            next: {
+              translate: ['100%', 0, 0],
+            },
+          }"
+        >
+          <SwiperSlide v-for="(slide, index) in slides" :key="index">
             <img :src="slide" alt="Slide Image" />
-          </swiper-slide>
+          </SwiperSlide>
           <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
+        </Swiper>
       </div>
     </div>
   </div>

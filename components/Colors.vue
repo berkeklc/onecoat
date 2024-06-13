@@ -65,8 +65,10 @@ const breakpoints = {
   bottom: 10px;
   width: 100%;
   text-align: center;
-  font: normal normal bold 11px/13px Helvetica Neue;
+  font-size: 11px;
+  font-family: 'Avenir Heavy';
   letter-spacing: 0px;
+  font-weight: bold;
   color: #ffffff;
   opacity: 1;
 }
