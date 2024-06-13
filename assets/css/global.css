@@ -7,15 +7,6 @@
   font-style: normal;
 }
 
-/* Eklediğiniz diğer font ağırlıkları için benzer kurallar ekleyin */
-@font-face {
-  font-family: 'Helvetica Neue';
-  src:
-    url('~/assets/fonts/helveticaneue-thin-Bold.woff2') format('woff2'),
-    url('~/assets/fonts/helveticaneue-thin-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
 @font-face {
   font-family: 'Avenir Book';
   src:
