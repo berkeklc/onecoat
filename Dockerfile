@@ -11,3 +11,6 @@ ENV PUBLIC_URL https://naturaonecoat.herokuapp.com
 
 # Expose the port Directus will run on
 EXPOSE 8055
+
+# Start the Directus server
+CMD ["directus", "start"]
