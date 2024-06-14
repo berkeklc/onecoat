@@ -16,15 +16,18 @@ export default {
       'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
-  swiper: {
-    // Swiper options
-  },
+  buildModules: ['nuxt-gsap-module'],
+  swiper: {},
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     'bootstrap-icons/font/bootstrap-icons.css',
     '@/assets/css/global.css',
   ],
-  serverMiddleware: [{ path: '/api', handler: '~/server/middleware/proxy.js' }],
+  nitro: {
+    middleware: {
+      '/api': '~/server/middleware/proxy.js',
+    },
+  },
   app: {
     head: {
       link: [
