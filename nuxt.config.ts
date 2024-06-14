@@ -1,27 +1,23 @@
-export default {
+export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-swiper', 'nuxt-directus'],
-  routes: { '/': { prerender: true }, '/*': { cors: true } },
   runtimeConfig: {
     public: {
-      directusApiUrl: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
+      directusApiUrl:
+        process.env.DIRECTUS_API_URL ||
+        'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
       directusApiKey: process.env.DIRECTUS_API_KEY,
     },
   },
   directus: {
     devtools: true,
-    url: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
+    url:
+      process.env.DIRECTUS_API_URL ||
+      'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
-  axios: {
-    baseURL: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
-  },
-  buildModules: ['nuxt-gsap-module'],
   swiper: {
     // Swiper options
-    //----------------------
-    // prefix: 'Swiper',
-    // styleLang: 'css',
   },
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
@@ -49,4 +45,4 @@ export default {
       ],
     },
   },
-}
+})
