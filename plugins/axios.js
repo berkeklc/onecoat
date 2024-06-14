@@ -1,11 +1,10 @@
-// plugins/axios.js
 import axios from 'axios'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
 
   const api = axios.create({
-    baseURL: config.public.directusApiUrl,
+    baseURL: '/api',
     headers: {
       Authorization: `Bearer ${config.public.directusApiKey}`,
     },
