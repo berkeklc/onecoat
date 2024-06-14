@@ -1,4 +1,4 @@
-export default defineNuxtConfig({
+export default {
   devtools: { enabled: true },
   modules: ['nuxt-swiper', 'nuxt-directus'],
   runtimeConfig: {
@@ -16,7 +16,6 @@ export default defineNuxtConfig({
       'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
-  serverMiddleware: [{ path: '/api', handler: '~/server-middleware/proxy.js' }],
   swiper: {
     // Swiper options
   },
@@ -25,6 +24,7 @@ export default defineNuxtConfig({
     'bootstrap-icons/font/bootstrap-icons.css',
     '@/assets/css/global.css',
   ],
+  serverMiddleware: [{ path: '/api', handler: '~/server/middleware/proxy.js' }],
   app: {
     head: {
       link: [
@@ -46,4 +46,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-})
+}
