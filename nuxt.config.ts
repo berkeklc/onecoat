@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
+  serverMiddleware: [{ path: '/api', handler: '~/server-middleware/proxy.js' }],
   swiper: {
     // Swiper options
   },
