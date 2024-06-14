@@ -10,7 +10,7 @@ export default {
   },
   directus: {
     devtools: true,
-    url: 'http://localhost:8055',
+    url: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
   axios: {
