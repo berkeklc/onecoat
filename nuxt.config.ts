@@ -4,17 +4,17 @@ export default {
   routes: { '/': { prerender: true }, '/*': { cors: true } },
   runtimeConfig: {
     public: {
-      directusApiUrl: process.env.DIRECTUS_API_URL,
+      directusApiUrl: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
       directusApiKey: process.env.DIRECTUS_API_KEY,
     },
   },
   directus: {
     devtools: true,
-    url: process.env.DIRECTUS_API_URL,
+    url: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   plugins: ['~/plugins/axios.js'],
   axios: {
-    baseURL: process.env.DIRECTUS_API_URL,
+    baseURL: 'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
   },
   buildModules: ['nuxt-gsap-module'],
   swiper: {
