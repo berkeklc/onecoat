@@ -26,7 +26,7 @@
               </div>
             </form>
             <div class="text1">
-              We will never share your email address & you can opt out at any
+              * We will never share your email address & you can opt out at any
               time, we promise.
             </div>
           </div>
@@ -90,25 +90,8 @@
           <a href="mailto:info@kollektmag.com" target="_blank"
             ><img src="~/assets/img/in.png"
           /></a>
-          <a
-            href="https://www.linkedin.com/company/kollekt-mag-official/"
-            target="_blank"
-            ><img src="~/assets/img/in.png"
-          /></a>
-          <a
-            href="https://twitter.com/i/flow/login?redirect_after_login=%2FKollektMag"
-            target="_blank"
-            ><img src="~/assets/img/in.png"
-          /></a>
-          <a href="https://www.facebook.com/kollektmedya" target="_blank"
-            ><img src="~/assets/img/in.png"
-          /></a>
-          <!--https://twitter.com/i/flow/login?redirect_after_login=%2FKollektMag-->
         </div>
-        <div class="text1">
-          We will never share your email address & you can opt out at any time,
-          we promise.
-        </div>
+        <div class="text1">&copy; Copyright 2024 - Natura Onecoat</div>
       </div>
     </div>
   </footer>
@@ -137,10 +120,6 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
-#footer1 .sect30 .grid .s {
-}
-#footer1 .sect30 .grid .s.s1 {
-}
 #footer1 .sect30 .grid .s.s1 .bos {
   height: 50px;
   background: #272727;
@@ -152,17 +131,9 @@ a {
   font: normal normal normal 37px/51px Avenir;
 }
 
-#footer1 .sect30 .grid .s.s2 {
-}
-#footer1 .sect30 .grid .s.s2 form {
-}
 #footer1 .sect30 .grid .s.s2 form .grid2 {
   display: grid;
   grid-template-columns: 3fr 1fr;
-}
-#footer1 .sect30 .grid .s.s2 form .grid2s {
-}
-#footer1 .sect30 .grid .s.s2 form .grid2s.s1 {
 }
 #footer1 .sect30 .grid .s.s2 form .grid2s.s1 input {
   display: block;
@@ -206,12 +177,8 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
-#footer1 .sect40 .grid .s {
-}
 #footer1 .sect40 .grid .s.s1 {
   align-self: end;
-}
-#footer1 .sect40 .grid .s.s1 a {
 }
 #footer1 .sect40 .grid .s.s1 a img {
   width: 200px;
@@ -226,18 +193,10 @@ a {
   grid-template-columns: repeat(3, auto);
   grid-gap: 30px;
 }
-#footer1 .sect40 .grid2s {
-}
 #footer1 .sect40 .grid2s .navtitle {
   margin: 0 0 10px 0;
   font-family: 'avenir_medium';
   font-size: 1.2rem;
-}
-#footer1 .sect40 .grid2s .list {
-}
-#footer1 .sect40 .grid2s .list div {
-}
-#footer1 .sect40 .grid2s .list div a {
 }
 
 #footer1 .sect50 {

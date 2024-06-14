@@ -1,6 +1,22 @@
 export default {
   devtools: { enabled: true },
-  modules: ['nuxt-swiper'],
+  modules: ['nuxt-swiper', 'nuxt-directus'],
+  routes: { '/': { prerender: true }, '/*': { cors: true } },
+  runtimeConfig: {
+    public: {
+      directusApiUrl: process.env.DIRECTUS_API_URL,
+      directusApiKey: process.env.DIRECTUS_API_KEY,
+    },
+  },
+  directus: {
+    devtools: true,
+    url: 'http://localhost:8055',
+  },
+  plugins: ['~/plugins/axios.js'],
+  axios: {
+    baseURL: process.env.DIRECTUS_API_URL,
+  },
+  buildModules: ['nuxt-gsap-module'],
   swiper: {
     // Swiper options
     //----------------------

@@ -1,7 +1,7 @@
 version: '3'
 services:
   directus:
-    image: directus/directus:10.12.1
+    image: directus/directus:latest
     ports:
       - 8055:8055
     volumes:
@@ -16,3 +16,8 @@ services:
       DB_FILENAME: '/directus/database/data.db'
       WEBSOCKETS_ENABLED: 'true'
       PUBLIC_URL: 'http://localhost:8055'
+      CORS_ENABLED: 'true'
+      CORS_ORIGIN: 'http://localhost:3000'
+      CORS_METHODS: 'GET,POST,PATCH,PUT,DELETE,OPTIONS'
+      CORS_HEADERS: 'Content-Type,Authorization'
+      CORS_CREDENTIALS: 'true'

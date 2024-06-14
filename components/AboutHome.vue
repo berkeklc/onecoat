@@ -10,7 +10,9 @@
             between rolling hills and serene meadows, there stood a coffee
             company named Osso. It was no ordinary company; it was a sanctuary
             for coffee lovers, a place where the art of brewing was taken to new
-            heights. The journey of Osso began with a passionate group of coffee
+            heights. <br />
+            <br />
+            The journey of Osso began with a passionate group of coffee
             enthusiasts. They roamed the world, from the misty plantations of
             Colombia to the bustling markets of Ethiopia, in search of the
             finest coffee beans. Each bean was carefully selected, a testament
@@ -43,7 +45,7 @@
           <div class="ikon">
             <img src="~/assets/img/en71.png" />
           </div>
-          <div class="info">EN 71-3</div>
+          <div class="info en71">EN 71-3</div>
           <div class="info_sub">SAFETY <span>FOR TOYS</span></div>
         </div>
         <div class="item">
@@ -64,6 +66,10 @@
 </template>
 
 <style scoped>
+.en71 {
+  position: relative;
+  top: 7px;
+}
 .ikon {
   min-height: 61px;
 }
@@ -101,7 +107,7 @@
 .urun_wrap .urun_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 20px 0px 20px 70px;
+  margin: 70px 0px 20px 70px;
   gap: 20px;
 }
 .urun_wrap .urun_grid .content {
@@ -110,25 +116,25 @@
 }
 .urun_wrap .urun_grid .content .title {
   text-align: left;
-  font: normal normal normal 88px/120px Avenir;
+  font-family: 'Avenir Book';
+  font-size: 88px;
   font-family: Avenir Book;
   letter-spacing: 0px;
   color: #0e112c;
-  opacity: 1;
+  margin-bottom: -35px;
+  margin-top: 70px;
 }
 .urun_wrap .urun_grid .content .subtitle {
   text-align: left;
-  font: normal normal 900 88px/120px Avenir;
-  font-family: Avenir Book;
+  font-family: Avenir Heavy;
+  font-size: 88px;
   letter-spacing: 0px;
   color: #0e112c;
-  opacity: 1;
 }
 .urun_wrap .urun_grid .content .icerik {
   text-align: left;
   letter-spacing: 0px;
   color: #000000;
-  opacity: 1;
 }
 .urun_wrap .urun_grid .gorsel {
   text-align: center;

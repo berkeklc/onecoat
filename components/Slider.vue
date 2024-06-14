@@ -64,6 +64,7 @@ const slides = ['/mac1.jpg', '/mac2.jpg', '/mac3.jpg', '/mac4.jpg']
   border-top-left-radius: 10px;
   height: 43%;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .screen img {
