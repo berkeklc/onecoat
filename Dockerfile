@@ -1,5 +1,9 @@
 FROM directus/directus:latest
 
+# Copy custom files
+COPY ./middleware /directus/middleware
+COPY ./index.js /directus/index.js
+
 # Environment Variables
 ARG SECRET
 ARG ADMIN_EMAIL

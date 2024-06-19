@@ -1,0 +1,44 @@
+name: Deploy to Heroku
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Heroku Container Registry
+        run: echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Build and Push Docker image
+        run: |
+          docker buildx build --platform linux/amd64 -t registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web .
+          docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web
+
+      - name: Deploy to Heroku
+        run: |
+          heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
+
+      - name: Set Environment Variables on Heroku
+        run: |
+          heroku config:set CORS_ENABLED=true --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set CORS_ORIGIN=http://localhost:3000 --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set CORS_METHODS=GET,POST,PUT,DELETE,OPTIONS --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set CORS_ALLOWED_HEADERS=Content-Type,Authorization,X-Requested-With --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set CORS_EXPOSED_HEADERS=Content-Range,X-Content-Range --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set DIRECTUS_API_URL=https://naturaonecoat-cc85b1fdbbef.herokuapp.com --app ${{ secrets.HEROKU_APP_NAME }}
+          heroku config:set DIRECTUS_API_KEY=${{ secrets.DIRECTUS_API_KEY }} --app ${{ secrets.HEROKU_APP_NAME }}
+
+    env:
+      HEROKU_APP_NAME: your-heroku-app-name
