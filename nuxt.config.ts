@@ -1,33 +1,25 @@
-export default {
+export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-swiper', 'nuxt-directus'],
   runtimeConfig: {
     public: {
-      directusApiUrl:
-        process.env.DIRECTUS_API_URL ||
-        'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
+      directusApiUrl: process.env.DIRECTUS_API_URL,
       directusApiKey: process.env.DIRECTUS_API_KEY,
     },
   },
   directus: {
     devtools: true,
-    url:
-      process.env.DIRECTUS_API_URL ||
-      'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
+    url: 'http://localhost:8055',
   },
   plugins: ['~/plugins/axios.js'],
-  buildModules: ['nuxt-gsap-module'],
-  swiper: {},
+  swiper: {
+    // Swiper options
+  },
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     'bootstrap-icons/font/bootstrap-icons.css',
     '@/assets/css/global.css',
   ],
-  nitro: {
-    middleware: {
-      '/api': '~/server/middleware/proxy.js',
-    },
-  },
   app: {
     head: {
       link: [
@@ -49,4 +41,4 @@ export default {
       ],
     },
   },
-}
+})

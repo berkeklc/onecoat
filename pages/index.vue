@@ -34,13 +34,16 @@
           class="elfsight-app-4db7538f-8b88-4fba-ab46-85f9a8dad137"
           data-elfsight-app-lazy
         ></div>
-        <Newslatter />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+  layout: 'default',
+})
+</script>
 
 <style>
 .p50 {

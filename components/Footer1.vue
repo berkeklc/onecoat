@@ -158,6 +158,13 @@ a {
   font-family: 'poppins_light';
   font-size: 1rem;
 }
+#footer1 .sect30 .grid .s.s2 form .grid2s.s2 button:hover {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: #3c717f;
+}
+
 #footer1 .sect30 .grid .s.s2 form .grid2s.s2 img.loading {
   display: none;
   width: auto;

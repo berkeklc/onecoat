@@ -1,8 +1,16 @@
-// services/directus.js
+import axios from 'axios'
+
 export const fetchProducts = async () => {
   try {
-    const { $axios } = useNuxtApp()
-    const response = await $axios.get('/items/products')
+    const runtimeConfig = useRuntimeConfig()
+    const response = await axios.get(
+      `${runtimeConfig.public.directusApiUrl}/items/products`,
+      {
+        headers: {
+          Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,
+        },
+      }
+    )
     return response.data.data
   } catch (error) {
     console.error('Error fetching products:', error)
