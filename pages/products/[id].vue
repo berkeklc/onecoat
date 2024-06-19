@@ -10,19 +10,28 @@
               <div class="col-md-6">
                 <h1 class="pbrand">{{ product.brand }}</h1>
                 <h1 class="ptitle">{{ product.name }}</h1>
-                <h3 class="psize">TWO SIZE</h3>
-                <a
-                  href="#"
-                  :class="{ active: activeSize === '1.3L' }"
-                  @click="changeProductSize('1.3L')"
-                  >1.3L</a
-                >
-                <a
-                  href="#"
-                  :class="{ active: activeSize === '360ML' }"
-                  @click="changeProductSize('360ML')"
-                  >360ML</a
-                >
+                <div class="row">
+                  <div class="col-md-3">
+                    <h3 class="psize">TWO SIZE</h3>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="sizes">
+                      <a
+                        href="#"
+                        :class="{ active: activeSize === '1.3L' }"
+                        @click="changeProductSize('1.3L')"
+                        >1.3L</a
+                      >
+                      <a
+                        href="#"
+                        :class="{ active: activeSize === '360ML' }"
+                        @click="changeProductSize('360ML')"
+                        >360ML</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
                 <div class="categories">
                   <h1 class="pftitle">CATEGORIES</h1>
                   <p>Wood Oil</p>
@@ -43,8 +52,8 @@
               </div>
               <div class="col-md-6">
                 <div class="breadcump">
-                  <a href="#">Products</a> >
-                  <a href="#">Natura Onecoat Wood Oil</a> >
+                  <a href="#">Products</a> <Right />
+                  <a href="#">Natura Onecoat Wood Oil</a> <Right />
                   <a href="#">Clear</a>
                 </div>
                 <p>
@@ -152,6 +161,20 @@ definePageMeta({
 })
 </script>
 <style>
+.breadcump {
+  font-family: 'Avenir Roman';
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #696d6e;
+}
+.breadcump a {
+  font-family: 'Avenir Roman';
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #696d6e;
+}
 .pftitle {
   font-family: 'Helvetica Neue';
   font-size: 13px;
@@ -159,12 +182,13 @@ definePageMeta({
   color: #000000;
 }
 .details {
-  padding-top: 100px;
+  padding-top: 200px;
+  padding-left: 46px;
 }
 .productarea {
   background: #f5f5f5;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 200px;
 }
 .colors img {
   width: 100%;
@@ -188,6 +212,8 @@ definePageMeta({
   font-family: 'Avenir Roman';
   color: #696d6e;
   font-size: 16px;
+  margin-bottom: 200px;
+  padding-top: 6px;
 }
 .pbrand {
   font-family: 'Helvetica Neue';
@@ -203,8 +229,27 @@ definePageMeta({
   font-size: 37px;
   letter-spacing: -2.22px;
 }
-a.active {
+
+.sizes a {
+  background: #f7f7f8 0% 0% no-repeat padding-box;
+  border-radius: 2px;
   font-weight: bold;
+  font-family: 'Avenir Roman';
+  font-size: 10px;
+  color: #696d6e;
+  padding: 4px 21px;
+  text-decoration: none;
+}
+a.active {
+  background: #175e6c 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  font-weight: bold;
+  font-family: 'Avenir Roman';
+  font-size: 10px;
+  color: white;
+  padding: 4px 21px;
+
+  text-decoration: none;
 }
 .accordion h1 {
   cursor: pointer;

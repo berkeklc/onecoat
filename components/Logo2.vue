@@ -129,6 +129,6 @@
 
 <script>
 export default {
-  name: 'Logo',
+  name: 'Logo2',
 }
 </script>

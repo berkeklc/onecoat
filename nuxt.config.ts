@@ -3,7 +3,9 @@ export default defineNuxtConfig({
   modules: ['nuxt-swiper', 'nuxt-directus'],
   runtimeConfig: {
     public: {
-      directusApiUrl: process.env.DIRECTUS_API_URL,
+      directusApiUrl:
+        process.env.DIRECTUS_API_URL ||
+        'https://naturaonecoat-cc85b1fdbbef.herokuapp.com',
       directusApiKey: process.env.DIRECTUS_API_KEY,
     },
   },

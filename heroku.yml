@@ -6,6 +6,18 @@ setup:
 build:
   docker:
     web: Dockerfile
+  config:
+    SECRET: SuperSecureRandomKey123!@#
+    ADMIN_EMAIL: root@root.com
+    ADMIN_PASSWORD: 12root34
+    DB_CLIENT: pg
+    DB_HOST: ${DATABASE_HOST}
+    DB_PORT: ${DATABASE_PORT}
+    DB_DATABASE: ${DATABASE_NAME}
+    DB_USER: ${DATABASE_USER}
+    DB_PASSWORD: ${DATABASE_PASSWORD}
+    WEBSOCKETS_ENABLED: true
+    PUBLIC_URL: https://naturaonecoat-cc85b1fdbbef.herokuapp.com
 
 run:
   web: sh -c "npx directus bootstrap && npx directus start"
