@@ -39,7 +39,7 @@
         <div class="grid">
           <div class="s s1">
             <a href="#">
-              <img src="~/assets/img/natura_onecoat.jpg" alt="" />
+              <Logo2 />
             </a>
           </div>
           <div class="s s2">

@@ -11,21 +11,28 @@
                 <h1 class="pbrand">{{ product.brand }}</h1>
                 <h1 class="ptitle">{{ product.name }}</h1>
                 <h3 class="psize">TWO SIZE</h3>
-                <a href="#" @click.prevent="selectSize('1.3L')">1.3L</a>
-                <a href="#" @click.prevent="selectSize('360ML')">360 ML</a>
-
+                <a
+                  href="#"
+                  :class="{ active: activeSize === '1.3L' }"
+                  @click="changeProductSize('1.3L')"
+                  >1.3L</a
+                >
+                <a
+                  href="#"
+                  :class="{ active: activeSize === '360ML' }"
+                  @click="changeProductSize('360ML')"
+                  >360ML</a
+                >
                 <div class="categories">
-                  <h1>CATEGORIES</h1>
+                  <h1 class="pftitle">CATEGORIES</h1>
                   <p>Wood Oil</p>
                 </div>
-
                 <div class="colors row">
-                  <h1>COLOURS</h1>
+                  <h1 class="pftitle">COLOURS</h1>
                   <div
                     class="col-md-3"
-                    v-for="(image, index) in product.images"
+                    v-for="(image, index) in images"
                     :key="index"
-                    @click="selectColor(image)"
                   >
                     <div class="image-wrapper">
                       <img :src="image.src" :alt="image.title" />
@@ -38,77 +45,126 @@
                 <div class="breadcump">
                   <a href="#">Products</a> >
                   <a href="#">Natura Onecoat Wood Oil</a> >
-                  <a href="#">{{ selectedColor.title }}</a>
+                  <a href="#">Clear</a>
                 </div>
-                <p>{{ product.desc }}</p>
+                <p>
+                  Natura Onecoat is a hardwax wood oil that creates bonds among
+                  the upper fibers of the wood without creating a layer on the
+                  surface.
+                </p>
+                <div class="accordion">
+                  <h1 @click="toggleDetails">
+                    {{ showDetails ? '-' : '+' }} Details
+                  </h1>
+                  <div v-if="showDetails" class="details-content">
+                    <p>{{ product.desc }}</p>
+                  </div>
+                </div>
+                <button class="buy-now">BUY NOW</button>
+                <div class="msds-buttons">
+                  <button>MSDS 2K-A</button>
+                  <button>MSDS 2K-B</button>
+                </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">SIZE</div>
-                <div class="col-md-6">COVERAGE AREA</div>
+            </div>
+            <div class="row size-coverage">
+              <div class="col-md-6">
+                <h1 class="pftitle">SIZE</h1>
+                <p>12.17 oz.(1.3L)</p>
+              </div>
+              <div class="col-md-6">
+                <h1 class="pftitle">COVERAGE AREA</h1>
+                <p>120-190 sq. ft. surface.</p>
               </div>
             </div>
           </div>
           <div class="col-md-6 productarea">
-            <img :src="selectedImage" alt="" />
+            <img :src="currentImage" alt="" />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 
+const images = [
+  { src: '/clearnew.png', title: 'CLEAR' },
+  { src: '/naturalwhite.png', title: 'NATURAL WHITE' },
+  { src: '/whitenew.png', title: 'WHITE' },
+  { src: '/naturalmist.png', title: 'NATURAL MIST' },
+  { src: '/darkoaknews.png', title: 'DARK OAK' },
+  { src: '/blacknew.png', title: 'BLACK' },
+  { src: '/walnutnew.png', title: 'WALNUT' },
+  { src: '/chbrownnew.png', title: 'CHOCOLATE BROWN' },
+  { src: '/graynew.png', title: 'GRAY' },
+  { src: '/charcoalnew.png', title: 'CHARCOAL' },
+]
+
 const route = useRoute()
 const product = ref(null)
+const currentImage = ref('')
+const activeSize = ref('1.3L')
 const error = ref(null)
-const selectedSize = ref('1.3L')
-const selectedColor = ref({ src: '', title: '' })
-onMounted(async () => {
+const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
+const showDetails = ref(false)
+
+const fetchProduct = async (productId) => {
   try {
     const { data } = await axios.get(
-      `${useRuntimeConfig().public.directusApiUrl}/items/products/${route.params.id}`
+      `${directusBaseUrl}/items/products/${productId}`
     )
     product.value = data.data
 
-    // Set initial color
-    if (product.value.images && product.value.images.length > 0) {
-      selectColor(product.value.images[0])
+    if (product.value.image) {
+      currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
+    } else {
+      currentImage.value = '/path/to/default/image.png'
     }
   } catch (err) {
     error.value = err
     console.error('Product fetch error:', err)
   }
-})
-
-const selectedImage = computed(() => {
-  if (!selectedColor.value.src) return ''
-  return `${useRuntimeConfig().public.directusApiUrl}/assets/${selectedColor.value.src}`
-})
-
-function selectSize(size) {
-  selectedSize.value = size
 }
 
-function selectColor(image) {
-  selectedColor.value = image
+const changeProductSize = (size) => {
+  activeSize.value = size
+  if (size === '1.3L') {
+    currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
+  } else if (size === '360ML') {
+    currentImage.value = `${directusBaseUrl}/assets/${product.value.image2}`
+  }
 }
+
+const toggleDetails = () => {
+  showDetails.value = !showDetails.value
+}
+
+onMounted(async () => {
+  await fetchProduct(route.params.id)
+})
+
 definePageMeta({
   layout: 'header2',
 })
 </script>
-
 <style>
+.pftitle {
+  font-family: 'Helvetica Neue';
+  font-size: 13px;
+  letter-spacing: 2.6px;
+  color: #000000;
+}
 .details {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .productarea {
   background: #f5f5f5;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .colors img {
   width: 100%;
@@ -146,5 +202,48 @@ definePageMeta({
   font-weight: 400;
   font-size: 37px;
   letter-spacing: -2.22px;
+}
+a.active {
+  font-weight: bold;
+}
+.accordion h1 {
+  cursor: pointer;
+  user-select: none;
+}
+.details-content {
+  margin-top: 10px;
+}
+.size-coverage {
+  margin-top: 20px;
+}
+.size-coverage h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.size-coverage p {
+  font-size: 14px;
+}
+.buy-now {
+  margin-top: 20px;
+  background-color: #004c54;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.msds-buttons {
+  margin-top: 20px;
+}
+.msds-buttons button {
+  background-color: #f5f5f5;
+  color: #004c54;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 </style>
