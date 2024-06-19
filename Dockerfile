@@ -1,9 +1,5 @@
 FROM directus/directus:latest
 
-# Copy custom files
-COPY ./middleware /directus/middleware
-COPY ./index.js /directus/index.js
-
 # Environment Variables
 ARG SECRET
 ARG ADMIN_EMAIL
@@ -31,6 +27,5 @@ ENV PUBLIC_URL=$PUBLIC_URL
 
 # Expose the port Directus will run on
 EXPOSE 8055
-
 # Initialize the database and start Directus
 CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]
