@@ -19,7 +19,7 @@
       <div class="col-md-3">
         <h1>2</h1>
         <p class="st">
-          st <br />
+          nd <br />
           Step
         </p>
         <p class="desc">
@@ -30,7 +30,7 @@
       <div class="col-md-3">
         <h1>3</h1>
         <p class="st">
-          st <br />
+          rd <br />
           Step
         </p>
         <p class="desc">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="header2">
+    <header class="header3">
       <nav>
         <ul>
           <li>
@@ -21,8 +21,15 @@
 </template>
 
 <style scoped>
-.header2 {
+body {
+  overflow-x: hidden;
+}
+header ul li a {
+  color: white;
+}
+.header3 {
   position: absolute;
+  z-index: 4;
   width: 100%;
   top: 0;
 }

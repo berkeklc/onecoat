@@ -28,7 +28,14 @@
     url('~/assets/fonts/Avenir-Heavy.woff') format('woff');
   font-style: normal;
 }
-ul {
+@font-face {
+  font-family: 'Rionaldo Angelo';
+  src:
+    url('~/assets/fonts/Rionaldo-Angelo.woff2') format('woff2'),
+    url('~/assets/fonts/Rionaldo-Angelo.woff') format('woff');
+  font-style: normal;
+}
+header ul {
   display: flex;
   list-style: none;
   margin-top: 56px;
@@ -37,11 +44,11 @@ ul {
   width: 40%;
 }
 
-ul li {
+header ul li {
   flex: 1; /* Her bir li eşit genişlikte olacak şekilde ayarlanır */
 }
 
-ul li a {
+header ul li a {
   display: block; /* Block seviyesinde öğe yaparak genişlik almasını sağlar */
   text-align: center;
   font-style: normal;
@@ -53,13 +60,16 @@ ul li a {
   color: #000000;
   opacity: 1;
   text-decoration: none;
+  transition: transform 0.5s;
+
   padding: 10px 0; /* Dikey boşluk ekler */
 }
 
-ul li a:hover,
-ul li a.active {
+header ul li a:hover,
+header ul li a.active {
   text-align: center;
   font-weight: bold; /* bold */
+  transition: transform 0.5s;
   font-family: 'Futura PT', sans-serif;
 }
 

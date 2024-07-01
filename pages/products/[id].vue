@@ -14,7 +14,7 @@
                   <div class="col-md-3">
                     <h3 class="psize">TWO SIZE</h3>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-8 pl0">
                     <div class="sizes">
                       <a
                         href="#"
@@ -32,12 +32,12 @@
                   </div>
                 </div>
 
-                <div class="categories">
+                <div class="categories row">
                   <h1 class="pftitle">CATEGORIES</h1>
-                  <p>Wood Oil</p>
+                  <p class="p0">Wood Oil</p>
                 </div>
                 <div class="colors row">
-                  <h1 class="pftitle">COLOURS</h1>
+                  <h1 class="pftitle clrs">COLOURS</h1>
                   <div
                     class="col-md-3"
                     v-for="(image, index) in images"
@@ -56,34 +56,69 @@
                   <a href="#">Natura Onecoat Wood Oil</a> <Right />
                   <a href="#">Clear</a>
                 </div>
-                <p>
+                <p class="firstdetails">
                   Natura Onecoat is a hardwax wood oil that creates bonds among
                   the upper fibers of the wood without creating a layer on the
                   surface.
                 </p>
                 <div class="accordion">
-                  <h1 @click="toggleDetails">
-                    {{ showDetails ? '-' : '+' }} Details
+                  <h1 class="accordiontitle" @click="toggleDetails">
+                    Details {{ showDetails ? '-' : '+' }}
                   </h1>
                   <div v-if="showDetails" class="details-content">
-                    <p>{{ product.desc }}</p>
+                    <p v-html="product.desc"></p>
                   </div>
                 </div>
-                <button class="buy-now">BUY NOW</button>
+                <button class="buy-now">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18.972"
+                    class="cartsvg"
+                    height="19.003"
+                    viewBox="0 0 18.972 19.003"
+                  >
+                    <g
+                      id="cart_shop_buy_retail"
+                      data-name="cart, shop, buy, retail"
+                      transform="translate(-3 -3)"
+                    >
+                      <path
+                        id="Path_112873"
+                        data-name="Path 112873"
+                        d="M23.189,23a2.189,2.189,0,1,0,2.189,2.189A2.189,2.189,0,0,0,23.189,23Zm0,2.919a.73.73,0,1,1,.73-.73A.73.73,0,0,1,23.189,25.919Z"
+                        transform="translate(-4.865 -5.406)"
+                        fill="#fff"
+                      />
+                      <path
+                        id="Path_112874"
+                        data-name="Path 112874"
+                        d="M13.946,17.594H8.108a.73.73,0,0,1,0-1.459H19.783a.73.73,0,0,0,.72-.61l1.459-8.756a.73.73,0,0,0-.72-.85H9.567a.73.73,0,0,0,0,1.459H20.381l-1.216,7.3H10.073l-4.2-11.2A.73.73,0,0,0,5.189,3H3.73a.73.73,0,0,0,0,1.459h.954L8.514,14.675H8.108a2.182,2.182,0,0,0-.569,4.292,2.193,2.193,0,1,0,4.083.086h2.324a.73.73,0,0,0,0-1.459ZM10.3,19.783a.73.73,0,1,1-.73-.73.73.73,0,0,1,.73.73Z"
+                        transform="translate(0 0)"
+                        fill="#fff"
+                      />
+                    </g>
+                  </svg>
+                  BUY NOW
+                </button>
                 <div class="msds-buttons">
                   <button>MSDS 2K-A</button>
-                  <button>MSDS 2K-B</button>
+                  <button class="bl">MSDS 2K-B</button>
                 </div>
               </div>
             </div>
             <div class="row size-coverage">
               <div class="col-md-6">
-                <h1 class="pftitle">SIZE</h1>
-                <p>12.17 oz.(1.3L)</p>
+                <h1 class="pftitle">
+                  SIZE
+
+                  <p class="pfdetail">12.17 oz.(1.3L)</p>
+                </h1>
               </div>
               <div class="col-md-6">
-                <h1 class="pftitle">COVERAGE AREA</h1>
-                <p>120-190 sq. ft. surface.</p>
+                <h1 class="pftitle">
+                  COVERAGE AREA
+                  <p class="pfdetail">120-190 sq. ft. surface.</p>
+                </h1>
               </div>
             </div>
           </div>
@@ -161,6 +196,25 @@ definePageMeta({
 })
 </script>
 <style>
+.clrs {
+  margin-top: 77px;
+}
+.p0 {
+  padding: 0;
+  color: black;
+  font-size: 21px;
+  font-family: 'Avenir Roman';
+}
+.pl0 {
+  padding-left: 0;
+}
+.firstdetails {
+  margin-top: 185px;
+}
+.cartsvg {
+  margin-top: -4px;
+  margin-right: 10px;
+}
 .breadcump {
   font-family: 'Avenir Roman';
   text-decoration: none;
@@ -175,11 +229,27 @@ definePageMeta({
   letter-spacing: 1.2px;
   color: #696d6e;
 }
-.pftitle {
-  font-family: 'Helvetica Neue';
+.accordiontitle {
+  font-family: 'Avenir Roman';
+
   font-size: 13px;
   letter-spacing: 2.6px;
   color: #000000;
+}
+.pftitle {
+  font-family: 'Avenir Roman';
+  font-size: 13px;
+  letter-spacing: 2.6px;
+  color: #000000;
+  padding: 0;
+}
+.pfdetail {
+  font-size: 21px;
+
+  margin: 16px 0 0 0;
+  letter-spacing: 0px;
+  color: #000000;
+  font-family: 'Avenir Roman';
 }
 .details {
   padding-top: 200px;
@@ -189,6 +259,9 @@ definePageMeta({
   background: #f5f5f5;
   text-align: center;
   padding-top: 200px;
+}
+.colors {
+  padding-right: 55px;
 }
 .colors img {
   width: 100%;
@@ -205,7 +278,7 @@ definePageMeta({
   text-align: center;
   font-family: 'Avenir Roman';
   letter-spacing: 0.7px;
-  font-size: 12px;
+  font-size: 8px;
   color: black;
 }
 .psize {
@@ -240,7 +313,7 @@ definePageMeta({
   padding: 4px 21px;
   text-decoration: none;
 }
-a.active {
+.sizes a.active {
   background: #175e6c 0% 0% no-repeat padding-box;
   border-radius: 2px;
   font-weight: bold;
@@ -254,6 +327,9 @@ a.active {
 .accordion h1 {
   cursor: pointer;
   user-select: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px 0;
 }
 .details-content {
   margin-top: 10px;
@@ -264,31 +340,41 @@ a.active {
 .size-coverage h1 {
   font-size: 16px;
   font-weight: bold;
-}
-.size-coverage p {
-  font-size: 14px;
+  color: #818181;
+  font-size: 13px;
+  letter-spacing: 2.6px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px 0;
 }
 .buy-now {
-  margin-top: 20px;
-  background-color: #004c54;
+  margin-top: 124px;
+  background-color: #175e6c;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 29px 20px;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 0;
+  width: 100%;
+  letter-spacing: 3px;
+  font-family: 'Avenir Roman';
 }
 .msds-buttons {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 .msds-buttons button {
   background-color: #f5f5f5;
   color: #004c54;
   border: none;
-  padding: 10px 20px;
+  padding: 29px 20px;
   cursor: pointer;
   font-size: 14px;
-  margin-right: 10px;
-  border-radius: 5px;
+  margin-right: 0;
+  width: 50%;
+  border-radius: 0px;
+}
+.bl {
+  border-left: 9px solid white !important;
 }
 </style>

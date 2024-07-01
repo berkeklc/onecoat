@@ -45,7 +45,7 @@ const breakpoints = {
 
 <style scoped>
 .swiper {
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 .image-wrapper {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -53,6 +53,12 @@ const breakpoints = {
   border-radius: 5px;
   opacity: 1;
   position: relative;
+  transition: transform 0.5s;
+}
+.image-wrapper:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 35%);
 }
 
 .image-wrapper img {

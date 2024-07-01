@@ -1,14 +1,60 @@
 <template>
   <div>
-    <h1>Products</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 headtitle">
+          <h1>PRODUCTS <span class="of">of</span> NATURA</h1>
+          <p>
+            Only one coat protection of all kinds of interior wooden surfaces
+            for flooring and furniture.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center">
+      <div class="pbg">
+        <img src="~/assets/img/products.png" alt="" />
+      </div>
+    </div>
+    <div class="container">
+      <Colors />
+    </div>
     <div v-if="error">{{ error.message }}</div>
     <div v-else-if="!products.length">Loading...</div>
     <div v-else>
-      <div v-for="product in products" :key="product.id">
-        <nuxt-link :to="'/products/' + product.id">
-          {{ product.brand + ' ' + product.name }}
-        </nuxt-link>
-        <p>{{ product.desc }}</p>
+      <div class="container">
+        <div class="row">
+          <div
+            v-for="product in products"
+            :key="product.id"
+            class="col-md-4 mb-4"
+          >
+            <div class="product-card">
+              <nuxt-link :to="'/products/' + product.id">
+                <img
+                  :src="getFullImagePath(product.image2)"
+                  alt="Product Image"
+                  class="img-fluid mb-3"
+                />
+                <div class="product-info">
+                  <h5 class="brand-name">
+                    {{ product.brand }} <span>{{ product.name }}</span>
+                  </h5>
+                  <div class="product-actions text-center">
+                    <nuxt-link :to="'/products/' + product.id" class="readmore"
+                      >Read More</nuxt-link
+                    >
+                    <nuxt-link
+                      :to="'/products/' + product.id + '/buy'"
+                      class="buynow"
+                      >Buy Now</nuxt-link
+                    >
+                  </div>
+                </div>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -17,9 +63,15 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { fetchProducts } from '@/services/directus'
+import { useRuntimeConfig } from '#app'
 
 const products = ref([])
 const error = ref(null)
+const config = useRuntimeConfig()
+
+const getFullImagePath = (imagePath) => {
+  return `${config.public.directusApiUrl}/assets/${imagePath}`
+}
 
 onMounted(async () => {
   try {
@@ -29,4 +81,88 @@ onMounted(async () => {
     console.error('Fetch products error:', err)
   }
 })
+definePageMeta({
+  layout: 'header2',
+})
 </script>
+
+<style scoped>
+.readmore {
+  text-decoration: underline;
+  font-family: 'Avenir Roman';
+  font-size: 12px;
+  color: #000000;
+  letter-spacing: 0px;
+}
+.buynow {
+  text-decoration: underline;
+  font-family: 'Avenir Roman';
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: #1d707f;
+  margin-left: 15px;
+}
+a {
+  text-decoration: none;
+}
+.brand-name {
+  letter-spacing: -1.2px;
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: 'Helvetica Neue';
+}
+.brand-name span {
+  font-weight: bold;
+  text-shadow: 0px 0px 0px black;
+}
+.of {
+  font-family: 'Rionaldo Angelo';
+  font-size: 1000px;
+  color: #e4e4e4;
+  position: relative;
+  top: 80px;
+  z-index: -1;
+  left: 13px;
+  margin: 0 50px;
+}
+.pbg {
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.pbg:before {
+  content: '';
+  position: absolute;
+  height: 180px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  top: 205px;
+  background: #232631;
+}
+.headtitle {
+  text-align: center;
+  margin-top: 130px;
+  position: relative;
+}
+.headtitle h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 140px;
+  font-weight: 400;
+  color: #232631;
+  font-style: normal;
+  margin-top: -3.2em;
+  margin-bottom: -2.7em;
+  position: relative;
+  z-index: -1;
+}
+.headtitle p {
+  color: #2c2c2c;
+  font-family: 'Avenir Roman';
+  text-align: center;
+  letter-spacing: 1.67px;
+  font-size: 26px;
+}
+</style>
