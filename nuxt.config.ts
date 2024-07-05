@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-swiper', 'nuxt-directus'],
+  modules: ['nuxt-swiper', 'nuxt-directus', '@nuxtjs/leaflet'],
   runtimeConfig: {
     public: {
       directusApiUrl:
@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     'bootstrap/dist/css/bootstrap.min.css',
     'bootstrap-icons/font/bootstrap-icons.css',
     '@/assets/css/global.css',
+    'leaflet/dist/leaflet.css',
   ],
   app: {
     head: {

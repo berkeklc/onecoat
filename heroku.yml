@@ -10,11 +10,11 @@ build:
     ADMIN_EMAIL: root@root.com
     ADMIN_PASSWORD: 12root34
     DB_CLIENT: pg
-    DB_HOST: ${DATABASE_HOST}
-    DB_PORT: ${DATABASE_PORT}
-    DB_DATABASE: ${DATABASE_NAME}
-    DB_USER: ${DATABASE_USER}
-    DB_PASSWORD: ${DATABASE_PASSWORD}
+    DB_HOST: c8lj070d5ubs83.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com
+    DB_PORT: 5432
+    DB_DATABASE: ddf8fhht60hi19
+    DB_USER: u7hipdmfa7bhhl
+    DB_PASSWORD: p1b8fcbcbcc880da4d33d24ab758ab42e3a0da154e8c29e7d683025caeba43d0c
     WEBSOCKETS_ENABLED: true
     PUBLIC_URL: https://naturaonecoat-cc85b1fdbbef.herokuapp.com
 

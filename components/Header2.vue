@@ -11,6 +11,9 @@
             <NuxtLink to="/products" active-class="active">products</NuxtLink>
           </li>
           <li><NuxtLink to="/faq" active-class="active">faq</NuxtLink></li>
+          <li>
+            <NuxtLink to="/contact" active-class="active">contact</NuxtLink>
+          </li>
         </ul>
       </nav>
     </header>

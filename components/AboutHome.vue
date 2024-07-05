@@ -158,8 +158,9 @@
 .slogan_wrap .slogan_text {
   margin: 45px 0 50px 0;
   text-align: center;
+  color: #0e112c;
   font-family: Avenir Book;
-  letter-spacing: 22px;
-  font-size: 2rem;
+  letter-spacing: 11.5px;
+  font-size: 23px;
 }
 </style>

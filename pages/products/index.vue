@@ -106,7 +106,6 @@ a {
   text-decoration: none;
 }
 .brand-name {
-  letter-spacing: -1.2px;
   text-align: center;
   color: #000000;
   font-size: 20px;
