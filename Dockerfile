@@ -10,7 +10,6 @@ ARG DB_PORT=5432
 ARG DB_DATABASE=ddf8fhht60hi19
 ARG DB_USER=u7hipdmfa7bhhl
 ARG DB_PASSWORD=p1b8fcbcbcc880da4d33d24ab758ab42e3a0da154e8c29e7d683025caeba43d0c
-ARG DB_SSL=true
 ARG WEBSOCKETS_ENABLED=true
 ARG PUBLIC_URL=https://naturaonecoat-cc85b1fdbbef.herokuapp.com
 
@@ -23,9 +22,11 @@ ENV DB_PORT=${DB_PORT}
 ENV DB_DATABASE=${DB_DATABASE}
 ENV DB_USER=${DB_USER}
 ENV DB_PASSWORD=${DB_PASSWORD}
-ENV DB_SSL=${DB_SSL}
 ENV WEBSOCKETS_ENABLED=${WEBSOCKETS_ENABLED}
 ENV PUBLIC_URL=${PUBLIC_URL}
+
+# Set SSL configuration as a JSON object
+ENV DB_SSL='{"rejectUnauthorized":true}'
 
 # Expose the port Directus will run on
 EXPOSE 8055
