@@ -1,5 +1,8 @@
 FROM directus/directus:latest
 
+# Copy .env file into the container
+COPY .env /app/.env
+
 # Environment Variables
 ARG SECRET
 ARG ADMIN_EMAIL
@@ -27,5 +30,6 @@ ENV PUBLIC_URL=$PUBLIC_URL
 
 # Expose the port Directus will run on
 EXPOSE 8055
+
 # Initialize the database and start Directus
 CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]
