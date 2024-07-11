@@ -12,7 +12,7 @@
                 <h1 class="ptitle">{{ product.name }}</h1>
                 <div class="row">
                   <div class="col-md-3">
-                    <h3 class="psize">TWO SIZE</h3>
+                    <h3 class="psize">TWO SIZE.</h3>
                   </div>
                   <div class="col-md-8 pl0">
                     <div class="sizes">
