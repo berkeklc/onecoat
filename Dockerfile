@@ -26,7 +26,7 @@ ENV WEBSOCKETS_ENABLED=${WEBSOCKETS_ENABLED}
 ENV PUBLIC_URL=${PUBLIC_URL}
 
 # Set SSL configuration as a JSON object
-ENV DB_SSL='{"rejectUnauthorized":true}'
+ENV DB_SSL='{"rejectUnauthorized":false}'
 
 # Expose the port Directus will run on
 EXPOSE 8055
