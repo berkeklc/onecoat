@@ -36,7 +36,7 @@
         </client-only>
       </div>
       <div class="col-md-12">
-        <h1>PLEASE FILL THE FORM...</h1>
+        <h1>PLEASE FILL THE FORM.</h1>
       </div>
       <div class="col-md-12">
         <h1>Come and <span>Ask Us </span></h1>
