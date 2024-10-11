@@ -2,7 +2,11 @@
   <div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 pf50">
+          <h3 class="small-text">
+            <span class="one">ONE</span>
+            <span class="coat">COAT</span>
+          </h3>
           <h1 class="large-text">NATURA</h1>
         </div>
         <div class="col-md-2"></div>
@@ -19,11 +23,12 @@
             application. Crafted from 100% natural ingredients, it
           </p>
         </div>
+        <HomeSlider />
         <div class="col-md-7 d-flex flex-column justify-content-end bg">
-          <Slider />
+          <!-- <Slider />-->
         </div>
         <div class="col-md-5">
-          <Before />
+          <!-- <Before /> -->
         </div>
         <AboutHome />
         <Colors />
@@ -48,6 +53,9 @@ definePageMeta({
 <style>
 .p50 {
   padding-right: 50px;
+}
+.pf50 {
+  padding-left: 50px;
 }
 .p50 p {
   padding-left: 19px;
