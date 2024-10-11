@@ -1,137 +1,137 @@
 @font-face {
-  font-family: 'Helvetica Neue';
-  src:
-    url('~/assets/fonts/helveticaneue-thin.woff2') format('woff2'),
-    url('~/assets/fonts/helveticaneue-thin.woff') format('woff');
-  font-weight: 100; /* Ultra Light */
-  font-style: normal;
+	font-family: 'Helvetica Neue';
+	src:
+		url('~/assets/fonts/helveticaneue-thin.woff2') format('woff2'),
+		url('~/assets/fonts/helveticaneue-thin.woff') format('woff');
+	font-weight: 100; /* Ultra Light */
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Avenir Book';
-  src:
-    url('~/assets/fonts/Avenir-Book.woff2') format('woff2'),
-    url('~/assets/fonts/Avenir-Book.woff') format('woff');
-  font-style: normal;
+	font-family: 'Avenir Book';
+	src:
+		url('~/assets/fonts/Avenir-Book.woff2') format('woff2'),
+		url('~/assets/fonts/Avenir-Book.woff') format('woff');
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Avenir Roman';
-  src:
-    url('~/assets/fonts/Avenir-Roman.woff2') format('woff2'),
-    url('~/assets/fonts/Avenir-Roman.woff') format('woff');
-  font-style: normal;
+	font-family: 'Avenir Roman';
+	src:
+		url('~/assets/fonts/Avenir-Roman.woff2') format('woff2'),
+		url('~/assets/fonts/Avenir-Roman.woff') format('woff');
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Avenir Heavy';
-  src:
-    url('~/assets/fonts/Avenir-Heavy.woff2') format('woff2'),
-    url('~/assets/fonts/Avenir-Heavy.woff') format('woff');
-  font-style: normal;
+	font-family: 'Avenir Heavy';
+	src:
+		url('~/assets/fonts/Avenir-Heavy.woff2') format('woff2'),
+		url('~/assets/fonts/Avenir-Heavy.woff') format('woff');
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Rionaldo Angelo';
-  src:
-    url('~/assets/fonts/Rionaldo-Angelo.woff2') format('woff2'),
-    url('~/assets/fonts/Rionaldo-Angelo.woff') format('woff');
-  font-style: normal;
+	font-family: 'Rionaldo Angelo';
+	src:
+		url('~/assets/fonts/Rionaldo-Angelo.woff2') format('woff2'),
+		url('~/assets/fonts/Rionaldo-Angelo.woff') format('woff');
+	font-style: normal;
 }
 header ul {
-  display: flex;
-  list-style: none;
-  margin-top: 56px;
-  margin-bottom: 0;
-  padding: 0;
-  width: 40%;
+	display: flex;
+	list-style: none;
+	margin-top: 56px;
+	margin-bottom: 0;
+	padding: 0;
+	width: 40%;
 }
 
 header ul li {
-  flex: 1; /* Her bir li eşit genişlikte olacak şekilde ayarlanır */
+	flex: 1; /* Her bir li eşit genişlikte olacak şekilde ayarlanır */
 }
 
 header ul li a {
-  display: block; /* Block seviyesinde öğe yaparak genişlik almasını sağlar */
-  text-align: center;
-  font-style: normal;
-  font-weight: 500; /* medium */
-  font-size: 14px;
-  line-height: 19px;
-  font-family: 'Futura PT', sans-serif;
-  letter-spacing: 2.8px;
-  color: #000000;
-  opacity: 1;
-  text-decoration: none;
-  transition: transform 0.5s;
+	display: block; /* Block seviyesinde öğe yaparak genişlik almasını sağlar */
+	text-align: center;
+	font-style: normal;
+	font-weight: 500; /* medium */
+	font-size: 14px;
+	line-height: 19px;
+	font-family: 'Futura PT', sans-serif;
+	letter-spacing: 2.8px;
+	color: #000000;
+	opacity: 1;
+	text-decoration: none;
+	transition: transform 0.5s;
 
-  padding: 10px 0; /* Dikey boşluk ekler */
+	padding: 10px 0; /* Dikey boşluk ekler */
 }
 
 header ul li a:hover,
 header ul li a.active {
-  text-align: center;
-  font-weight: bold; /* bold */
-  transition: transform 0.5s;
-  font-family: 'Futura PT', sans-serif;
+	text-align: center;
+	font-weight: bold; /* bold */
+	transition: transform 0.5s;
+	font-family: 'Futura PT', sans-serif;
 }
 
 .logo {
-  margin-top: 31px;
-  float: right;
-  margin-right: 0;
+	margin-top: 31px;
+	float: right;
+	margin-right: 0;
 }
 
 .search-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Sağa yasla */
-  border-bottom: 1px solid #000;
-  padding-bottom: 8px;
-  margin-top: 9rem; /* Yukarıda biraz boşluk bırak */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end; /* Sağa yasla */
+	border-bottom: 1px solid #000;
+	padding-bottom: 8px;
+	margin-top: 9rem; /* Yukarıda biraz boşluk bırak */
 }
 
 .search-icon {
-  margin-right: 8px; /* İkon ile input arasındaki boşluk */
-  width: 20px; /* İkon boyutu */
-  height: 20px; /* İkon boyutu */
+	margin-right: 8px; /* İkon ile input arasındaki boşluk */
+	width: 20px; /* İkon boyutu */
+	height: 20px; /* İkon boyutu */
 }
 
 .search-input {
-  border: none;
-  outline: none;
-  font-size: 16px; /* Yazı boyutu */
-  font-family: Arial, sans-serif; /* Yazı tipi */
-  flex: 1; /* Genişliği doldur */
+	border: none;
+	outline: none;
+	font-size: 16px; /* Yazı boyutu */
+	font-family: Arial, sans-serif; /* Yazı tipi */
+	flex: 1; /* Genişliği doldur */
 }
 
 .large-text {
-  text-align: left;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 184px;
-  line-height: 243px;
-  font-family: 'Helvetica Neue', sans-serif;
-  letter-spacing: -11.04px;
-  color: #0e112c;
-  opacity: 1;
+	text-align: left;
+	font-style: normal;
+	font-weight: 100;
+	font-size: 184px;
+	line-height: 243px;
+	font-family: 'Helvetica Neue', sans-serif;
+	letter-spacing: -11.04px;
+	color: #0e112c;
+	opacity: 1;
 }
 
 .small-text {
-  padding-left: 10px;
-  margin-bottom: -50px;
+	padding-left: 10px;
+	margin-bottom: -50px;
 }
 .one,
 .coat {
-  font-size: 50px;
-  text-align: left;
-  letter-spacing: -3px;
-  line-height: 68px;
+	font-size: 50px;
+	text-align: left;
+	letter-spacing: -3px;
+	line-height: 68px;
 
-  color: #175e6c;
+	color: #175e6c;
 }
 .one {
-  font-family: 'Avenir Roman', sans-serif;
+	font-family: 'Avenir Roman', sans-serif;
 }
 .coat {
-  font-family: 'Avenir Heavy', sans-serif;
+	font-family: 'Avenir Heavy', sans-serif;
 }
 /*
 .large-text {
@@ -148,5 +148,5 @@ header ul li a.active {
 }*/
 
 .bg {
-  background: #f8f8f8;
+	background: #f8f8f8;
 }

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-swiper', 'nuxt-directus', '@nuxtjs/leaflet'],
+  modules: ['nuxt-swiper', 'nuxt-directus', '@nuxtjs/leaflet', '@vesp/nuxt-fontawesome'],
   runtimeConfig: {
     public: {
       directusApiUrl:
