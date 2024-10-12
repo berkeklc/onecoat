@@ -1,6 +1,15 @@
 <template>
 	<div class="container-fluid product-slider-section">
 		<div class="row">
+			<div class="slider-buttons pf50">
+				<button @click="goToSlide(0)" class="slider-btn">Floor</button>
+				<button @click="goToSlide(1)" class="slider-btn pf50">
+					INTERIOR
+				</button>
+				<button @click="goToSlide(2)" class="slider-btn pf50">
+					CARE & MAINTENANCE
+				</button>
+			</div>
 			<!-- Sol tarafta ürün bilgileri -->
 			<div class="col-md-6 product-description">
 				<img
@@ -17,7 +26,9 @@
 						<p class="product-subtitle">For Wooden Surfaces</p>
 					</div>
 					<div class="button-container">
-						<a href="#" class="buy-now-btn"> BUY NOW </a>
+						<a href="#" class="buy-now-btn">
+							<font-awesome-icon icon="shopping-cart" /> BUY NOW
+						</a>
 					</div>
 					<div class="content">
 						<p class="product-text">
@@ -35,8 +46,9 @@
 					ref="mySwiper"
 					:spaceBetween="50"
 					:slidesPerView="1"
-					navigation
+					:loop="true"
 					pagination
+					@swiper="onSwiper"
 				>
 					<!-- Slider item 1 -->
 					<swiper-slide>
@@ -46,6 +58,11 @@
 								alt="Slider Image 1"
 								class="slider-image"
 							/>
+							<div class="item_bar">
+								<div class="bar checked_bar"></div>
+								<div class="bar"></div>
+								<div class="bar"></div>
+							</div>
 							<div class="slider-text">
 								<h3>Floor</h3>
 								<p>One Coat Superior Coverage.</p>
@@ -66,11 +83,41 @@
 								alt="Slider Image 2"
 								class="slider-image"
 							/>
+							<div class="item_bar">
+								<div class="bar"></div>
+								<div class="bar checked_bar"></div>
+								<div class="bar"></div>
+							</div>
 							<div class="slider-text">
-								<h3>Another Feature</h3>
+								<h3>INTERIOR</h3>
 								<p>Description for another feature.</p>
 								<button
 									@click="goToSlide(2)"
+									class="show-products-btn"
+								>
+									Explore
+								</button>
+							</div>
+						</div>
+					</swiper-slide>
+
+					<swiper-slide>
+						<div class="slider-item">
+							<img
+								src="~/assets/img/941x1057.png"
+								alt="Slider Image 2"
+								class="slider-image"
+							/>
+							<div class="item_bar">
+								<div class="bar"></div>
+								<div class="bar"></div>
+								<div class="bar checked_bar"></div>
+							</div>
+							<div class="slider-text">
+								<h3>CARE & MAINTENANCE</h3>
+								<p>Description for another feature.</p>
+								<button
+									@click="goToSlide(3)"
 									class="show-products-btn"
 								>
 									Explore
@@ -89,18 +136,19 @@ import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
 
+// Swiper referansını tanımla
 const mySwiper = ref(null)
-const activeSlideIndex = ref(0)
-const slides = [0, 1] // Slide sayısı burada tanımlandı
 
-// Fonksiyon: İlgili slayda gitme
-const goToSlide = (index) => {
-	mySwiper.value.swiper.slideTo(index)
+// Swiper yüklendiğinde çağrılacak fonksiyon
+const onSwiper = (swiper) => {
+	mySwiper.value = swiper
 }
 
-// Fonksiyon: Aktif slaytın indeksini güncelleme
-const updateActiveSlide = () => {
-	activeSlideIndex.value = mySwiper.value.swiper.activeIndex
+// İlgili slayda gitme fonksiyonu
+const goToSlide = (index) => {
+	if (mySwiper.value) {
+		mySwiper.value.slideTo(index)
+	}
 }
 </script>
 
@@ -160,10 +208,11 @@ const updateActiveSlide = () => {
 }
 
 .product-text {
-	margin-top: 10px;
+	margin-top: 30px;
 	font-size: 16px;
 	color: #666;
 	line-height: 1.5;
+	font-family: 'Avenir Roman', sans-serif;
 }
 
 .button-container {
@@ -174,14 +223,18 @@ const updateActiveSlide = () => {
 .buy-now-btn {
 	background-color: #2f6776;
 	color: white;
-	padding: 15px 30px;
+	padding: 17px 65px;
 	border: none;
 	cursor: pointer;
+	margin-bottom: 15px;
 	text-decoration: none;
-	border-radius: 5px;
-	font-size: 16px;
+	font-size: 15px;
 	transition: background-color 0.3s ease;
-	font-weight: 600;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	width: 266px;
+	height: 58px;
+	letter-spacing: 3px;
+	font-family: 'Avenir Roman', sans-serif;
 }
 
 .buy-now-btn:hover {
@@ -190,13 +243,12 @@ const updateActiveSlide = () => {
 
 .buy-now-btn i {
 	margin-right: 10px;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 /* Sağ taraf (slider) için stil */
 .product-slider {
 	position: relative;
-	padding: 0 40px;
 }
 
 .slider-item {
@@ -210,10 +262,36 @@ const updateActiveSlide = () => {
 	object-fit: cover;
 }
 
+.item_bar {
+	position: absolute;
+	z-index: 8;
+	top: 5%;
+	left: 0px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 2px;
+}
+
+.bar {
+	height: 4px;
+	background-color: #e5e5df;
+	height: 100%;
+	width: 100%;
+	transition: width 0.3s ease;
+}
+
+.checked_bar {
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	transition: width 0.3s ease;
+}
+
 .slider-text {
 	position: absolute;
-	bottom: 30px;
-	left: 30px;
+	top: 35%;
+	left: 80px;
 	color: white;
 }
 
@@ -223,5 +301,45 @@ const updateActiveSlide = () => {
 	padding: 10px 20px;
 	border: none;
 	cursor: pointer;
+}
+
+/* BUTTON CSS */
+
+.slider-buttons {
+	display: flex;
+	justify-content: left;
+	margin-top: 20px;
+}
+
+.slider-btn {
+	background: none;
+	color: #333333;
+	border: none;
+	cursor: pointer;
+	font-size: 17px;
+	font-family: 'Avenir Roman', sans-serif;
+	letter-spacing: 9.96px;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	position: relative;
+	padding-right: 36px;
+}
+
+.slider-btn:not(:last-child)::after {
+	content: '•';
+	color: #333;
+	margin-left: 79px;
+	font-weight: normal;
+}
+
+.slider-btn:hover {
+	color: #1d4d59;
+}
+
+.slider-btn:focus,
+.slider-btn.active {
+	font-family: 'Avenir Heavy', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
 }
 </style>
