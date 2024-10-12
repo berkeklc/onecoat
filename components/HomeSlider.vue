@@ -248,6 +248,7 @@ const goToSlide = (index) => {
 
 /* Sağ taraf (slider) için stil */
 .product-slider {
+	padding-left: 0px;
 	position: relative;
 }
 
