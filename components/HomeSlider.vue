@@ -340,6 +340,7 @@ const goToSlide = (index) => {
 	background: none;
 	color: #333333;
 	border: none;
+	height: 40px;
 	cursor: pointer;
 	font-size: 17px;
 	font-family: 'Avenir Roman', sans-serif;
