@@ -38,29 +38,36 @@
 			<div class="col-md-12">
 				<h1>PLEASE FILL THE FORM.</h1>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12 form-section">
 				<h1>Come and <span>Ask Us </span></h1>
 				<p>Fill out the form below to apply.</p>
 				<form action="">
-					<input type="text" placeholder="Name" />
-					<input type="text" placeholder="Surname" />
-					<input type="email" placeholder="Email" />
-					<input type="text" placeholder="Phone" />
-					<textarea
-						name=""
-						id=""
-						cols="30"
-						rows="10"
-						placeholder="Message"
-					></textarea>
+					<div class="form-row">
+						<input type="text" placeholder="Name" />
+						<input type="text" placeholder="Surname" />
+					</div>
+					<div class="form-row">
+						<input type="email" placeholder="E-mail" />
+						<input type="text" placeholder="Phone" />
+					</div>
+					<div class="form-row">
+						<textarea
+							name=""
+							id=""
+							cols="30"
+							rows="5"
+							placeholder="Comment"
+						></textarea>
+					</div>
 					<input type="submit" value="Submit the Comment" />
 				</form>
 			</div>
 		</div>
 	</div>
 </template>
+
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const zoom = ref(2)
 const center = ref([20, 0])
@@ -81,15 +88,11 @@ const locations = ref([
 		lng: -0.127,
 	},
 ])
-
-definePageMeta({
-	layout: 'header2',
-})
 </script>
 
 <style scoped>
 .contact {
-	margin-top: 50px;
+	margin-top: 150px;
 	padding: 50px;
 }
 
@@ -126,15 +129,31 @@ a span {
 	background: transparent !important;
 }
 
+.form-section {
+	margin-top: 40px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	gap: 2%;
+	margin-bottom: 20px;
+}
+
 input[type='text'],
 input[type='email'],
 textarea {
 	width: 48%;
 	padding: 15px;
-	margin-bottom: 20px;
 	border: 1px solid #ccc;
 	font-family: 'Avenir Book', sans-serif;
 	font-size: 16px;
+	color: #333;
 }
 
 textarea {
@@ -151,27 +170,11 @@ input[type='submit'] {
 	font-size: 16px;
 	text-transform: uppercase;
 	margin-top: 20px;
+	width: fit-content;
 }
 
 input[type='submit']:hover {
 	background-color: #2c2c2c;
-}
-
-.col-md-4 h1 {
-	font-family: 'Avenir Heavy', sans-serif;
-	font-size: 36px;
-}
-
-.col-md-4 a {
-	display: inline-block;
-	margin-top: 15px;
-	font-family: 'Avenir Heavy', sans-serif;
-	color: #232631;
-	font-size: 18px;
-}
-
-.col-md-4 a span {
-	color: #2c2c2c;
 }
 
 .col-md-12 h1 {
@@ -184,26 +187,5 @@ input[type='submit']:hover {
 .col-md-12 h1 span {
 	font-family: 'Avenir Book', sans-serif;
 	font-size: 24px;
-}
-
-form {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-form input[type='text'],
-form input[type='email'],
-form textarea {
-	flex: 1;
-}
-
-form input[type='text']:nth-child(odd),
-form input[type='email']:nth-child(odd) {
-	margin-right: 4%;
-}
-
-form input[type='text']:nth-child(even),
-form input[type='email']:nth-child(even) {
-	margin-left: 0;
 }
 </style>
