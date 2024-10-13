@@ -2,7 +2,10 @@
 	<Logo />
 	<div class="faq-container">
 		<div class="faq-header">
-			<h1>YOU GOT <span class="highlight">QUESTIONS</span></h1>
+			<h1>
+				YOU GOT
+				<div class="highlight">QUESTIONS</div>
+			</h1>
 			<p>“Frequently Asked Questions”</p>
 		</div>
 
@@ -108,23 +111,30 @@ const faqs = ref([
 }
 
 .faq-header {
-	text-align: center;
+	text-align: left;
 	margin-bottom: 40px;
 }
 
 .faq-header h1 {
-	font-size: 36px;
-	font-weight: bold;
+	font-size: 59px;
+	letter-spacing: 17.7px;
+	line-height: 81px;
+	color: #2c2c2c;
+	font-family: 'Avenir Book';
 }
 
 .faq-header .highlight {
-	font-size: 48px;
-	font-weight: bold;
+	font-size: 59px;
+	font-family: 17.7px;
+	line-height: 81px;
+	font-family: 'Avenir Heavy';
 }
 
 .faq-header p {
-	font-size: 18px;
-	font-style: italic;
+	font-size: 23px;
+	letter-spacing: 11.5px;
+	line-height: 31px;
+	font-family: 'Avenir Medium';
 }
 
 .faq-list {
@@ -167,8 +177,18 @@ const faqs = ref([
 	margin-top: 50px;
 }
 
+.faq-footer p {
+	font-size: 29px;
+	letter-spacing: 0px;
+	line-height: 35px;
+	font-family: 'Helvetica Neue';
+}
+
 .faq-footer .highlight {
+	font-size: 29px;
+	letter-spacing: 0px;
+	line-height: 35px;
+	font-family: 'Helvetica Neue';
 	font-weight: bold;
-	font-size: 18px;
 }
 </style>

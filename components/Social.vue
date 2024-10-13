@@ -67,8 +67,8 @@ const breakpoints = {
 }
 
 .social_item img {
-	width: 100%;
-	height: auto;
+	width: 315px;
+	height: 336px;
 	object-fit: cover;
 	border-radius: 0;
 	padding: 0;
