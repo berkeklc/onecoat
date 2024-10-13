@@ -90,7 +90,7 @@
 	font-family: 'Avenir Heavy';
 }
 .urun_wrap .urun_grid {
-	margin: 70px 0px 20px 70px;
+	margin: 0px 0px 20px 0px;
 }
 .urun_wrap .urun_grid .content {
 	align-items: left;

@@ -156,6 +156,12 @@ header ul li a.active {
 	max-width: 96%;
 	margin: 0 auto;
 }
+
+.center4 {
+	width: 900px;
+	max-width: 96%;
+	margin: 0 auto;
+}
 /*
 .large-text {
   text-align: left;

@@ -64,8 +64,10 @@
 								<div class="bar"></div>
 							</div>
 							<div class="slider-text">
-								<h3>Floor</h3>
-								<p>One Coat Superior Coverage.</p>
+								<h3 class="slider-text_title">Floor</h3>
+								<p class="slider-text_subtitle">
+									One Coat Superior Coverage.
+								</p>
 								<button
 									@click="goToSlide(1)"
 									class="show-products-btn"
@@ -89,13 +91,15 @@
 								<div class="bar"></div>
 							</div>
 							<div class="slider-text">
-								<h3>INTERIOR</h3>
-								<p>Description for another feature.</p>
+								<h3 class="slider-text_title">Interior</h3>
+								<p class="slider-text_subtitle">
+									One Coat Superior Coverage.
+								</p>
 								<button
-									@click="goToSlide(2)"
+									@click="goToSlide(1)"
 									class="show-products-btn"
 								>
-									Explore
+									Show Products
 								</button>
 							</div>
 						</div>
@@ -114,13 +118,17 @@
 								<div class="bar checked_bar"></div>
 							</div>
 							<div class="slider-text">
-								<h3>CARE & MAINTENANCE</h3>
-								<p>Description for another feature.</p>
+								<h3 class="slider-text_title">
+									Care & Maintenance
+								</h3>
+								<p class="slider-text_subtitle">
+									One Coat Superior Coverage.
+								</p>
 								<button
-									@click="goToSlide(3)"
+									@click="goToSlide(1)"
 									class="show-products-btn"
 								>
-									Explore
+									Show Products
 								</button>
 							</div>
 						</div>
@@ -265,17 +273,16 @@ const goToSlide = (index) => {
 
 .item_bar {
 	position: absolute;
-	z-index: 8;
-	top: 5%;
-	left: 0px;
+	top: 25px;
 	width: 100%;
+	padding: 0 30px;
+	height: 6px;
 	display: grid;
 	grid-template-columns: auto auto auto;
-	gap: 2px;
+	gap: 5px;
 }
 
 .bar {
-	height: 4px;
 	background-color: #e5e5df;
 	height: 100%;
 	width: 100%;
@@ -296,10 +303,27 @@ const goToSlide = (index) => {
 	color: white;
 }
 
-.show-products-btn {
+.slider-text .slider-text_title {
+	font-family: 'Helvetica Neue';
+	font-size: 77px;
+	letter-spacing: -4.62px;
+	height: 66px;
+}
+
+.slider-text .slider-text_subtitle {
+	font-family: 'Avenir Roman';
+	font-size: 21px;
+	letter-spacing: 0px;
+	height: 15px;
+}
+
+.slider-text .show-products-btn {
+	font-size: 10px;
+	letter-spacing: 2px;
+	font-family: 'Avenir Roman';
 	background-color: white;
 	color: black;
-	padding: 10px 20px;
+	padding: 17px 37px;
 	border: none;
 	cursor: pointer;
 }

@@ -50,6 +50,7 @@ const breakpoints = {
 .image-wrapper {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	box-shadow: 0px 3px 6px #00000029;
+	border-radius: 5px;
 	opacity: 1;
 	position: relative;
 	transition: transform 0.5s;
@@ -62,6 +63,7 @@ const breakpoints = {
 
 .image-wrapper img {
 	width: 100%;
+	border-radius: 5px;
 }
 
 .title {

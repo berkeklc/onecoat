@@ -49,7 +49,7 @@
 					></iframe>
 				</div>
 				<Social />
-				<Easy />
+				<!-- <Easy /> -->
 
 				<div
 					class="elfsight-app-4db7538f-8b88-4fba-ab46-85f9a8dad137"
