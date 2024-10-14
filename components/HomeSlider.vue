@@ -168,6 +168,7 @@ const goToSlide = (index) => {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: flex-end;
 }
 
 .product-image {
@@ -340,7 +341,6 @@ const goToSlide = (index) => {
 	background: none;
 	color: #333333;
 	border: none;
-	height: 40px;
 	cursor: pointer;
 	font-size: 17px;
 	font-family: 'Avenir Roman', sans-serif;
@@ -358,14 +358,9 @@ const goToSlide = (index) => {
 	font-weight: normal;
 }
 
-.slider-btn:hover {
-	color: #1d4d59;
-}
-
 .slider-btn:focus,
 .slider-btn.active {
 	font-family: 'Avenir Heavy', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
 }
 </style>

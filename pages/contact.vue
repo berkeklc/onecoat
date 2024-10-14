@@ -68,6 +68,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { LMap, LTileLayer, LMarker, LPopup } from '@vue-leaflet/vue-leaflet'
 
 const zoom = ref(2)
 const center = ref([20, 0])
