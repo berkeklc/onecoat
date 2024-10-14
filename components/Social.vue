@@ -10,7 +10,8 @@
 			</div>
 		</div>
 		<div class="social_grid">
-			<swiper :space-between="0" :breakpoints="breakpoints">
+			<swiper :space-between="10" :breakpoints="breakpoints">
+				<!-- spaceBetween 20px olarak ayarlandı -->
 				<swiper-slide v-for="(image, index) in images" :key="index">
 					<div class="social_item">
 						<img :src="image.src" :alt="image.title" />
@@ -26,33 +27,30 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
 
 const images = [
-	{ src: '/instagram_gorsel/onecoat1.jpg' },
-	{ src: '/instagram_gorsel/onecoat2.jpg' },
-	{ src: '/instagram_gorsel/onecoat3.jpg' },
-	{ src: '/instagram_gorsel/onecoat4.jpg' },
-	{ src: '/instagram_gorsel/onecoat5.jpg' },
-	{ src: '/instagram_gorsel/onecoat6.jpg' },
-	{ src: '/instagram_gorsel/onecoat7.jpg' },
-	{ src: '/instagram_gorsel/onecoat8.jpg' },
-	{ src: '/instagram_gorsel/onecoat9.jpg' },
+	{ src: '/instagram_new/natura05.png' },
+	{ src: '/instagram_new/natura01.png' },
+	{ src: '/instagram_new/natura02.png' },
+	{ src: '/instagram_new/natura03.png' },
+	{ src: '/instagram_new/natura04.png' },
+	{ src: '/instagram_new/natura06.png' },
 ]
 
 const breakpoints = {
 	1920: {
 		slidesPerView: 6,
-		spaceBetween: 0,
+		spaceBetween: 10,
 	},
 	1024: {
-		slidesPerView: 5,
-		spaceBetween: 0,
+		slidesPerView: 6,
+		spaceBetween: 10,
 	},
 	768: {
 		slidesPerView: 3,
-		spaceBetween: 0,
+		spaceBetween: 10,
 	},
 	480: {
 		slidesPerView: 2,
-		spaceBetween: 0,
+		spaceBetween: 5,
 	},
 }
 </script>
@@ -67,12 +65,10 @@ const breakpoints = {
 }
 
 .social_item img {
-	width: 315px;
-	height: 336px;
 	object-fit: cover;
 	border-radius: 0;
-	padding: 0;
-	margin: 0;
+	width: 100%;
+	height: auto;
 }
 
 .social_item {

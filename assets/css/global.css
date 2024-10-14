@@ -35,6 +35,32 @@
 		url('~/assets/fonts/Rionaldo-Angelo.woff') format('woff');
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Bodoni Book';
+	src: url('~/assets/fonts/bodoni/bodoni_book-01.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Bodoni Orn';
+	src: url('~/assets/fonts/bodoni/bodoni_ornaments.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Bodoni SmallBook';
+	src: url('~/assets/fonts/bodoni/bodoni72_smallcaps_book.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Bodoni 72';
+	src: url('~/assets/fonts/bodoni/bodoni72.ttc') format('ttc');
+}
+
+@font-face {
+	font-family: 'Bodoni 72os';
+	src: url('~/assets/fonts/bodoni/bodoni72os.ttc') format('ttc');
+}
+
 header ul {
 	display: flex;
 	list-style: none;
@@ -74,8 +100,12 @@ header ul li a.active {
 }
 
 .logo {
+	position: absolute;
+	right: 31px;
+	top: 31px;
 	margin-top: 31px;
 	float: right;
+	z-index: 9999999;
 	margin-right: 0;
 }
 

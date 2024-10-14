@@ -48,24 +48,37 @@
 				<p class="fill_apply">Fill out the form below to apply.</p>
 				<form action="">
 					<div class="form-row">
-						<input type="text" placeholder="Name" />
-						<input type="text" placeholder="Surname" />
+						<div class="input-container">
+							<input type="text" id="name" required />
+							<label for="name">Name</label>
+						</div>
+						<div class="input-container">
+							<input type="text" id="surname" required />
+							<label for="surname">Surname</label>
+						</div>
 					</div>
 					<div class="form-row">
-						<input type="email" placeholder="E-mail" />
-						<input type="text" placeholder="Phone" />
+						<div class="input-container">
+							<input type="text" id="email" required />
+							<label for="email">E-mail</label>
+						</div>
+						<div class="input-container">
+							<input type="text" id="phone" required />
+							<label for="phone">Phone</label>
+						</div>
 					</div>
 					<div class="form-row">
-						<textarea
-							name=""
-							id=""
-							cols="30"
-							rows="5"
-							placeholder="Comment"
-						></textarea>
+						<div class="input-container">
+							<textarea id="comment" rows="5" required></textarea>
+							<label for="comment">Comment</label>
+						</div>
 					</div>
 					<input type="submit" value="Submit the Comment" />
 				</form>
+				<p class="centered-footer-text">
+					* We will never share your email address & you can opt out
+					at any time, we promise.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -124,6 +137,7 @@ const locations = ref([
 	background-color: #2c384e;
 	text-decoration: none;
 	color: #ffffff;
+	margin-bottom: 17px;
 	padding: 9px 50px;
 	font-family: 'Avenir Book', sans-serif;
 	font-size: 13px;
@@ -145,6 +159,7 @@ const locations = ref([
 
 .maps_text .mail_btn {
 	text-decoration: none;
+	margin-top: 10px;
 	font-family: 'Avenir Book', sans-serif;
 	font-size: 22px;
 	letter-spacing: 6.6px;
@@ -179,7 +194,7 @@ const locations = ref([
 .form-section .come_and_ask {
 	font-family: 'Avenir Book', sans-serif;
 	font-size: 17px;
-	height: 0px;
+	height: 11px;
 }
 
 .form-section .come_and_ask span {
@@ -197,48 +212,17 @@ const locations = ref([
 form {
 	display: flex;
 	flex-direction: column;
+	gap: 35px;
 }
 
 .form-row {
 	display: flex;
 	justify-content: space-between;
-	gap: 2%;
+	gap: 5%;
 	margin-bottom: 20px;
 }
 
 /*İNPUTS*/
-
-input[type='text'],
-input[type='email'],
-textarea {
-	width: 48%;
-	padding: 15px;
-	border: 1px solid #ccc;
-	font-family: 'Avenir Book', sans-serif;
-	font-size: 16px;
-	color: #333;
-}
-
-textarea {
-	width: 100%;
-}
-
-input[type='submit'] {
-	background-color: #232631;
-	color: white;
-	padding: 15px 30px;
-	border: none;
-	cursor: pointer;
-	font-family: 'Avenir Heavy', sans-serif;
-	font-size: 16px;
-	text-transform: uppercase;
-	margin-top: 20px;
-	width: fit-content;
-}
-
-input[type='submit']:hover {
-	background-color: #2c2c2c;
-}
 
 /*
 
@@ -266,4 +250,92 @@ footer .input-container input:not(:placeholder-shown) + label {
 }
 
 */
+.input-container {
+	position: relative;
+	width: 100%;
+}
+
+.input-container textarea {
+	width: 100%;
+}
+
+.input-container input,
+.input-container textarea {
+	appearance: none;
+	width: 100%;
+	padding: 10px;
+	background-color: transparent;
+	border: none;
+	letter-spacing: 0.32px;
+	border-bottom: 1px solid #00000039;
+	font-family: 'Avenir Book', sans-serif;
+	font-size: 16px;
+	color: #333;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+.input-container label {
+	position: absolute;
+	left: 10px;
+	top: 12px;
+	color: #737374;
+	font-size: 16px;
+	font-family: 'Avenir Book', sans-serif;
+	transition: all 0.3s ease;
+}
+
+.input-container input[type='email']:focus + label,
+.input-container input[type='email']:not(:placeholder-shown):valid + label {
+	top: -20px;
+	left: 0;
+	font-size: 0.85rem;
+	color: #232631;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown):valid + label,
+.input-container textarea:focus + label,
+.input-container textarea:not(:placeholder-shown):valid + label {
+	top: -20px;
+	left: 0;
+	font-size: 0.85rem;
+	color: #232631;
+}
+
+input[type='submit'] {
+	background-color: transparent;
+	color: #2c384e;
+	padding: 10px 0;
+	border: none;
+	cursor: pointer;
+	font-family: 'Avenir Heavy', sans-serif;
+	font-size: 18px;
+	letter-spacing: 0px;
+	text-transform: capitalize;
+	margin-top: 20px;
+	margin-left: auto;
+	display: block;
+	width: fit-content;
+	border-bottom: 2px solid #bcc2cc;
+	transition: all 0.3s ease;
+}
+
+input[type='submit']:hover {
+	color: #2c2c2c;
+	border-bottom-color: #2c2c2c;
+}
+
+.centered-footer-text {
+	font-family: 'Avenir Book', sans-serif;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 40px;
+}
 </style>

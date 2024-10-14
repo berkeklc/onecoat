@@ -15,16 +15,16 @@ import 'swiper/swiper-bundle.css'
 
 const images = [
 	// Resim URL'lerini ve başlıklarını buraya ekleyin
-	{ src: '/clearnew.png', title: 'CLEAR' },
-	{ src: '/naturalwhite.png', title: 'NATURAL WHITE' },
-	{ src: '/whitenew.png', title: 'WHITE' },
-	{ src: '/naturalmist.png', title: 'NATURAL MIST' },
-	{ src: '/darkoaknews.png', title: 'DARK OAK' },
-	{ src: '/blacknew.png', title: 'BLACK' },
-	{ src: '/walnutnew.png', title: 'WALNUT' },
-	{ src: '/chbrownnew.png', title: 'CHOCOLATE BROWN' },
-	{ src: '/graynew.png', title: 'GRAY' },
-	{ src: '/charcoalnew.png', title: 'CHARCOAL' },
+	{ src: '/colors_new/clear.png', title: 'CLEAR' },
+	{ src: '/colors_new/natural_white.png', title: 'NATURAL WHITE' },
+	{ src: '/colors_new/white.png', title: 'WHITE' },
+	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
+	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
+	{ src: '/colors_new/black.png', title: 'BLACK' },
+	{ src: '/colors_new/walnut.png', title: 'WALNUT' },
+	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
+	{ src: '/colors_new/gray.png', title: 'GRAY' },
+	{ src: '/colors_new/charcoal.png', title: 'CHARCOAL' },
 ]
 
 const breakpoints = {

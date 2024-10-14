@@ -54,7 +54,7 @@
 					<swiper-slide>
 						<div class="slider-item">
 							<img
-								src="~/assets/img/941x1057.png"
+								src="~/assets/img/homeSlider/floor.png"
 								alt="Slider Image 1"
 								class="slider-image"
 							/>
@@ -81,7 +81,7 @@
 					<swiper-slide>
 						<div class="slider-item">
 							<img
-								src="~/assets/img/941x1057.png"
+								src="~/assets/img/homeSlider/interior.png"
 								alt="Slider Image 2"
 								class="slider-image"
 							/>
@@ -108,7 +108,7 @@
 					<swiper-slide>
 						<div class="slider-item">
 							<img
-								src="~/assets/img/941x1057.png"
+								src="~/assets/img/homeSlider/careand.png"
 								alt="Slider Image 2"
 								class="slider-image"
 							/>

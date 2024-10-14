@@ -1,44 +1,56 @@
 <template>
-  <div>
-    <header class="header3">
-      <nav>
-        <ul>
-          <li>
-            <NuxtLink to="/" exact-active-class="active" exact>home</NuxtLink>
-          </li>
-          <li><NuxtLink to="/about" active-class="active">about</NuxtLink></li>
-          <li>
-            <NuxtLink to="/products" active-class="active">products</NuxtLink>
-          </li>
-          <li><NuxtLink to="/faq" active-class="active">faq</NuxtLink></li>
-          <li>
-            <NuxtLink to="/contact" active-class="active">contact</NuxtLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="logoarea">
-      <Logo />
-    </div>
-  </div>
+	<div>
+		<header class="header3">
+			<nav>
+				<ul>
+					<li>
+						<NuxtLink to="/" exact-active-class="active" exact
+							>home</NuxtLink
+						>
+					</li>
+					<li>
+						<NuxtLink to="/about" active-class="active"
+							>about</NuxtLink
+						>
+					</li>
+					<li>
+						<NuxtLink to="/products" active-class="active"
+							>products</NuxtLink
+						>
+					</li>
+					<li>
+						<NuxtLink to="/faq" active-class="active">faq</NuxtLink>
+					</li>
+					<li>
+						<NuxtLink to="/contact" active-class="active"
+							>contact</NuxtLink
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="logoarea" style="display: none">
+			<Logo />
+		</div>
+	</div>
 </template>
 
 <style scoped>
 body {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 header ul li a {
-  color: white;
+	color: white;
 }
 .header3 {
-  position: absolute;
-  z-index: 4;
-  width: 100%;
-  top: 0;
+	position: absolute;
+	z-index: 4;
+	width: 100%;
+	top: 0;
 }
 .logoarea {
-  position: absolute;
-  right: 30px;
-  top: 30px;
+	position: absolute;
+	right: 30px;
+	top: 30px;
 }
 </style>

@@ -37,8 +37,8 @@
 
 			<!-- Sağ Taraf Görselleri -->
 			<div class="faq-images">
-				<img src="https://via.placeholder.com/300x600" alt="Image 1" />
-				<img src="https://via.placeholder.com/300x600" alt="Image 2" />
+				<img src="~/assets/img/faq/faq1.png" alt="FAQ IMAGE" />
+				<img src="~/assets/img/faq/faq2.png" alt="FAQ IMAGE" />
 			</div>
 		</div>
 
@@ -162,13 +162,13 @@ const faqs = ref([
 
 /* Aktif olan accordion'un rengini değiştir */
 .faq-question.active {
-	color: #007272; /* Değiştirmek istediğiniz renk */
+	color: #175e6c; /* Değiştirmek istediğiniz renk */
 }
 
 .faq-answer {
+	color: #175e6c;
 	padding-top: 10px;
 	font-size: 16px;
-	color: #555;
 	transition: max-height 0.3s ease;
 }
 
