@@ -1,13 +1,18 @@
 <template>
-	<div class="container contact">
+	<div class="contact">
 		<div class="row">
 			<div class="col-md-4">
-				<h1>in <span>world</span></h1>
-				<h1>CONTACT INFORMATION</h1>
-				<a href="#formarea">GO TO <span>FORM</span> </a> <br />
-				<a href="mailto:info@naturaonecoat.com"
-					>info@<span>naturaonecoat.com</span>
-				</a>
+				<div class="maps_text">
+					<h1 class="in_world">in <span>world</span></h1>
+					<h1 class="contact_information">CONTACT INFORMATION</h1>
+					<a href="#formarea" class="go_form_btn"
+						>GO TO <span>FORM</span>
+					</a>
+					<br />
+					<a href="mailto:info@naturaonecoat.com" class="mail_btn"
+						>info@<span>naturaonecoat.com</span>
+					</a>
+				</div>
 			</div>
 			<div class="col-md-8">
 				<client-only>
@@ -36,11 +41,11 @@
 				</client-only>
 			</div>
 			<div class="col-md-12">
-				<h1>PLEASE FILL THE FORM.</h1>
+				<h1 class="fill_form">PLEASE FILL THE FORM.</h1>
 			</div>
-			<div class="col-md-12 form-section">
-				<h1>Come and <span>Ask Us </span></h1>
-				<p>Fill out the form below to apply.</p>
+			<div class="col-md-12 form-section center3" id="formarea">
+				<h1 class="come_and_ask">Come and <span>Ask Us </span></h1>
+				<p class="fill_apply">Fill out the form below to apply.</p>
 				<form action="">
 					<div class="form-row">
 						<input type="text" placeholder="Name" />
@@ -97,27 +102,64 @@ const locations = ref([
 	padding: 50px;
 }
 
-h1 {
-	font-family: 'Avenir Heavy', sans-serif;
-	font-size: 36px;
-	font-weight: 400;
+.maps_text .in_world {
+	font-size: 85px;
+	letter-spacing: 0px;
+	font-family: 'Helvetica Neue';
 }
 
-h1 span {
+.maps_text .in_world span {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.maps_text .contact_information {
 	font-family: 'Avenir Book', sans-serif;
-	color: #2c2c2c;
+	font-size: 22px;
+	letter-spacing: 11px;
 }
 
-a {
-	font-family: 'Avenir Heavy', sans-serif;
-	font-size: 18px;
-	color: #232631;
+.maps_text .go_form_btn {
+	background-color: #2c384e;
 	text-decoration: none;
+	color: #ffffff;
+	padding: 9px 50px;
+	font-family: 'Avenir Book', sans-serif;
+	font-size: 13px;
+	letter-spacing: 5.2px;
+	border: 1px solid #1b2532;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
 }
 
-a span {
+.maps_text .go_form_btn span {
+	font-family: 'Avenir Heavy', sans-serif;
+}
+
+.maps_text .go_form_btn:hover {
+	background-color: #1b2532;
+	cursor: pointer;
+}
+
+.maps_text .mail_btn {
+	text-decoration: none;
 	font-family: 'Avenir Book', sans-serif;
-	color: #2c2c2c;
+	font-size: 22px;
+	letter-spacing: 6.6px;
+	color: #0f0f0d;
+	text-align: center;
+}
+
+.maps_text .mail_btn span {
+	font-family: 'Avenir Heavy', sans-serif;
+}
+
+.contact .fill_form {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 39px;
+	letter-spacing: 0px;
 }
 
 .map-container {
@@ -134,6 +176,24 @@ a span {
 	margin-top: 40px;
 }
 
+.form-section .come_and_ask {
+	font-family: 'Avenir Book', sans-serif;
+	font-size: 17px;
+	height: 0px;
+}
+
+.form-section .come_and_ask span {
+	font-size: 17px;
+	font-family: 'Avenir Heavy', sans-serif;
+}
+
+.form-section .fill_apply {
+	line-height: 40px;
+	height: 55px;
+	font-size: 29px;
+	font-family: 'Avenir Book', sans-serif;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -145,6 +205,8 @@ form {
 	gap: 2%;
 	margin-bottom: 20px;
 }
+
+/*İNPUTS*/
 
 input[type='text'],
 input[type='email'],
@@ -178,15 +240,30 @@ input[type='submit']:hover {
 	background-color: #2c2c2c;
 }
 
-.col-md-12 h1 {
-	font-family: 'Avenir Heavy', sans-serif;
-	font-size: 24px;
-	margin-top: 50px;
-	margin-bottom: 30px;
+/*
+
+footer .input-container input {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #737374;
+    color: #fff;
+    font-size: 1rem;
 }
 
-.col-md-12 h1 span {
-	font-family: 'Avenir Book', sans-serif;
-	font-size: 24px;
+footer .input-container input:focus {
+    outline: none;
+    border-color: white; 
 }
+
+footer .input-container input:focus + label,
+footer .input-container input:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 5px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+*/
 </style>
