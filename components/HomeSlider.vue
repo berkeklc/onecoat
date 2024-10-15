@@ -164,7 +164,7 @@ const goToSlide = (index) => {
 .product-description {
 	background-color: #f8f8f8;
 	text-align: left;
-	padding: 50px;
+	padding: 25px 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
