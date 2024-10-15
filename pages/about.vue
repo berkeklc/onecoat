@@ -376,6 +376,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	gap: 35px;
 }
 
 .left-content {
@@ -384,7 +385,7 @@ body {
 }
 
 .right-content {
-	width: 25%;
+	width: 33%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -465,6 +466,7 @@ body {
 }
 
 .bodoni2 {
+	width: 82%;
 	font-family: 'Avenir Roman', serif;
 	font-size: 14px;
 	letter-spacing: 0px;
