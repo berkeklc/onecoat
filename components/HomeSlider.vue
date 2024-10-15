@@ -174,7 +174,7 @@ const goToSlide = (index) => {
 .product-image {
 	max-width: 300px;
 	height: auto;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 }
 
 .product-info {
