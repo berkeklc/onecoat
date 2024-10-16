@@ -172,9 +172,9 @@ const goToSlide = (index) => {
 }
 
 .product-image {
-	max-width: 300px;
+	max-width: 100%;
 	height: auto;
-	margin-bottom: 60px;
+	margin-bottom: 0;
 }
 
 .product-info {
@@ -182,6 +182,7 @@ const goToSlide = (index) => {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 10px;
+	align-items: center;
 }
 /*
 .text-content {
@@ -259,9 +260,14 @@ const goToSlide = (index) => {
 .product-slider {
 	padding-left: 0px;
 	position: relative;
+	min-height: 500px;
 }
 
 .slider-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 	position: relative;
 }
 
@@ -362,5 +368,85 @@ const goToSlide = (index) => {
 .slider-btn.active {
 	font-family: 'Avenir Heavy', sans-serif;
 	font-weight: bold;
+}
+
+@media (max-width: 930px) {
+	.slider-buttons {
+		display: none;
+	}
+}
+
+@media (max-width: 1270px) {
+	.title {
+		height: 81px;
+	}
+}
+
+@media (max-width: 1200px) {
+	/* Ekran genişliği 1200px altında ise */
+	.product-description,
+	.product-slider {
+		min-height: 400px; /* Yüksekliği biraz düşürelim */
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 60px; /* Yazı boyutunu küçültelim */
+	}
+}
+
+@media (max-width: 930px) {
+}
+
+@media (max-width: 768px) {
+	/* Ekran genişliği 768px altında ise */
+	.product-description,
+	.product-slider {
+		min-height: auto;
+		padding: 10px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 32px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 14px;
+	}
+
+	.buy-now-btn {
+		width: 180px;
+		padding: 8px 30px;
+	}
+
+	.slider-image {
+		width: 100%; /* Resmi tam genişlikte yap */
+	}
+}
+
+@media (max-width: 480px) {
+	/* Ekran genişliği 480px altında ise */
+	.product-description {
+		text-align: center;
+		padding: 10px;
+	}
+
+	.product-image {
+		max-width: 80%;
+		height: auto;
+		margin-bottom: 20px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 24px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 12px;
+	}
+
+	.buy-now-btn {
+		width: 150px;
+		padding: 5px 20px;
+	}
 }
 </style>
