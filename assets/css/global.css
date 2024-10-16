@@ -209,3 +209,234 @@ header ul li a.active {
 .bg {
 	background: #f8f8f8;
 }
+
+/* Mobil cihazlar için (max-width: 600px) */
+@media (max-width: 600px) {
+	/* Header'daki menü elemanları */
+	header ul {
+		width: 100%;
+		flex-direction: column; /* Dikey hizala */
+		margin-top: 20px;
+	}
+
+	header ul li {
+		margin-bottom: 10px;
+	}
+
+	header ul li a {
+		font-size: 12px; /* Daha küçük yazı boyutu */
+		letter-spacing: 1.5px;
+	}
+
+	/* Büyük başlık yazısı */
+	.large-text {
+		font-size: 72px; /* Mobilde daha küçük başlık */
+		line-height: 100px;
+		letter-spacing: -4px;
+		height: auto;
+	}
+
+	/* Küçük başlık yazısı */
+	.one,
+	.coat {
+		font-size: 28px; /* Mobil için küçük yazı */
+		line-height: 40px;
+		letter-spacing: -2px;
+	}
+
+	/* Logo */
+	.logo {
+		right: 10px;
+		top: 10px;
+	}
+
+	/* Arama çubuğu */
+	.search-container {
+		margin-top: 2rem;
+		flex-direction: column;
+	}
+
+	.search-input {
+		font-size: 14px;
+		width: 100%;
+	}
+
+	.search-icon {
+		width: 16px;
+		height: 16px;
+	}
+
+	/* Center sınıfları */
+	.center1,
+	.center2,
+	.center3,
+	.center4 {
+		width: 100%;
+		padding: 0 15px; /* Kenarlardan boşluk bırak */
+	}
+}
+
+/* Tablet cihazlar için (max-width: 900px) */
+@media (max-width: 900px) {
+	/* Header menü elemanları */
+	header ul {
+		width: 100%;
+		margin-top: 30px;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	header ul li a {
+		font-size: 14px; /* Biraz daha küçük yazı */
+		letter-spacing: 2px;
+	}
+
+	/* Büyük başlık yazısı */
+	.large-text {
+		font-size: 120px; /* Tabletlerde daha küçük */
+		line-height: 150px;
+		letter-spacing: -8px;
+		height: auto;
+	}
+
+	/* Küçük başlık yazısı */
+	.one,
+	.coat {
+		font-size: 36px;
+		line-height: 50px;
+	}
+
+	/* Logo */
+	.logo {
+		right: 20px;
+		top: 20px;
+	}
+
+	/* Arama çubuğu */
+	.search-container {
+		margin-top: 5rem;
+	}
+
+	.search-input {
+		font-size: 16px;
+	}
+
+	/* Center sınıfları */
+	.center1,
+	.center2,
+	.center3,
+	.center4 {
+		width: 90%;
+	}
+}
+
+/* Büyük ekranlar için (max-width: 1200px) */
+@media (max-width: 1200px) {
+	/* Header menü elemanları */
+	header ul {
+		width: 100%;
+		margin-top: 40px;
+		flex-direction: row;
+	}
+
+	header ul li a {
+		font-size: 16px;
+		letter-spacing: 2.5px;
+	}
+
+	/* Büyük başlık yazısı */
+	.large-text {
+		font-size: 160px; /* Büyük ekranlar için */
+		line-height: 200px;
+		letter-spacing: -10px;
+		height: auto;
+	}
+
+	/* Küçük başlık yazısı */
+	.one,
+	.coat {
+		font-size: 44px;
+		line-height: 60px;
+	}
+
+	/* Logo */
+	.logo {
+		right: 30px;
+		top: 30px;
+	}
+
+	/* Arama çubuğu */
+	.search-container {
+		margin-top: 7rem;
+	}
+
+	.search-input {
+		font-size: 18px;
+	}
+
+	/* Center sınıfları */
+	.center1,
+	.center2,
+	.center3,
+	.center4 {
+		width: 90%;
+	}
+}
+
+/* Geniş ekranlar için (min-width: 1201px) */
+@media (min-width: 1201px) {
+	/* Header menü elemanları */
+	header ul {
+		width: 40%;
+	}
+
+	header ul li a {
+		font-size: 14px;
+	}
+
+	/* Büyük başlık yazısı */
+	.large-text {
+		font-size: 184px;
+		line-height: 243px;
+		letter-spacing: -11px;
+	}
+
+	/* Küçük başlık yazısı */
+	.one,
+	.coat {
+		font-size: 50px;
+		line-height: 68px;
+	}
+
+	/* Logo */
+	.logo {
+		right: 31px;
+		top: 31px;
+	}
+
+	/* Arama çubuğu */
+	.search-container {
+		margin-top: 9rem;
+	}
+
+	.search-input {
+		font-size: 16px;
+	}
+
+	/* Center sınıfları */
+	.center1 {
+		width: 1600px;
+	}
+
+	.center2 {
+		width: 1400px;
+	}
+
+	.center3 {
+		width: 1200px;
+	}
+
+	.center4 {
+		width: 900px;
+	}
+}

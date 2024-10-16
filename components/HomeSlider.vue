@@ -363,4 +363,300 @@ const goToSlide = (index) => {
 	font-family: 'Avenir Heavy', sans-serif;
 	font-weight: bold;
 }
+
+/* Mobil cihazlar için (max-width: 600px) */
+@media (max-width: 600px) {
+	/* Slider butonları */
+	.slider-buttons {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+	}
+
+	.slider-btn {
+		font-size: 12px;
+		letter-spacing: 4px;
+		margin-bottom: 20px;
+		padding-right: 20px;
+	}
+
+	/* Ürün bilgileri */
+	.product-description {
+		padding: 15px;
+		text-align: center;
+	}
+
+	.product-image {
+		max-width: 200px;
+		margin-bottom: 40px;
+	}
+
+	.product-title {
+		font-size: 18px;
+	}
+
+	.product-subtitle {
+		font-size: 14px;
+	}
+
+	.product-text {
+		font-size: 14px;
+	}
+
+	.buy-now-btn {
+		padding: 10px 40px;
+		width: 200px;
+		font-size: 14px;
+	}
+
+	/* Slider bölümü */
+	.product-slider {
+		padding-left: 0;
+	}
+
+	.slider-text {
+		top: 20%;
+		left: 20px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 40px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 16px;
+	}
+
+	.show-products-btn {
+		font-size: 8px;
+		padding: 12px 30px;
+	}
+
+	/* Center sınıfları */
+	.center3 {
+		width: 100%;
+		padding: 0 10px;
+	}
+}
+
+/* Tablet cihazlar için (max-width: 900px) */
+@media (max-width: 900px) {
+	/* Slider butonları */
+	.slider-buttons {
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	.slider-btn {
+		font-size: 14px;
+		letter-spacing: 7px;
+		margin-bottom: 30px;
+		padding-right: 30px;
+	}
+
+	/* Ürün bilgileri */
+	.product-description {
+		padding: 20px;
+		text-align: center;
+	}
+
+	.product-image {
+		max-width: 250px;
+		margin-bottom: 50px;
+	}
+
+	.product-title {
+		font-size: 20px;
+	}
+
+	.product-subtitle {
+		font-size: 16px;
+	}
+
+	.product-text {
+		font-size: 15px;
+	}
+
+	.buy-now-btn {
+		padding: 12px 50px;
+		width: 220px;
+		font-size: 14px;
+	}
+
+	/* Slider bölümü */
+	.product-slider {
+		padding-left: 0;
+	}
+
+	.slider-text {
+		top: 30%;
+		left: 50px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 50px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 18px;
+	}
+
+	.show-products-btn {
+		font-size: 10px;
+		padding: 14px 32px;
+	}
+
+	/* Center sınıfları */
+	.center3 {
+		width: 90%;
+	}
+}
+
+/* Geniş ekranlar için (max-width: 1200px) */
+@media (max-width: 1200px) {
+	/* Slider butonları */
+	.slider-buttons {
+		justify-content: space-around;
+		margin-top: 20px;
+	}
+
+	.slider-btn {
+		font-size: 16px;
+		letter-spacing: 8px;
+		margin-bottom: 40px;
+		padding-right: 36px;
+	}
+
+	/* Ürün bilgileri */
+	.product-description {
+		padding: 25px;
+		text-align: left;
+	}
+
+	.product-image {
+		max-width: 280px;
+		margin-bottom: 60px;
+	}
+
+	.product-title {
+		font-size: 22px;
+	}
+
+	.product-subtitle {
+		font-size: 18px;
+	}
+
+	.product-text {
+		font-size: 16px;
+	}
+
+	.buy-now-btn {
+		padding: 15px 60px;
+		width: 240px;
+		font-size: 15px;
+	}
+
+	/* Slider bölümü */
+	.product-slider {
+		padding-left: 0;
+	}
+
+	.slider-text {
+		top: 35%;
+		left: 70px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 60px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 20px;
+	}
+
+	.show-products-btn {
+		font-size: 10px;
+		padding: 16px 35px;
+	}
+
+	/* Center sınıfları */
+	.center3 {
+		width: 95%;
+	}
+}
+
+/* Geniş ekranlar için (min-width: 1201px) */
+@media (min-width: 1201px) {
+	/* Slider butonları */
+	.slider-buttons {
+		justify-content: left;
+		margin-top: 20px;
+	}
+
+	.slider-btn {
+		font-size: 17px;
+		letter-spacing: 9.96px;
+		margin-bottom: 40px;
+		padding-right: 36px;
+	}
+
+	/* Ürün bilgileri */
+	.product-description {
+		padding: 25px 50px;
+		text-align: left;
+	}
+
+	.product-image {
+		max-width: 300px;
+		margin-bottom: 60px;
+	}
+
+	.product-title {
+		font-size: 24px;
+	}
+
+	.product-subtitle {
+		font-size: 18px;
+	}
+
+	.product-text {
+		font-size: 16px;
+	}
+
+	.buy-now-btn {
+		padding: 17px 65px;
+		width: 266px;
+		font-size: 15px;
+	}
+
+	/* Slider bölümü */
+	.product-slider {
+		padding-left: 0px;
+	}
+
+	.slider-text {
+		top: 35%;
+		left: 80px;
+	}
+
+	.slider-text .slider-text_title {
+		font-size: 77px;
+		letter-spacing: -4.62px;
+	}
+
+	.slider-text .slider-text_subtitle {
+		font-size: 21px;
+	}
+
+	.show-products-btn {
+		font-size: 10px;
+		padding: 17px 37px;
+	}
+
+	/* Center sınıfları */
+	.center3 {
+		width: 1200px;
+		max-width: 96%;
+	}
+}
 </style>
