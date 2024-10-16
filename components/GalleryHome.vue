@@ -102,4 +102,10 @@
 	grid-template-columns: 1fr;
 	gap: 2px;
 }
+
+@media (max-width: 600px) {
+	.urun_wrap .urun_grid {
+		margin: 0px;
+	}
+}
 </style>

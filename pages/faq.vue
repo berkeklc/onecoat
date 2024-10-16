@@ -37,8 +37,16 @@
 
 			<!-- Sağ Taraf Görselleri -->
 			<div class="faq-images">
-				<img src="~/assets/img/faq/faq1.png" alt="FAQ IMAGE" />
-				<img src="~/assets/img/faq/faq2.png" alt="FAQ IMAGE" />
+				<img
+					class="faq-images_1"
+					src="~/assets/img/faq/faq1.png"
+					alt="FAQ IMAGE"
+				/>
+				<img
+					class="faq-images_2"
+					src="~/assets/img/faq/faq2.png"
+					alt="FAQ IMAGE"
+				/>
 			</div>
 		</div>
 
@@ -190,5 +198,103 @@ const faqs = ref([
 	line-height: 35px;
 	font-family: 'Helvetica Neue';
 	font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+	.faq-content {
+		grid-template-columns: 2fr 1fr; /* Kolonları daraltalım */
+	}
+	.faq-header h1 {
+		font-size: 50px; /* Başlığı biraz küçültelim */
+	}
+	.faq-header .highlight {
+		font-size: 50px;
+	}
+	.faq-header p {
+		font-size: 20px;
+	}
+	.faq-footer p,
+	.faq-footer .highlight {
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 992px) {
+	.faq-content {
+		grid-template-columns: 1fr; /* Tek kolona düşürelim */
+		gap: 20px;
+	}
+	.faq-images {
+		grid-template-columns: auto auto; /* Görselleri tek sütuna koyalım */
+	}
+	.faq-header h1 {
+		font-size: 45px; /* Başlığı daha da küçültelim */
+	}
+	.faq-header .highlight {
+		font-size: 45px;
+	}
+	.faq-header p {
+		font-size: 18px;
+	}
+	.faq-footer p,
+	.faq-footer .highlight {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.faq-container {
+		padding: 20px; /* Padding'i küçültelim */
+	}
+	.faq-header h1 {
+		font-size: 40px;
+	}
+	.faq-images .faq-images_2 {
+		display: none;
+	}
+	.faq-header .highlight {
+		font-size: 40px;
+	}
+	.faq-header p {
+		font-size: 16px;
+	}
+	.faq-footer p,
+	.faq-footer .highlight {
+		font-size: 20px;
+	}
+	.faq-item {
+		padding: 15px 0;
+	}
+	.faq-question p {
+		font-size: 16px;
+	}
+	.faq-answer {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 576px) {
+	.faq-header h1 {
+		font-size: 35px;
+	}
+	.faq-header .highlight {
+		font-size: 35px;
+	}
+	.faq-header p {
+		font-size: 14px;
+	}
+	.faq-footer p,
+	.faq-footer .highlight {
+		font-size: 18px;
+	}
+	.faq-item {
+		padding: 10px 0;
+	}
+	.faq-question p {
+		font-size: 14px;
+	}
+	.faq-answer {
+		font-size: 12px;
+	}
 }
 </style>

@@ -338,4 +338,267 @@ input[type='submit']:hover {
 	margin: 0 auto;
 	padding-top: 40px;
 }
+
+@media (max-width: 1200px) {
+	.contact {
+		margin-top: 100px;
+		padding: 30px;
+	}
+
+	.maps_text .in_world {
+		font-size: 70px;
+	}
+
+	.maps_text .contact_information {
+		font-size: 18px;
+		letter-spacing: 9px;
+	}
+
+	.maps_text .go_form_btn {
+		font-size: 11px;
+		padding: 8px 40px;
+	}
+
+	.maps_text .mail_btn {
+		font-size: 18px;
+	}
+
+	.contact .fill_form {
+		font-size: 35px;
+	}
+
+	.map-container {
+		height: 350px;
+	}
+
+	.form-section .come_and_ask {
+		font-size: 15px;
+	}
+
+	.form-section .fill_apply {
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+@media (max-width: 992px) {
+	.row {
+		flex-direction: column;
+	}
+
+	.col-md-4,
+	.col-md-8 {
+		width: 100%;
+	}
+
+	.contact {
+		margin-top: 70px;
+		padding: 20px;
+	}
+
+	.maps_text .in_world {
+		font-size: 60px;
+	}
+
+	.maps_text .contact_information {
+		font-size: 16px;
+		letter-spacing: 8px;
+	}
+
+	.maps_text .go_form_btn {
+		font-size: 10px;
+		padding: 7px 30px;
+	}
+
+	.maps_text .mail_btn {
+		font-size: 16px;
+	}
+
+	.contact .fill_form {
+		font-size: 30px;
+	}
+
+	.map-container {
+		height: 300px;
+	}
+
+	.form-section .come_and_ask {
+		font-size: 14px;
+	}
+
+	.form-section .fill_apply {
+		font-size: 22px;
+		line-height: 30px;
+	}
+
+	form {
+		gap: 20px;
+	}
+
+	.form-row {
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.maps_text .in_world {
+		font-size: 50px;
+	}
+
+	.maps_text .contact_information {
+		font-size: 14px;
+		letter-spacing: 6px;
+	}
+
+	.maps_text .go_form_btn {
+		font-size: 9px;
+		padding: 6px 20px;
+	}
+
+	.maps_text .mail_btn {
+		font-size: 14px;
+	}
+
+	.contact .fill_form {
+		font-size: 25px;
+	}
+
+	.map-container {
+		height: 250px;
+	}
+
+	.form-section .come_and_ask {
+		font-size: 13px;
+	}
+
+	.form-section .fill_apply {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	form {
+		gap: 15px;
+	}
+
+	.form-row {
+		gap: 10px;
+	}
+
+	.input-container input,
+	.input-container textarea {
+		font-size: 14px;
+	}
+
+	input[type='submit'] {
+		font-size: 16px;
+		padding: 8px 0;
+	}
+
+	.centered-footer-text {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 576px) {
+	.maps_text .in_world {
+		font-size: 40px;
+	}
+
+	.maps_text .contact_information {
+		font-size: 12px;
+		letter-spacing: 5px;
+	}
+
+	.maps_text .go_form_btn {
+		font-size: 8px;
+		padding: 5px 15px;
+	}
+
+	.maps_text .mail_btn {
+		font-size: 12px;
+	}
+
+	.contact .fill_form {
+		font-size: 22px;
+	}
+
+	.map-container {
+		height: 200px;
+	}
+
+	.form-section .come_and_ask {
+		font-size: 12px;
+	}
+
+	.form-section .fill_apply {
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	.input-container input,
+	.input-container textarea {
+		font-size: 13px;
+	}
+
+	input[type='submit'] {
+		font-size: 14px;
+		padding: 6px 0;
+	}
+
+	.centered-footer-text {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 400px) {
+	.maps_text .in_world {
+		font-size: 35px;
+	}
+
+	.maps_text .contact_information {
+		font-size: 10px;
+		letter-spacing: 4px;
+	}
+
+	.maps_text .go_form_btn {
+		font-size: 7px;
+		padding: 4px 10px;
+	}
+
+	.maps_text .mail_btn {
+		font-size: 10px;
+	}
+
+	.contact .fill_form {
+		font-size: 18px;
+	}
+
+	.map-container {
+		height: 150px;
+	}
+
+	.form-section .come_and_ask {
+		font-size: 10px;
+	}
+
+	.form-section .fill_apply {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.input-container input,
+	.input-container textarea {
+		font-size: 12px;
+	}
+
+	input[type='submit'] {
+		font-size: 12px;
+		padding: 5px 0;
+	}
+
+	.centered-footer-text {
+		font-size: 11px;
+	}
+}
 </style>

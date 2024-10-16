@@ -53,4 +53,10 @@ header ul li a {
 	right: 30px;
 	top: 30px;
 }
+
+@media (max-width: 1100px) {
+	header ul li a {
+		color: black;
+	}
+}
 </style>

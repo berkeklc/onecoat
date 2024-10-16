@@ -434,7 +434,6 @@ a {
 	}
 
 	#footer1 .sect40 .grid2 {
-		grid-template-columns: repeat(1, 1fr);
 		grid-gap: 30px;
 		text-align: center;
 	}
@@ -461,6 +460,12 @@ a {
 @media only screen and (max-width: 600px) {
 	#footer1 .sect30 .grid .s.s2 form .grid2 {
 		grid-template-columns: 2fr 1fr;
+	}
+
+	#footer1 .sect40 .grid2 {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+		text-align: center;
 	}
 }
 

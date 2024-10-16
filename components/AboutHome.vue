@@ -156,4 +156,10 @@
 .slogan_wrap .slogan_text .slogan_text2 {
 	font-family: 'Avenir Heavy';
 }
+
+@media (max-width: 600px) {
+	.urun_wrap .urun_grid .content .icerik {
+		width: 100%;
+	}
+}
 </style>

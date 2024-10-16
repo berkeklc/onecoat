@@ -380,6 +380,17 @@ const goToSlide = (index) => {
 	.title {
 		height: 81px;
 	}
+
+	.product-slider-section .row {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Her iki tarafı tam genişlikte yapıyoruz */
+	.product-description,
+	.product-slider {
+		width: 100%;
+	}
 }
 
 @media (max-width: 1200px) {
@@ -398,15 +409,10 @@ const goToSlide = (index) => {
 }
 
 @media (max-width: 768px) {
-	/* Ekran genişliği 768px altında ise */
 	.product-description,
 	.product-slider {
 		min-height: auto;
 		padding: 10px;
-	}
-
-	.slider-text .slider-text_title {
-		font-size: 32px;
 	}
 
 	.slider-text .slider-text_subtitle {
@@ -424,7 +430,6 @@ const goToSlide = (index) => {
 }
 
 @media (max-width: 480px) {
-	/* Ekran genişliği 480px altında ise */
 	.product-description {
 		text-align: center;
 		padding: 10px;
@@ -437,7 +442,7 @@ const goToSlide = (index) => {
 	}
 
 	.slider-text .slider-text_title {
-		font-size: 24px;
+		font-size: 45px;
 	}
 
 	.slider-text .slider-text_subtitle {

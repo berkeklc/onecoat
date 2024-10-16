@@ -227,7 +227,7 @@
 					<div class="row">
 						<section class="row">
 							<div class="col-md-1"></div>
-							<div class="col-md-4">
+							<div class="col-md-4 text_wrap">
 								<h5 class="h5title">
 									Feel The Difference With Premium Hard Wax
 									Oil
@@ -268,7 +268,7 @@
 						</section>
 						<section class="row">
 							<div class="col-md-1"></div>
-							<div class="col-md-4">
+							<div class="col-md-4 text_wrap">
 								<h5 class="h5title">Breakthrough Products.</h5>
 								<h1 class="h1title">Enviroment Friendly</h1>
 								<p class="headerspanalt">
@@ -299,7 +299,7 @@
 						</section>
 						<section class="row">
 							<div class="col-md-1"></div>
-							<div class="col-md-4">
+							<div class="col-md-4 text_wrap">
 								<h5 class="h5title">Breakthrough Products.</h5>
 								<h1 class="h1title">
 									All in One Coat Wood Oil Stain
@@ -559,5 +559,276 @@ body {
 
 .text-right {
 	text-align: right;
+}
+
+@media (max-width: 1200px) {
+	.slide-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.right-content {
+		width: 100%;
+		padding-left: 0;
+		margin-top: 20px;
+	}
+
+	.text_wrap {
+		width: 100% !important;
+	}
+
+	.left-content {
+		width: 100%;
+	}
+
+	.text-overlay {
+		top: 30%;
+		left: 5%;
+		width: 90%;
+	}
+
+	.avenir22 {
+		font-size: 100px;
+		line-height: 120px;
+		letter-spacing: -5px;
+	}
+
+	.bodoni {
+		font-size: 24px;
+	}
+
+	.headerspan {
+		font-size: 16px;
+	}
+	.col-md-2 {
+		display: none;
+	}
+
+	.col-md-4.imgarea {
+		width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.aboutHeader {
+		margin-top: 50px;
+	}
+
+	.hard-wax {
+		position: relative;
+	}
+
+	.avenir22 {
+		letter-spacing: 0px;
+	}
+}
+
+@media (max-width: 992px) {
+	.slide-content {
+		flex-direction: column;
+	}
+
+	.text-overlay {
+		top: 25%;
+		left: 5%;
+		width: 90%;
+	}
+
+	.avenir22 {
+		font-size: 80px;
+		line-height: 90px;
+	}
+
+	.bodoni {
+		font-size: 20px;
+	}
+
+	.headerspan {
+		font-size: 14px;
+	}
+
+	.item_bar {
+		padding: 0 20px;
+	}
+
+	.h1title {
+		font-size: 60px;
+		letter-spacing: -3px;
+	}
+
+	.h5title {
+		font-size: 18px;
+	}
+
+	.detailp {
+		font-size: 12px;
+	}
+
+	.imgarea img {
+		width: 90%;
+	}
+
+	.row section {
+		margin-bottom: 150px;
+	}
+
+	.right-content {
+		width: 100%;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.aboutHeader {
+		margin-top: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	.avenir22 {
+		font-size: 50px;
+		line-height: 70px;
+	}
+
+	.bodoni {
+		font-size: 18px;
+	}
+
+	.headerspan {
+		font-size: 12px;
+	}
+
+	.h1title {
+		font-size: 48px;
+	}
+
+	.h5title {
+		font-size: 16px;
+	}
+
+	.detailp {
+		font-size: 11px;
+	}
+
+	.item_bar {
+		padding: 0 10px;
+	}
+
+	.row section {
+		margin-bottom: 100px;
+	}
+
+	.imgarea img {
+		width: 100%;
+	}
+
+	.right-content {
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		align-items: center;
+		align-content: center;
+	}
+
+	.text-right {
+		text-align: center;
+	}
+
+	.text-right a {
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 576px) {
+	.text-overlay {
+		top: 20%;
+		left: 5%;
+		width: 90%;
+	}
+
+	.avenir22 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+
+	.bodoni {
+		font-size: 16px;
+	}
+
+	.headerspan {
+		font-size: 10px;
+	}
+
+	.h1title {
+		font-size: 36px;
+	}
+
+	.h5title {
+		font-size: 14px;
+	}
+
+	.detailp {
+		font-size: 10px;
+	}
+
+	.imgarea img {
+		width: 100%;
+		height: auto;
+	}
+
+	.right-content {
+		width: 100%;
+		padding-left: 0;
+		margin-top: 10px;
+	}
+
+	.row section {
+		margin-bottom: 50px;
+	}
+
+	.text-right {
+		text-align: center;
+	}
+
+	.text-right a {
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 400px) {
+	.text-overlay {
+		top: 15%;
+		left: 5%;
+		width: 90%;
+	}
+
+	.avenir22 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	.bodoni {
+		font-size: 14px;
+	}
+
+	.headerspan {
+		font-size: 8px;
+	}
+
+	.h1title {
+		font-size: 30px;
+	}
+
+	.h5title {
+		font-size: 12px;
+	}
+
+	.detailp {
+		font-size: 9px;
+	}
+
+	.item_bar {
+		padding: 0 5px;
+	}
 }
 </style>
