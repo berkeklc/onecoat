@@ -189,7 +189,7 @@ const fetchProduct = async (productId) => {
 		product.value = data.data
 
 		if (product.value.image) {
-			currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
+			currentImage.value = `${directusBaseUrl}/files/${product.value.image}`
 		} else {
 			currentImage.value = '/path/to/default/image.png'
 		}
@@ -202,9 +202,9 @@ const fetchProduct = async (productId) => {
 const changeProductSize = (size) => {
 	activeSize.value = size
 	if (size === '1.3L') {
-		currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
+		currentImage.value = `${directusBaseUrl}/files/${product.value.image}`
 	} else if (size === '360ML') {
-		currentImage.value = `${directusBaseUrl}/assets/${product.value.image2}`
+		currentImage.value = `${directusBaseUrl}/files/${product.value.image2}`
 	}
 }
 
