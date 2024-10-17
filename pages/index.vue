@@ -37,16 +37,12 @@
 				<Colors />
 				<GalleryHome />
 				<div class="video">
-					<iframe
-						width="100%"
-						height="1000px"
-						src="https://www.youtube.com/embed/d-hItQrccQw"
-						title="Gyproc OneCoat Plaster – How to hand apply"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin"
-						allowfullscreen
-					></iframe>
+					<video width="100%" height="auto" controls>
+						<source
+							src="~/assets/video/natura_video.mp4"
+							type="video/mp4"
+						/>
+					</video>
 				</div>
 				<!-- <Easy /> -->
 
