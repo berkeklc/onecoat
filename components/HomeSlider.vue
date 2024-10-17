@@ -354,13 +354,12 @@ const goToSlide = (index) => {
 	margin-bottom: 40px;
 	text-transform: uppercase;
 	position: relative;
-	padding-right: 36px;
 }
 
 .slider-btn:not(:last-child)::after {
 	content: '•';
 	color: #333;
-	margin-left: 79px;
+	margin-left: 50px;
 	font-weight: normal;
 }
 

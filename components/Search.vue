@@ -34,6 +34,10 @@ export default {
 	text-align: center;
 }
 
+.search-input::placeholder {
+	color: black; /* Placeholder rengini siyah yapar */
+}
+
 @media (max-width: 930px) {
 	.search-container {
 		display: none;

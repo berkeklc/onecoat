@@ -39,7 +39,7 @@
 				<div class="video">
 					<video width="100%" height="auto" controls>
 						<source
-							src="~/assets/video/natura_video.mp4"
+							src="~/assets/video/natura2.mp4"
 							type="video/mp4"
 						/>
 					</video>
