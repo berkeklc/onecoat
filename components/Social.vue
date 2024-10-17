@@ -75,6 +75,11 @@ const breakpoints = {
 }
 
 .social_wrap .social_title {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .social_wrap .social_title .social_title_text1,
@@ -109,5 +114,84 @@ const breakpoints = {
 	font-family: 'Avenir Heavy';
 	font-size: 31px;
 	letter-spacing: 0px;
+}
+
+/* Responsive Kodlar */
+@media (max-width: 1200px) {
+	.social_wrap .social_title .social_title_text1,
+	.social_wrap .social_title .social_title_text2 {
+		font-size: 16px;
+		letter-spacing: 8px;
+	}
+	.social_wrap .social_title .social_title_text3,
+	.social_wrap .social_title .social_title_text4 {
+		font-size: 28px;
+	}
+	.social_wrap .social_title .slash {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 992px) {
+	.social_wrap .social_title .social_title_text1,
+	.social_wrap .social_title .social_title_text2 {
+		font-size: 14px;
+		letter-spacing: 6px;
+	}
+	.social_wrap .social_title .social_title_text3,
+	.social_wrap .social_title .social_title_text4 {
+		font-size: 24px;
+	}
+	.social_wrap .social_title .slash {
+		font-size: 35px;
+	}
+}
+
+@media (max-width: 768px) {
+	.social_wrap .social_title .social_title_text1,
+	.social_wrap .social_title .social_title_text2 {
+		font-size: 12px;
+		letter-spacing: 5px;
+	}
+	.social_wrap .social_title .social_title_text3,
+	.social_wrap .social_title .social_title_text4 {
+		font-size: 20px;
+	}
+	.social_wrap .social_title .slash {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 576px) {
+	.social_wrap .social_title {
+		flex-direction: column;
+	}
+	.social_wrap .social_title .social_title_text1,
+	.social_wrap .social_title .social_title_text2 {
+		font-size: 10px;
+		letter-spacing: 4px;
+	}
+	.social_wrap .social_title .social_title_text3,
+	.social_wrap .social_title .social_title_text4 {
+		font-size: 18px;
+	}
+	.social_wrap .social_title .slash {
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 400px) {
+	.social_wrap .social_title .social_title_text1,
+	.social_wrap .social_title .social_title_text2 {
+		font-size: 8px;
+		letter-spacing: 3px;
+	}
+	.social_wrap .social_title .social_title_text3,
+	.social_wrap .social_title .social_title_text4 {
+		font-size: 16px;
+	}
+	.social_wrap .social_title .slash {
+		font-size: 20px;
+	}
 }
 </style>
