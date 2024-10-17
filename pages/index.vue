@@ -14,37 +14,22 @@
 					<Logo />
 					<Search />
 				</div>
-				<!--
-				<div class="col-md-12 p50">
-					<p>
-						Natura Onecoat is an all-in-one, eco-friendly wood oil
-						stain that simplifies wood finishing for woodworkers.
-						This innovative product combines the protective
-						qualities of a hard wax oil with the aesthetic benefits
-						of a stain, all achievable in a single application.
-						Crafted from 100% natural ingredients, it
-					</p>
-				</div>
-        -->
 				<HomeSlider />
-				<div class="col-md-7 d-flex flex-column justify-content-end bg">
-					<!-- <Slider />-->
-				</div>
-				<div class="col-md-5">
-					<!-- <Before /> -->
-				</div>
+				<div
+					class="col-md-7 d-flex flex-column justify-content-end bg"
+				></div>
+				<div class="col-md-5"></div>
 				<AboutHome />
 				<Colors />
 				<GalleryHome />
 				<div class="video">
-					<video width="100%" height="auto" controls>
+					<video width="100%" height="auto" autoplay muted loop>
 						<source
 							src="~/assets/video/natura2.mp4"
 							type="video/mp4"
 						/>
 					</video>
 				</div>
-				<!-- <Easy /> -->
 
 				<div
 					class="elfsight-app-4db7538f-8b88-4fba-ab46-85f9a8dad137"
