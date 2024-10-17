@@ -575,7 +575,7 @@ input[type='submit']:hover {
 	}
 
 	.map-container {
-		height: 150px;
+		height: 536px;
 	}
 
 	.form-section .come_and_ask {
