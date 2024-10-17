@@ -1,24 +1,25 @@
 version: '3'
 services:
-  directus:
-    image: directus/directus:latest
-    ports:
-      - 8055:8055
-    volumes:
-      - ./database:/directus/database
-      - ./uploads:/directus/uploads
-      - ./extensions:/directus/extensions
-    environment:
-      SECRET: 'SuperSecureRandomKey123!@#'
-      ADMIN_EMAIL: 'root@root.com'
-      ADMIN_PASSWORD: '12root34'
-      DB_CLIENT: 'pg'
-      CUSTOM_DATABASE_URL: 'postgres://u6q399niki4pkm:pbdaae4f2aaacd2685d2bb210db9921bb2e9b4b04ec0ba444cc1cd250de1a7724@c2v3jin4rntblb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d553ngv6q8lrkk'
-      DB_SSL: '{"rejectUnauthorized":false}'
-      WEBSOCKETS_ENABLED: 'true'
-      PUBLIC_URL: 'http://localhost:8055'
-      CORS_ENABLED: 'true'
-      CORS_ORIGIN: 'https://naturaonecoat.vercel.app'
-      CORS_METHODS: 'GET,POST,PATCH,PUT,DELETE,OPTIONS'
-      CORS_HEADERS: 'Content-Type,Authorization'
-      CORS_CREDENTIALS: 'true'
+    directus:
+        image: directus/directus:latest
+        ports:
+            - 8055:8055
+        volumes:
+            - ./database:/directus/database
+            - ./uploads:/directus/uploads
+            - ./extensions:/directus/extensions
+        environment:
+            SECRET: 'SuperSecureRandomKey123!@#'
+            ADMIN_EMAIL: 'root@root.com'
+            ADMIN_PASSWORD: '12root34'
+            DB_CLIENT: 'pg'
+            CUSTOM_DATABASE_URL: 'postgres://u1ap8aa3t30p9a:pcaca8a768ad99ca891ece2a6861e73e746371070140a925a00242b2cde3e9699@cdeuajkr4sf66s.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dfqce15pmnpls9'
+            DATABASE_URL: 'postgres://u1ap8aa3t30p9a:pcaca8a768ad99ca891ece2a6861e73e746371070140a925a00242b2cde3e9699@cdeuajkr4sf66s.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dfqce15pmnpls9'
+            DB_SSL: '{"rejectUnauthorized":false}'
+            WEBSOCKETS_ENABLED: 'true'
+            PUBLIC_URL: 'http://localhost:8055'
+            CORS_ENABLED: 'true'
+            CORS_ORIGIN: 'https://naturaonecoat.vercel.app'
+            CORS_METHODS: 'GET,POST,PATCH,PUT,DELETE,OPTIONS'
+            CORS_HEADERS: 'Content-Type,Authorization'
+            CORS_CREDENTIALS: 'true'
