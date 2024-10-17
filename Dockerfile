@@ -5,11 +5,7 @@ ARG SECRET=SuperSecureRandomKey123!@#
 ARG ADMIN_EMAIL=root@root.com
 ARG ADMIN_PASSWORD=12root34
 ARG DB_CLIENT=pg
-ARG DB_HOST=c8lj070d5ubs83.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com
-ARG DB_PORT=5432
-ARG DB_DATABASE=ddf8fhht60hi19
-ARG DB_USER=u7hipdmfa7bhhl
-ARG DB_PASSWORD=p1b8fcbcbcc880da4d33d24ab758ab42e3a0da154e8c29e7d683025caeba43d0c
+ARG CUSTOM_DATABASE_URL=postgres://u6q399niki4pkm:pbdaae4f2aaacd2685d2bb210db9921bb2e9b4b04ec0ba444cc1cd250de1a7724@c2v3jin4rntblb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d553ngv6q8lrkk
 ARG WEBSOCKETS_ENABLED=true
 ARG PUBLIC_URL=https://naturaonecoat-cc85b1fdbbef.herokuapp.com
 ARG CORS_ENABLED=true
@@ -19,11 +15,7 @@ ENV SECRET=${SECRET}
 ENV ADMIN_EMAIL=${ADMIN_EMAIL}
 ENV ADMIN_PASSWORD=${ADMIN_PASSWORD}
 ENV DB_CLIENT=${DB_CLIENT}
-ENV DB_HOST=${DB_HOST}
-ENV DB_PORT=${DB_PORT}
-ENV DB_DATABASE=${DB_DATABASE}
-ENV DB_USER=${DB_USER}
-ENV DB_PASSWORD=${DB_PASSWORD}
+ENV CUSTOM_DATABASE_URL=${CUSTOM_DATABASE_URL}
 ENV WEBSOCKETS_ENABLED=${WEBSOCKETS_ENABLED}
 ENV PUBLIC_URL=${PUBLIC_URL}
 ENV CORS_ENABLED=${CORS_ENABLED}
@@ -36,4 +28,4 @@ ENV DB_SSL='{"rejectUnauthorized":false}'
 EXPOSE 8055
 
 # Initialize the database and start Directus
-CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]
+CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]
