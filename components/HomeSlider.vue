@@ -441,7 +441,8 @@ const goToSlide = (index) => {
 	}
 
 	.slider-text .slider-text_title {
-		font-size: 45px;
+		font-size: 30px;
+		letter-spacing: 0px;
 	}
 
 	.slider-text .slider-text_subtitle {
