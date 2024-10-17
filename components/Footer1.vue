@@ -397,10 +397,6 @@ a {
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 	}
-	#footer1 .sect30 .grid .s.s1 .bos {
-		height: 10px;
-	}
-
 	#footer1 .sect40 {
 		margin: 50px 0 0 0;
 	}
@@ -455,6 +451,10 @@ a {
 	}
 	#footer1 .sect20 .grid .s.s2 {
 		padding: 30px 0 0 0;
+	}
+
+	#footer1 .sect30 {
+		margin: 10px;
 	}
 }
 @media only screen and (max-width: 600px) {

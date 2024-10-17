@@ -377,11 +377,16 @@ body {
 	justify-content: space-between;
 	width: 100%;
 	gap: 35px;
+	min-height: 600px;
+	align-items: center;
 }
 
 .left-content {
 	position: relative;
 	width: 75%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* İçerikleri yukarıya hizala */
 }
 
 .right-content {
@@ -565,6 +570,11 @@ body {
 	.slide-content {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.imgarea {
+		width: 100% !important;
+		padding-right: 0 !important;
 	}
 
 	.right-content {
@@ -761,6 +771,7 @@ body {
 
 	.h1title {
 		font-size: 36px;
+		letter-spacing: 0px;
 	}
 
 	.h5title {

@@ -224,4 +224,22 @@ a {
 		font-size: 700px;
 	}
 }
+
+@media (max-width: 400px) {
+	.headtitle h1 {
+		font-size: 18px;
+	}
+	.of {
+		font-size: 600px;
+	}
+}
+
+@media (max-width: 370px) {
+	.headtitle h1 {
+		font-size: 18px;
+	}
+	.of {
+		font-size: 500px;
+	}
+}
 </style>
