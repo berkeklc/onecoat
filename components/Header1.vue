@@ -33,7 +33,7 @@
 </template>
 
 <style scoped>
-.nav {
+nav {
 	padding-left: 20px;
 }
 </style>
