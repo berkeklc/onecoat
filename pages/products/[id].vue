@@ -54,7 +54,6 @@
 										:key="index"
 									>
 										<div class="image-wrapper">
-											<!-- nuxt-link ile tıklanabilir hale getiriliyor -->
 											<nuxt-link
 												:to="'/products/' + (index + 1)"
 											>
@@ -199,7 +198,7 @@ const fetchProduct = async (productId) => {
 		if (product.value.image) {
 			currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
 		} else {
-			currentImage.value = '/path/to/default/image.png'
+			currentImage.value = '~/assets/img/naturaproduct.png'
 		}
 	} catch (err) {
 		error.value = err
