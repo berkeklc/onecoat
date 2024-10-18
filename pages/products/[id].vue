@@ -90,6 +90,12 @@
 										class="details-content"
 									>
 										<p v-html="product.desc"></p>
+										<div class="msds-buttons">
+											<button>MSDS 2K-A</button>
+											<button class="bl">
+												MSDS 2K-B
+											</button>
+										</div>
 									</div>
 								</div>
 								<button class="buy-now">
@@ -123,10 +129,6 @@
 									</svg>
 									BUY NOW
 								</button>
-								<div class="msds-buttons">
-									<button>MSDS 2K-A</button>
-									<button class="bl">MSDS 2K-B</button>
-								</div>
 							</div>
 						</div>
 						<div class="row size-coverage">
