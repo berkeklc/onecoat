@@ -322,6 +322,8 @@ const goToSlide = (index) => {
 	font-size: 21px;
 	letter-spacing: 0px;
 	height: 15px;
+	margin-bottom: 21px;
+	margin-top: 12px;
 }
 
 .slider-text .show-products-btn {

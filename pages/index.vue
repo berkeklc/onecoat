@@ -23,7 +23,7 @@
 				<Colors />
 				<GalleryHome />
 				<div class="video">
-					<video width="100%" height="auto" autoplay muted loop>
+					<video width="100%" height="auto" autoplay loop controls>
 						<source
 							src="~/assets/video/natura2.mp4"
 							type="video/mp4"

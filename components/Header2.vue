@@ -36,6 +36,9 @@
 </template>
 
 <style scoped>
+.nav {
+	padding-left: 20px;
+}
 .header2 {
 	position: absolute;
 	width: 100%;

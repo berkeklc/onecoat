@@ -36,6 +36,9 @@
 </template>
 
 <style scoped>
+.nav {
+	padding-left: 20px;
+}
 body {
 	overflow-x: hidden;
 }
