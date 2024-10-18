@@ -256,8 +256,8 @@ a {
 
 #footer1 .sect30 .grid .s.s1 .bos .text {
 	padding-left: 100px;
-	padding-top: 8px;
-	font-size: 37px;
+	padding-top: 26px;
+	font-size: 18px;
 	font-family: 'Avenir Book';
 }
 
