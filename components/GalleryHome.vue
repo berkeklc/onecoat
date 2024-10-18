@@ -31,7 +31,7 @@
 
 <style scoped>
 .title {
-	font-size: 25px;
+	font-size: 18px;
 	margin-top: 50px;
 	letter-spacing: 12.5px;
 	font-family: 'Avenir Book';
@@ -61,7 +61,7 @@
 .urun_wrap .urun_grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	margin: 20px 0px 20px 70px;
+	margin: 20px 0px 20px 30px;
 	gap: 20px;
 }
 

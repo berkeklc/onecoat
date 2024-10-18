@@ -21,6 +21,7 @@ const images = [
 	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
 	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
 	{ src: '/colors_new/black.png', title: 'BLACK' },
+	{ src: '/colors_new/gray.png', title: 'GRAY' },
 	{ src: '/colors_new/walnut.png', title: 'WALNUT' },
 	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
 	{ src: '/colors_new/gray.png', title: 'GRAY' },
@@ -29,7 +30,7 @@ const images = [
 
 const breakpoints = {
 	1920: {
-		slidesPerView: 10,
+		slidesPerView: 11,
 	},
 	1440: {
 		slidesPerView: 10,
@@ -51,7 +52,7 @@ const breakpoints = {
 
 <style scoped>
 .swiper {
-	padding: 10px 34px;
+	padding: 10px 0px;
 }
 .image-wrapper {
 	background: #ffffff 0% 0% no-repeat padding-box;
