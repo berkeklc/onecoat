@@ -197,6 +197,7 @@ const fetchProduct = async (productId) => {
 
 		if (product.value.image) {
 			currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
+			console.log(currentImage.value)
 		} else {
 			currentImage.value = '~/assets/img/naturaproduct.png'
 		}
