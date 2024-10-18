@@ -59,8 +59,16 @@ definePageMeta({
 	display: none !important;
 }
 
+.iPXdjg {
+	background-color: #fdfdfd !important;
+}
+
+.gwWjnk {
+	background-color: #fdfdfd !important;
+}
+
 .amazon_text {
-	margin: 20px 0px 20px 30px;
+	margin: 30px 0px 20px 30px;
 	font-size: 18px;
 	letter-spacing: 9px;
 	font-family: 'Avenir Book';

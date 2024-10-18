@@ -19,11 +19,15 @@
 									src="~/assets/img/aboutSlider/innovative_ideas.png"
 									alt=""
 								/>
+
 								<div class="item_bar">
 									<div class="bar checked_bar"></div>
 									<div class="bar"></div>
 									<div class="bar"></div>
 									<div class="bar"></div>
+								</div>
+								<div class="slider_img_bar">
+									<img src="~/assets/img/n.png" alt="" />
 								</div>
 								<div class="text-overlay">
 									<h1 class="bodoni">
@@ -60,6 +64,9 @@
 									<div class="bar checked_bar"></div>
 									<div class="bar"></div>
 									<div class="bar"></div>
+								</div>
+								<div class="slider_img_bar">
+									<img src="~/assets/img/n.png" alt="" />
 								</div>
 								<div class="text-overlay">
 									<h1 class="bodoni">
@@ -117,6 +124,9 @@
 									<div class="bar checked_bar"></div>
 									<div class="bar"></div>
 								</div>
+								<div class="slider_img_bar">
+									<img src="~/assets/img/n.png" alt="" />
+								</div>
 								<div class="text-overlay">
 									<h1 class="bodoni">
 										Breakthrough Products.
@@ -163,6 +173,9 @@
 									<div class="bar"></div>
 									<div class="bar"></div>
 									<div class="bar checked_bar"></div>
+								</div>
+								<div class="slider_img_bar">
+									<img src="~/assets/img/n.png" alt="" />
 								</div>
 								<div class="text-overlay">
 									<h1 class="bodoni">
@@ -396,6 +409,7 @@ body {
 	justify-content: center;
 	align-items: flex-start;
 	padding-left: 20px;
+	padding-right: 20px;
 	background-color: #fff;
 }
 
@@ -409,6 +423,36 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 15px;
+}
+
+.slider_img_bar {
+	position: absolute;
+	top: 25%;
+	left: 7%;
+	width: 102px;
+	padding: 20px;
+	height: 60%;
+}
+
+.swiper-slide:nth-child(1) .slider_img_bar {
+	background-color: #51513f;
+}
+
+.swiper-slide:nth-child(2) .slider_img_bar {
+	background-color: #51473f;
+}
+
+.swiper-slide:nth-child(3) .slider_img_bar {
+	background-color: #375634;
+}
+
+.swiper-slide:nth-child(4) .slider_img_bar {
+	background-color: #cfa165;
+}
+
+.slider_img_bar img {
+	margin-left: 15px;
+	margin-top: 10px;
 }
 
 .bar {
@@ -456,7 +500,6 @@ body {
 	font-size: 21px;
 	font-family: 'Avenir Roman';
 	color: white;
-	margin-top: 20px;
 }
 
 .headerspan span {
