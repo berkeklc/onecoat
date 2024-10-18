@@ -40,10 +40,10 @@
 					</div>
 				</client-only>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12" id="formarea">
 				<h1 class="fill_form">PLEASE FILL THE FORM.</h1>
 			</div>
-			<div class="col-md-12 form-section center3" id="formarea">
+			<div class="col-md-12 form-section center3">
 				<h1 class="come_and_ask">Come and <span>Ask Us </span></h1>
 				<p class="fill_apply">Fill out the form below to apply.</p>
 				<form action="">
@@ -175,10 +175,10 @@ const locations = ref([
 	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 39px;
 	letter-spacing: 0px;
+	margin-top: 150px;
 }
 
 .map-container {
-	height: 350px;
 	width: 100%;
 	margin-bottom: 50px;
 }
