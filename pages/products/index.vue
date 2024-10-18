@@ -77,7 +77,7 @@ const error = ref(null)
 const config = useRuntimeConfig()
 
 const getFullImagePath = (imagePath) => {
-	return `${config.public.directusApiUrl}/files/${imagePath}`
+	return `${config.public.directusApiUrl}/assets/${imagePath}`
 }
 
 onMounted(async () => {
