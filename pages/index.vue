@@ -37,7 +37,7 @@
 						/>
 					</video>
 				</div>
-
+				<div class="amazon_text">WHAT OUR <b>CUSTOMERS SAY</b></div>
 				<div
 					class="elfsight-app-4db7538f-8b88-4fba-ab46-85f9a8dad137"
 					data-elfsight-app-lazy
@@ -55,6 +55,20 @@ definePageMeta({
 </script>
 
 <style>
+.huflDf {
+	display: none !important;
+}
+
+.amazon_text {
+	margin: 20px 0px 20px 30px;
+	font-size: 18px;
+	letter-spacing: 9px;
+	font-family: 'Avenir Book';
+}
+
+.amazon_text span {
+	font-size: 'Avenir Heavy';
+}
 .p50 {
 	padding-right: 50px;
 }
