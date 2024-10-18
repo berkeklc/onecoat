@@ -54,13 +54,18 @@
 										:key="index"
 									>
 										<div class="image-wrapper">
-											<img
-												:src="image.src"
-												:alt="image.title"
-											/>
-											<div class="title">
-												{{ image.title }}
-											</div>
+											<!-- nuxt-link ile tıklanabilir hale getiriliyor -->
+											<nuxt-link
+												:to="'/product/' + (index + 1)"
+											>
+												<img
+													:src="image.src"
+													:alt="image.title"
+												/>
+												<div class="title">
+													{{ image.title }}
+												</div>
+											</nuxt-link>
 										</div>
 									</div>
 								</div>
@@ -89,7 +94,7 @@
 										v-if="showDetails"
 										class="details-content"
 									>
-										<p v-html="product.desc"></p>
+										<!-- <p v-html="product.desc"></p> -->
 										<div class="msds-buttons">
 											<button>MSDS 2K-A</button>
 											<button class="bl">
