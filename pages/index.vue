@@ -2,7 +2,7 @@
 	<div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6 pf50">
+				<div class="col-md-6 pf50 pt15">
 					<h3 class="small-text">
 						<span class="one">ONE</span>
 						<span class="coat">COAT</span>
@@ -76,6 +76,11 @@ definePageMeta({
 .pf50 {
 	padding-left: 50px;
 }
+
+.pt15 {
+	padding-top: 15px;
+}
+
 .p50 p {
 	padding-left: 19px;
 }
