@@ -1,125 +1,69 @@
 <template>
-	<div class="dropdown" @click.stop="toggleDropdown">
-		<div class="dropdown-toggle">
-			<span>{{
-				selectedOption ? selectedOption.text : 'Select an option'
-			}}</span>
-			<img
-				v-if="selectedOption"
-				:src="selectedOption.imgSrc"
-				alt="selected image"
-			/>
-		</div>
-
-		<!-- Dropdown Menu -->
-		<div v-if="isOpen" class="dropdown-menu">
-			<div
-				v-for="(item, index) in items"
-				:key="index"
-				class="dropdown-item"
-				@click="selectItem(item)"
-			>
-				<span>{{ item.text }}</span>
-				<img :src="item.imgSrc" alt="item image" />
-			</div>
-		</div>
+	<div>
+		<select ref="select" class="form-control">
+			<option value="option-1" data-src="http://placehold.it/45x45">
+				Option 1
+			</option>
+			<option value="option-2" data-src="http://placehold.it/45x45">
+				Option 2
+			</option>
+			<option value="option-3" data-src="http://placehold.it/45x45">
+				Option 3
+			</option>
+		</select>
 	</div>
 </template>
 
 <script>
+import $ from 'jquery'
+import 'select2'
+
 export default {
-	data() {
-		return {
-			isOpen: false, // Controls whether the dropdown is open
-			selectedOption: null, // Stores the currently selected option
-			items: [
-				{
-					text: 'Option 1',
-					value: 'option1',
-					imgSrc: 'https://via.placeholder.com/30',
-				},
-				{
-					text: 'Option 2',
-					value: 'option2',
-					imgSrc: 'https://via.placeholder.com/30',
-				},
-				{
-					text: 'Option 3',
-					value: 'option3',
-					imgSrc: 'https://via.placeholder.com/30',
-				},
-			],
-		}
-	},
-	methods: {
-		toggleDropdown() {
-			this.isOpen = !this.isOpen // Toggle the dropdown open/close
-		},
-		selectItem(item) {
-			this.selectedOption = item // Set the selected option
-			this.isOpen = false // Close the dropdown
-		},
-		handleClickOutside(event) {
-			if (!this.$el.contains(event.target)) {
-				this.isOpen = false // Close the dropdown if clicked outside
-			}
-		},
-	},
 	mounted() {
-		document.addEventListener('click', this.handleClickOutside)
+		// Select2'nin sadece istemci tarafında çalıştırılması gerektiğinden mounted() içinde kullanıyoruz
+		const formatState = (state) => {
+			if (!state.id) {
+				return state.text
+			}
+			var $state = $(
+				'<span><img src="' +
+					$(state.element).attr('data-src') +
+					'" class="img-flag" /> ' +
+					state.text +
+					'</span>'
+			)
+			return $state
+		}
+
+		$(this.$refs.select).select2({
+			minimumResultsForSearch: Infinity,
+			templateResult: formatState,
+			templateSelection: formatState,
+		})
 	},
+
 	beforeDestroy() {
-		document.removeEventListener('click', this.handleClickOutside)
+		// Bileşen yok edilmeden önce select2'yi temizle
+		$(this.$refs.select).select2('destroy')
 	},
 }
 </script>
 
 <style scoped>
-.dropdown {
-	position: relative;
-	width: 200px;
-	cursor: pointer;
+.select2-container--default .select2-selection--single {
+	border-color: #fff;
+	height: 60px;
+	padding: 7.5px 0;
+	border-radius: 0;
 }
 
-.dropdown-toggle {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
-	border: 1px solid #ccc;
-	background-color: #fff;
+.select2-selection__arrow {
+	height: 58px;
 }
 
-.dropdown-toggle img {
-	width: 30px;
-	height: 30px;
-}
-
-.dropdown-menu {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	border: 1px solid #ccc;
-	background-color: white;
-	z-index: 1000;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
-	cursor: pointer;
-}
-
-.dropdown-item:hover {
-	background-color: #f0f0f0;
-}
-
-.dropdown-item img {
-	width: 30px;
-	height: 30px;
+.select2-dropdown {
+	border-radius: 0;
+	box-shadow: #444 0px 3px 5px;
+	border: 0;
 }
 </style>
