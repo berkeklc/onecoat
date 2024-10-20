@@ -50,8 +50,10 @@
 								<div class="colors row">
 									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
+										<DenemeColors />
+										<!-- 
 										<div class="custom-select">
-											<!-- Seçenekleri liste olarak gösteriyoruz -->
+											Seçenekleri liste olarak gösteriyoruz
 											<div
 												class="selected-option"
 												@click="toggleDropdown"
@@ -93,6 +95,7 @@
 												</li>
 											</ul>
 										</div>
+                                         -->
 									</div>
 								</div>
 							</div>
@@ -293,7 +296,6 @@ const changeProductSize = (size) => {
 const toggleDetails = () => {
 	showDetails.value = !showDetails.value
 }
-
 onMounted(async () => {
 	await fetchProduct(route.params.id)
 })
@@ -507,7 +509,7 @@ definePageMeta({
 .bl {
 	border-left: 9px solid white !important;
 }
-
+/*
 .custom-select {
 	position: relative;
 	display: inline-block;
@@ -520,14 +522,14 @@ definePageMeta({
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
+	justify-content: space-between;
 }
 
 .img-flag {
 	width: 20px;
 	height: 20px;
 	margin-left: 10px;
-	flex-shrink: 0; /* Resmin küçülmesini önler */
+	flex-shrink: 0;
 }
 
 .options-list {
@@ -546,11 +548,12 @@ definePageMeta({
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
-	white-space: nowrap; /* Satırların alt alta geçmesini engeller */
+	justify-content: space-between;
+	white-space: nowrap;
 }
 
 .options-list li:hover {
 	background-color: #f0f0f0;
 }
+    */
 </style>
