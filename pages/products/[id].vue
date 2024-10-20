@@ -50,51 +50,59 @@
 								<div class="colors row">
 									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
-										<!-- Selectbox Container 
-                                         
-                                        <div class="custom-select">
-                                            <div class="selected-option" @click="toggleDropdown">
-                                                <span v-if="selectedOption">
-                                                    {{ getSelectedOptionText }}
-                                                    <img
-                                                        :src="getSelectedOptionImage"
-                                                        class="img-flag"
-                                                        alt="selected option image"
-                                                    />
-                                                </span>
-                                                <span v-else>Select an option</span>
-                                            </div>
-
-                                            <ul v-if="dropdownVisible" class="options-list">
-                                                <li
-                                                    v-for="option in options"
-                                                    :key="option.value"
-                                                    @click="selectOption(option)"
-                                                >
-                                                    {{ option.text }}
-                                                    <img :src="option.src" class="img-flag" alt="option image" />
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                        -->
+										<!-- Selectbox'un entegre edilmiş hali -->
 										<div class="color-selectbox">
-											<select v-model="selectedColor">
-												<option
-													v-for="(
-														image, index
-													) in images"
-													:key="index"
-													:value="image"
+											<!-- Custom Selectbox -->
+											<div class="custom-select">
+												<div
+													class="selected-option"
+													@click="toggleDropdown"
 												>
-													{{ image.title }}
-												</option>
-											</select>
+													<span v-if="selectedOption">
+														{{
+															getSelectedOptionText
+														}}
+														<img
+															:src="
+																getSelectedOptionImage
+															"
+															class="img-flag"
+															alt="selected option image"
+														/>
+													</span>
+													<span v-else>
+														Select an option
+													</span>
+												</div>
+
+												<ul
+													v-if="dropdownVisible"
+													class="options-list"
+												>
+													<li
+														v-for="option in options"
+														:key="option.value"
+														@click="
+															selectOption(option)
+														"
+													>
+														{{ option.text }}
+														<img
+															:src="option.src"
+															class="img-flag"
+															alt="option image"
+														/>
+													</li>
+												</ul>
+											</div>
+
 											<!-- Seçilen resim sağda görüntülenecek -->
 											<div class="selected-image">
 												<img
-													:src="selectedColor.src"
-													:alt="selectedColor.title"
+													:src="
+														getSelectedOptionImage
+													"
+													:alt="getSelectedOptionText"
 												/>
 											</div>
 										</div>
@@ -126,7 +134,6 @@
 										v-if="showDetails"
 										class="details-content"
 									>
-										<!-- <p v-html="product.desc"></p> -->
 										<div class="msds-buttons">
 											<button>MSDS 2K-A</button>
 											<button class="bl">
@@ -172,7 +179,6 @@
 							<div class="col-md-6">
 								<h1 class="pftitle">
 									SIZE
-
 									<p class="pfdetail">12.17 oz.(1.3L)</p>
 								</h1>
 							</div>
@@ -200,20 +206,91 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 
-const images = [
-	{ src: '/colors_new/clear.png', title: 'CLEAR' },
-	{ src: '/colors_new/natural_white.png', title: 'NATURAL WHITE' },
-	{ src: '/colors_new/white.png', title: 'WHITE' },
-	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
-	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
-	{ src: '/colors_new/black.png', title: 'BLACK' },
-	{ src: '/colors_new/walnut.png', title: 'WALNUT' },
-	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
-	{ src: '/colors_new/gray.png', title: 'GRAY' },
-	{ src: '/colors_new/charcoal.png', title: 'CHARCOAL' },
-	{ src: '/colors_new/soft_white.png', title: 'Soft White' },
-]
+// Selectbox ile ilgili değişkenler ve fonksiyonlar
+const dropdownVisible = ref(false)
+const selectedOption = ref(null)
+const options = ref([
+	{
+		src: '/colors_new/clear.png',
+		text: 'CLEAR',
+		value: 'option-1',
+	},
+	{
+		src: '/colors_new/natural_white.png',
+		text: 'NATURAL WHITE',
+		value: 'option-2',
+	},
+	{
+		src: '/colors_new/white.png',
+		text: 'WHITE',
+		value: 'option-3',
+	},
+	{
+		src: '/colors_new/natural_mist.png',
+		text: 'NATURAL MIST',
+		value: 'option-4',
+	},
+	{
+		src: '/colors_new/dark_oak.png',
+		text: 'DARK OAK',
+		value: 'option-5',
+	},
+	{
+		src: '/colors_new/black.png',
+		text: 'BLACK',
+		value: 'option-6',
+	},
+	{
+		src: '/colors_new/walnut.png',
+		text: 'WALNUT',
+		value: 'option-7',
+	},
+	{
+		src: '/colors_new/chocolate_brown.png',
+		text: 'CHOCOLATE BROWN',
+		value: 'option-8',
+	},
+	{
+		src: '/colors_new/gray.png',
+		text: 'GRAY',
+		value: 'option-9',
+	},
+	{
+		src: '/colors_new/charcoal.png',
+		text: 'CHARCOAL',
+		value: 'option-10',
+	},
+	{
+		src: '/colors_new/soft_white.png',
+		text: 'SOFT WHİTE',
+		value: 'option-11',
+	},
+])
 
+const getSelectedOptionImage = () => {
+	const option = options.value.find(
+		(opt) => opt.value === selectedOption.value
+	)
+	return option ? option.src : ''
+}
+
+const getSelectedOptionText = () => {
+	const option = options.value.find(
+		(opt) => opt.value === selectedOption.value
+	)
+	return option ? option.text : ''
+}
+
+const toggleDropdown = () => {
+	dropdownVisible.value = !dropdownVisible.value
+}
+
+const selectOption = (option) => {
+	selectedOption.value = option.value
+	dropdownVisible.value = false // Seçimden sonra dropdown'ı kapat
+}
+
+// Mevcut axios ve route işlemleri (eski kodlar korunuyor)
 const route = useRoute()
 const product = ref(null)
 const currentImage = ref('')
@@ -221,7 +298,7 @@ const activeSize = ref('1.3L')
 const error = ref(null)
 const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
 const showDetails = ref(false)
-const selectedColor = ref(images[0]) // Seçili renk başlangıçta ilk renk
+const selectedColor = ref(options.value[0])
 
 const fetchProduct = async (productId) => {
 	try {
@@ -466,5 +543,66 @@ definePageMeta({
 }
 .bl {
 	border-left: 9px solid white !important;
+}
+
+.custom-select {
+	position: relative;
+	display: inline-block;
+	width: 250px;
+}
+
+.selected-option {
+	border: 1px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
+}
+
+.img-flag {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	flex-shrink: 0; /* Resmin küçülmesini önler */
+}
+
+.options-list {
+	position: absolute;
+	width: 100%;
+	border: 1px solid #ccc;
+	background-color: white;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+}
+
+.options-list li {
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
+	white-space: nowrap; /* Satırların alt alta geçmesini engeller */
+}
+
+.options-list li:hover {
+	background-color: #f0f0f0;
+}
+
+.color-selectbox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.selected-image img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	margin-left: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
 </style>
