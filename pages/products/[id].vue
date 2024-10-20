@@ -57,10 +57,12 @@
 												@click="toggleDropdown"
 											>
 												<span v-if="selectedOption">
-													{{ getSelectedOptionText }}
+													{{
+														getSelectedOptionText()
+													}}
 													<img
 														:src="
-															getSelectedOptionImage
+															getSelectedOptionImage()
 														"
 														class="img-flag"
 														alt="selected option image"
@@ -193,105 +195,72 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 
-const images = [
-	{ src: '/colors_new/clear.png', title: 'CLEAR' },
-	{ src: '/colors_new/natural_white.png', title: 'NATURAL WHITE' },
-	{ src: '/colors_new/white.png', title: 'WHITE' },
-	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
-	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
-	{ src: '/colors_new/black.png', title: 'BLACK' },
-	{ src: '/colors_new/walnut.png', title: 'WALNUT' },
-	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
-	{ src: '/colors_new/gray.png', title: 'GRAY' },
-	{ src: '/colors_new/charcoal.png', title: 'CHARCOAL' },
-	{ src: '/colors_new/soft_white.png', title: 'Soft White' },
-]
-
 const route = useRoute()
 const product = ref(null)
 const currentImage = ref('')
 const activeSize = ref('1.3L')
 const error = ref(null)
-const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
 const showDetails = ref(false)
-const selectedColor = ref(images[0]) // Seçili renk başlangıçta ilk renk
+const dropdownVisible = ref(false)
+const selectedOption = ref(null)
 
-const dropdownVisible = false // Dropdown'un açık olup olmadığını kontrol eder
-const selectedOption = null // Seçilen opsiyonu tutar
+const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
 
-const options = [
-	{
-		src: '/colors_new/clear.png',
-		text: 'CLEAR',
-		value: 'option-1',
-	},
+const options = ref([
+	{ src: '/colors_new/clear.png', text: 'CLEAR', value: 'option-1' },
 	{
 		src: '/colors_new/natural_white.png',
 		text: 'NATURAL WHITE',
 		value: 'option-2',
 	},
-	{
-		src: '/colors_new/white.png',
-		text: 'WHITE',
-		value: 'option-3',
-	},
+	{ src: '/colors_new/white.png', text: 'WHITE', value: 'option-3' },
 	{
 		src: '/colors_new/natural_mist.png',
 		text: 'NATURAL MIST',
 		value: 'option-4',
 	},
-	{
-		src: '/colors_new/dark_oak.png',
-		text: 'DARK OAK',
-		value: 'option-5',
-	},
-	{
-		src: '/colors_new/black.png',
-		text: 'BLACK',
-		value: 'option-6',
-	},
-	{
-		src: '/colors_new/walnut.png',
-		text: 'WALNUT',
-		value: 'option-7',
-	},
+	{ src: '/colors_new/dark_oak.png', text: 'DARK OAK', value: 'option-5' },
+	{ src: '/colors_new/black.png', text: 'BLACK', value: 'option-6' },
+	{ src: '/colors_new/walnut.png', text: 'WALNUT', value: 'option-7' },
 	{
 		src: '/colors_new/chocolate_brown.png',
 		text: 'CHOCOLATE BROWN',
 		value: 'option-8',
 	},
-	{
-		src: '/colors_new/gray.png',
-		text: 'GRAY',
-		value: 'option-9',
-	},
-	{
-		src: '/colors_new/charcoal.png',
-		text: 'CHARCOAL',
-		value: 'option-10',
-	},
+	{ src: '/colors_new/gray.png', text: 'GRAY', value: 'option-9' },
+	{ src: '/colors_new/charcoal.png', text: 'CHARCOAL', value: 'option-10' },
 	{
 		src: '/colors_new/soft_white.png',
 		text: 'SOFT WHİTE',
 		value: 'option-11',
 	},
-]
+])
 
+// Dropdown'daki seçili öğenin text'ini döndürür
+const getSelectedOptionText = () => {
+	const option = options.value.find(
+		(opt) => opt.value === selectedOption.value
+	)
+	return option ? option.text : 'Select an option'
+}
+
+// Dropdown'daki seçili öğenin resmini döndürür
 const getSelectedOptionImage = () => {
-	const option = options.find((opt) => opt.value === selectedOption)
+	const option = options.value.find(
+		(opt) => opt.value === selectedOption.value
+	)
 	return option ? option.src : ''
 }
-getSelectedOptionText = () => {
-	const option = options.find((opt) => opt.value === selectedOption)
-	return option ? option.text : ''
+
+// Dropdown'un açılmasını/kapanmasını kontrol eder
+const toggleDropdown = () => {
+	dropdownVisible.value = !dropdownVisible.value
 }
 
-toggleDropdown = () => {
-	dropdownVisible = !dropdownVisible
-}
-selectOption = (option) => {
-	selectedOption = option.value
-	dropdownVisible = false // Seçimden sonra dropdown'ı kapat
+// Bir öğe seçildiğinde çalışır
+const selectOption = (option) => {
+	selectedOption.value = option.value
+	dropdownVisible.value = false // Seçimden sonra dropdown'ı kapat
 }
 
 const fetchProduct = async (productId) => {
