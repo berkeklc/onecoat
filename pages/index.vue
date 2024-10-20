@@ -36,6 +36,7 @@
 					data-elfsight-app-lazy
 				></div>
 				<Social />
+				<DenemeColors />
 			</div>
 		</div>
 	</div>

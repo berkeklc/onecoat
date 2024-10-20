@@ -92,4 +92,7 @@ onMounted(async () => {
 	color: #1d707f;
 	margin-left: 15px;
 }
+a {
+	text-decoration: none;
+}
 </style>

@@ -46,29 +46,35 @@
 									<h1 class="pftitle">CATEGORIES</h1>
 									<p class="p0">Wood Oil</p>
 								</div>
+
 								<div class="colors row">
 									<h1 class="pftitle clrs">COLOURS</h1>
-									<div
-										class="col-md-3"
-										v-for="(image, index) in images"
-										:key="index"
-									>
-										<div class="image-wrapper">
-											<nuxt-link
-												:to="'/products/' + (index + 1)"
-											>
-												<img
-													:src="image.src"
-													:alt="image.title"
-												/>
-												<div class="title">
+									<div class="col-md-12">
+										<!-- Selectbox Container -->
+										<div class="color-selectbox">
+											<select v-model="selectedColor">
+												<option
+													v-for="(
+														image, index
+													) in images"
+													:key="index"
+													:value="image"
+												>
 													{{ image.title }}
-												</div>
-											</nuxt-link>
+												</option>
+											</select>
+											<!-- Seçilen resim sağda görüntülenecek -->
+											<div class="selected-image">
+												<img
+													:src="selectedColor.src"
+													:alt="selectedColor.title"
+												/>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
 							<div class="col-md-6">
 								<div class="breadcump">
 									<a href="#">Products</a> <Right />
@@ -161,6 +167,7 @@
 		</div>
 	</div>
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -187,6 +194,7 @@ const activeSize = ref('1.3L')
 const error = ref(null)
 const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
 const showDetails = ref(false)
+const selectedColor = ref(images[0]) // Seçili renk başlangıçta ilk renk
 
 const fetchProduct = async (productId) => {
 	try {
@@ -197,7 +205,6 @@ const fetchProduct = async (productId) => {
 
 		if (product.value.image) {
 			currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
-			console.log(currentImage.value)
 		} else {
 			currentImage.value = '~/assets/img/naturaproduct.png'
 		}
@@ -228,7 +235,29 @@ definePageMeta({
 	layout: 'header2',
 })
 </script>
+
 <style>
+.color-selectbox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.color-selectbox select {
+	width: 60%;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.selected-image img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	margin-left: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
 .clrs {
 	margin-top: 77px;
 }
