@@ -197,9 +197,8 @@ import { useRoute } from 'vue-router'
 import axios from 'axios'
 
 // Selectbox ile ilgili değişkenler ve fonksiyonlar
-const dropdownVisible = ref(false)
-const selectedOption = ref(options.value[0].value)
 const options = ref([
+	// Önce options'ı tanımlayın
 	{
 		src: '/colors_new/clear.png',
 		text: 'CLEAR',
@@ -256,6 +255,10 @@ const options = ref([
 		value: 'option-11',
 	},
 ])
+
+const selectedOption = ref(options.value[0].value) // options tanımlandıktan sonra seçili opsiyonu ayarlayın
+
+const dropdownVisible = ref(false)
 
 const getSelectedOptionImage = () => {
 	if (!selectedOption.value) return '' // Eğer selectedOption boşsa boş string döndür
