@@ -95,16 +95,6 @@
 													</li>
 												</ul>
 											</div>
-
-											<!-- Seçilen resim sağda görüntülenecek -->
-											<div class="selected-image">
-												<img
-													:src="
-														getSelectedOptionImage
-													"
-													:alt="getSelectedOptionText"
-												/>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -208,7 +198,7 @@ import axios from 'axios'
 
 // Selectbox ile ilgili değişkenler ve fonksiyonlar
 const dropdownVisible = ref(false)
-const selectedOption = ref(null)
+const selectedOption = ref(options.value[0].value)
 const options = ref([
 	{
 		src: '/colors_new/clear.png',
@@ -268,6 +258,7 @@ const options = ref([
 ])
 
 const getSelectedOptionImage = () => {
+	if (!selectedOption.value) return '' // Eğer selectedOption boşsa boş string döndür
 	const option = options.value.find(
 		(opt) => opt.value === selectedOption.value
 	)
@@ -275,10 +266,11 @@ const getSelectedOptionImage = () => {
 }
 
 const getSelectedOptionText = () => {
+	if (!selectedOption.value) return 'Select an option' // Eğer selectedOption boşsa default text döndür
 	const option = options.value.find(
 		(opt) => opt.value === selectedOption.value
 	)
-	return option ? option.text : ''
+	return option ? option.text : 'Select an option'
 }
 
 const toggleDropdown = () => {
