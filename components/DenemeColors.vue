@@ -1,69 +1,166 @@
 <template>
-	<div>
-		<select ref="select" class="form-control">
-			<option value="option-1" data-src="http://placehold.it/45x45">
-				Option 1
-			</option>
-			<option value="option-2" data-src="http://placehold.it/45x45">
-				Option 2
-			</option>
-			<option value="option-3" data-src="http://placehold.it/45x45">
-				Option 3
-			</option>
-		</select>
+	<div class="custom-select">
+		<!-- Seçenekleri liste olarak gösteriyoruz -->
+		<div class="selected-option" @click="toggleDropdown">
+			<span v-if="selectedOption">
+				{{ getSelectedOptionText }}
+				<img
+					:src="getSelectedOptionImage"
+					class="img-flag"
+					alt="selected option image"
+				/>
+			</span>
+			<span v-else>Select an option</span>
+		</div>
+
+		<ul v-if="dropdownVisible" class="options-list">
+			<li
+				v-for="option in options"
+				:key="option.value"
+				@click="selectOption(option)"
+			>
+				{{ option.text }}
+				<img :src="option.src" class="img-flag" alt="option image" />
+			</li>
+		</ul>
 	</div>
 </template>
 
 <script>
-import $ from 'jquery'
-import 'select2'
-
 export default {
-	mounted() {
-		// Select2'nin sadece istemci tarafında çalıştırılması gerektiğinden mounted() içinde kullanıyoruz
-		const formatState = (state) => {
-			if (!state.id) {
-				return state.text
-			}
-			var $state = $(
-				'<span><img src="' +
-					$(state.element).attr('data-src') +
-					'" class="img-flag" /> ' +
-					state.text +
-					'</span>'
-			)
-			return $state
+	data() {
+		return {
+			dropdownVisible: false, // Dropdown'un açık olup olmadığını kontrol eder
+			selectedOption: null, // Seçilen opsiyonu tutar
+			options: [
+				{
+					src: '/colors_new/clear.png',
+					text: 'CLEAR',
+					value: 'option-1',
+				},
+				{
+					src: '/colors_new/natural_white.png',
+					text: 'NATURAL WHITE',
+					value: 'option-2',
+				},
+				{
+					src: '/colors_new/white.png',
+					text: 'WHITE',
+					value: 'option-3',
+				},
+				{
+					src: '/colors_new/natural_mist.png',
+					text: 'NATURAL MIST',
+					value: 'option-4',
+				},
+				{
+					src: '/colors_new/dark_oak.png',
+					text: 'DARK OAK',
+					value: 'option-5',
+				},
+				{
+					src: '/colors_new/black.png',
+					text: 'BLACK',
+					value: 'option-6',
+				},
+				{
+					src: '/colors_new/walnut.png',
+					text: 'WALNUT',
+					value: 'option-7',
+				},
+				{
+					src: '/colors_new/chocolate_brown.png',
+					text: 'CHOCOLATE BROWN',
+					value: 'option-8',
+				},
+				{
+					src: '/colors_new/gray.png',
+					text: 'GRAY',
+					value: 'option-9',
+				},
+				{
+					src: '/colors_new/charcoal.png',
+					text: 'CHARCOAL',
+					value: 'option-10',
+				},
+				{
+					src: '/colors_new/soft_white.png',
+					text: 'SOFT WHİTE',
+					value: 'option-11',
+				},
+			],
 		}
-
-		$(this.$refs.select).select2({
-			minimumResultsForSearch: Infinity,
-			templateResult: formatState,
-			templateSelection: formatState,
-		})
 	},
-
-	beforeDestroy() {
-		// Bileşen yok edilmeden önce select2'yi temizle
-		$(this.$refs.select).select2('destroy')
+	computed: {
+		getSelectedOptionImage() {
+			const option = this.options.find(
+				(opt) => opt.value === this.selectedOption
+			)
+			return option ? option.src : ''
+		},
+		getSelectedOptionText() {
+			const option = this.options.find(
+				(opt) => opt.value === this.selectedOption
+			)
+			return option ? option.text : ''
+		},
+	},
+	methods: {
+		toggleDropdown() {
+			this.dropdownVisible = !this.dropdownVisible
+		},
+		selectOption(option) {
+			this.selectedOption = option.value
+			this.dropdownVisible = false // Seçimden sonra dropdown'ı kapat
+		},
 	},
 }
 </script>
 
 <style scoped>
-.select2-container--default .select2-selection--single {
-	border-color: #fff;
-	height: 60px;
-	padding: 7.5px 0;
-	border-radius: 0;
+.custom-select {
+	position: relative;
+	display: inline-block;
+	width: 250px;
 }
 
-.select2-selection__arrow {
-	height: 58px;
+.selected-option {
+	border: 1px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
 }
 
-.select2-dropdown {
-	border-radius: 0;
-	box-shadow: #444 0px 3px 5px;
-	border: 0;
+.img-flag {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	flex-shrink: 0; /* Resmin küçülmesini önler */
+}
+
+.options-list {
+	position: absolute;
+	width: 100%;
+	border: 1px solid #ccc;
+	background-color: white;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+}
+
+.options-list li {
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
+	white-space: nowrap; /* Satırların alt alta geçmesini engeller */
+}
+
+.options-list li:hover {
+	background-color: #f0f0f0;
 }
 </style>

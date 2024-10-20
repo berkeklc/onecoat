@@ -50,7 +50,34 @@
 								<div class="colors row">
 									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
-										<!-- Selectbox Container -->
+										<!-- Selectbox Container 
+                                         
+                                        <div class="custom-select">
+                                            <div class="selected-option" @click="toggleDropdown">
+                                                <span v-if="selectedOption">
+                                                    {{ getSelectedOptionText }}
+                                                    <img
+                                                        :src="getSelectedOptionImage"
+                                                        class="img-flag"
+                                                        alt="selected option image"
+                                                    />
+                                                </span>
+                                                <span v-else>Select an option</span>
+                                            </div>
+
+                                            <ul v-if="dropdownVisible" class="options-list">
+                                                <li
+                                                    v-for="option in options"
+                                                    :key="option.value"
+                                                    @click="selectOption(option)"
+                                                >
+                                                    {{ option.text }}
+                                                    <img :src="option.src" class="img-flag" alt="option image" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        -->
 										<div class="color-selectbox">
 											<select v-model="selectedColor">
 												<option
