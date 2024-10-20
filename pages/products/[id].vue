@@ -51,51 +51,6 @@
 									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
 										<DenemeColors />
-										<!-- 
-										<div class="custom-select">
-											Seçenekleri liste olarak gösteriyoruz
-											<div
-												class="selected-option"
-												@click="toggleDropdown"
-											>
-												<span v-if="selectedOption">
-													{{
-														getSelectedOptionText()
-													}}
-													<img
-														:src="
-															getSelectedOptionImage()
-														"
-														class="img-flag"
-														alt="selected option image"
-													/>
-												</span>
-												<span v-else
-													>Select an option</span
-												>
-											</div>
-
-											<ul
-												v-if="dropdownVisible"
-												class="options-list"
-											>
-												<li
-													v-for="option in options"
-													:key="option.value"
-													@click="
-														selectOption(option)
-													"
-												>
-													{{ option.text }}
-													<img
-														:src="option.src"
-														class="img-flag"
-														alt="option image"
-													/>
-												</li>
-											</ul>
-										</div>
-                                         -->
 									</div>
 								</div>
 							</div>
@@ -203,68 +158,8 @@ const product = ref(null)
 const currentImage = ref('')
 const activeSize = ref('1.3L')
 const error = ref(null)
-const showDetails = ref(false)
-const dropdownVisible = ref(false)
-const selectedOption = ref(null)
-
 const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
-
-const options = ref([
-	{ src: '/colors_new/clear.png', text: 'CLEAR', value: 'option-1' },
-	{
-		src: '/colors_new/natural_white.png',
-		text: 'NATURAL WHITE',
-		value: 'option-2',
-	},
-	{ src: '/colors_new/white.png', text: 'WHITE', value: 'option-3' },
-	{
-		src: '/colors_new/natural_mist.png',
-		text: 'NATURAL MIST',
-		value: 'option-4',
-	},
-	{ src: '/colors_new/dark_oak.png', text: 'DARK OAK', value: 'option-5' },
-	{ src: '/colors_new/black.png', text: 'BLACK', value: 'option-6' },
-	{ src: '/colors_new/walnut.png', text: 'WALNUT', value: 'option-7' },
-	{
-		src: '/colors_new/chocolate_brown.png',
-		text: 'CHOCOLATE BROWN',
-		value: 'option-8',
-	},
-	{ src: '/colors_new/gray.png', text: 'GRAY', value: 'option-9' },
-	{ src: '/colors_new/charcoal.png', text: 'CHARCOAL', value: 'option-10' },
-	{
-		src: '/colors_new/soft_white.png',
-		text: 'SOFT WHİTE',
-		value: 'option-11',
-	},
-])
-
-// Dropdown'daki seçili öğenin text'ini döndürür
-const getSelectedOptionText = () => {
-	const option = options.value.find(
-		(opt) => opt.value === selectedOption.value
-	)
-	return option ? option.text : 'Select an option'
-}
-
-// Dropdown'daki seçili öğenin resmini döndürür
-const getSelectedOptionImage = () => {
-	const option = options.value.find(
-		(opt) => opt.value === selectedOption.value
-	)
-	return option ? option.src : ''
-}
-
-// Dropdown'un açılmasını/kapanmasını kontrol eder
-const toggleDropdown = () => {
-	dropdownVisible.value = !dropdownVisible.value
-}
-
-// Bir öğe seçildiğinde çalışır
-const selectOption = (option) => {
-	selectedOption.value = option.value
-	dropdownVisible.value = false // Seçimden sonra dropdown'ı kapat
-}
+const showDetails = ref(false)
 
 const fetchProduct = async (productId) => {
 	try {
@@ -296,6 +191,7 @@ const changeProductSize = (size) => {
 const toggleDetails = () => {
 	showDetails.value = !showDetails.value
 }
+
 onMounted(async () => {
 	await fetchProduct(route.params.id)
 })
@@ -509,51 +405,4 @@ definePageMeta({
 .bl {
 	border-left: 9px solid white !important;
 }
-/*
-.custom-select {
-	position: relative;
-	display: inline-block;
-	width: 250px;
-}
-
-.selected-option {
-	border: 1px solid #ccc;
-	padding: 10px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.img-flag {
-	width: 20px;
-	height: 20px;
-	margin-left: 10px;
-	flex-shrink: 0;
-}
-
-.options-list {
-	position: absolute;
-	width: 100%;
-	border: 1px solid #ccc;
-	background-color: white;
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	z-index: 1;
-}
-
-.options-list li {
-	padding: 10px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	white-space: nowrap;
-}
-
-.options-list li:hover {
-	background-color: #f0f0f0;
-}
-    */
 </style>
