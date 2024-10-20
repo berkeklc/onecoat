@@ -53,6 +53,7 @@
 		<div class="faq-footer">
 			<p>SEE ALL <span class="highlight">PRODUCTS</span></p>
 		</div>
+		<GetProducts />
 	</div>
 </template>
 
