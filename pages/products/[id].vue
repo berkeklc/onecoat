@@ -256,23 +256,35 @@ const options = ref([
 	},
 ])
 
-const selectedOption = ref(options.value[0].value) // options tanımlandıktan sonra seçili opsiyonu ayarlayın
+const selectedOption = ref(
+	options.value.length > 0 ? options.value[0].value : null
+)
 
 const dropdownVisible = ref(false)
 
 const getSelectedOptionImage = () => {
-	if (!selectedOption.value) return '' // Eğer selectedOption boşsa boş string döndür
+	// Eğer options veya selectedOption değerleri boş ise, boş string döndür
+	if (!selectedOption.value || !options.value) return ''
+
+	// Seçili olan option'u bul
 	const option = options.value.find(
 		(opt) => opt.value === selectedOption.value
 	)
+
+	// Eğer option varsa, src döndür; yoksa boş string döndür
 	return option ? option.src : ''
 }
 
 const getSelectedOptionText = () => {
-	if (!selectedOption.value) return 'Select an option' // Eğer selectedOption boşsa default text döndür
+	// Eğer options veya selectedOption değerleri boş ise, varsayılan text döndür
+	if (!selectedOption.value || !options.value) return 'Select an option'
+
+	// Seçili olan option'u bul
 	const option = options.value.find(
 		(opt) => opt.value === selectedOption.value
 	)
+
+	// Eğer option varsa, text döndür; yoksa varsayılan text döndür
 	return option ? option.text : 'Select an option'
 }
 
