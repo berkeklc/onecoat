@@ -80,9 +80,19 @@
 								<div class="navtitle"></div>
 								<div class="list">
 									<h3>Contact</h3>
-									<div><a href="#">We are?</a></div>
-									<div><a href="#">We are?</a></div>
-									<div><a href="#">We are?</a></div>
+									<div>
+										<nuxt-link to="/contact"
+											>Address</nuxt-link
+										>
+									</div>
+									<div>
+										<a href="tel:1111111111">Phone</a>
+									</div>
+									<div>
+										<a href="mailto:info@naturaonecoat.com"
+											>E-mail</a
+										>
+									</div>
 								</div>
 							</div>
 						</div>
