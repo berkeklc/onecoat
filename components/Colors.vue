@@ -30,7 +30,12 @@ const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
 
 const fetchColors = async () => {
 	try {
-		const { data } = await axios.get(`${directusBaseUrl}/items/Colors`)
+		const runtimeConfig = useRuntimeConfig()
+		const { data } = await axios.get(`${directusBaseUrl}/items/Colors`, {
+			headers: {
+				Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,
+			},
+		})
 		images.value = data.data.map((item) => ({
 			src: `${directusBaseUrl}/assets/${item.color_file}`,
 			title: item.color_name,
