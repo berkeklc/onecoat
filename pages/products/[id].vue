@@ -50,7 +50,7 @@
 								<div class="colors row">
 									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
-										<DenemeColors />
+										<SelectedColors />
 									</div>
 								</div>
 							</div>
