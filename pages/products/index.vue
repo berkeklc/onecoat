@@ -1,4 +1,5 @@
 <template>
+	<Logo />
 	<div>
 		<div class="container">
 			<div class="row">

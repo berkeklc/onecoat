@@ -18,6 +18,7 @@ const images = [
 	{ src: '/colors_new/clear.png', title: 'CLEAR' },
 	{ src: '/colors_new/natural_white.png', title: 'NATURAL WHITE' },
 	{ src: '/colors_new/white.png', title: 'WHITE' },
+	{ src: '/colors_new/soft_white.png', title: 'Soft White' },
 	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
 	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
 	{ src: '/colors_new/black.png', title: 'BLACK' },
@@ -25,7 +26,6 @@ const images = [
 	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
 	{ src: '/colors_new/gray.png', title: 'GRAY' },
 	{ src: '/colors_new/charcoal.png', title: 'CHARCOAL' },
-	{ src: '/colors_new/soft_white.png', title: 'Soft White' },
 ]
 
 const breakpoints = {
@@ -47,6 +47,24 @@ const breakpoints = {
 	320: {
 		slidesPerView: 2,
 	},
+}
+
+const fetchColor = async () => {
+	try {
+		const runtimeConfig = useRuntimeConfig()
+		const response = await axios.get(
+			`${runtimeConfig.public.directusApiUrl}/items/Colors`,
+			{
+				headers: {
+					Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,
+				},
+			}
+		)
+		return response.data.data
+	} catch (error) {
+		console.error('Error fetching products:', error)
+		throw error
+	}
 }
 </script>
 
