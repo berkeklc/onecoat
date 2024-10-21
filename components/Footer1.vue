@@ -94,7 +94,10 @@
 		<div class="standard_center1">
 			<div class="sect50">
 				<div class="icons">
-					<a href="#" target="_blank">
+					<a
+						href="https://www.instagram.com/naturaonecoat"
+						target="_blank"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="30.225"
@@ -130,9 +133,7 @@
 							</g>
 						</svg>
 					</a>
-					<a
-						href="https://www.instagram.com/naturaonecoat"
-						target="_blank"
+					<a href="" target="_blank"
 						><svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="30.217"

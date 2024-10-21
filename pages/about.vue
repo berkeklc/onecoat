@@ -228,7 +228,10 @@
 									<img src="~/assets/img/in.png" />
 								</a>
 
-								<a href="#" target="_blank">
+								<a
+									href="https://www.instagram.com/naturaonecoat"
+									target="_blank"
+								>
 									<img src="~/assets/img/instagram.png" />
 								</a>
 							</div>

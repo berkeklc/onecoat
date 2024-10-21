@@ -1,32 +1,49 @@
 <template>
-	<swiper :slides-per-view="10" :space-between="7" :breakpoints="breakpoints">
-		<swiper-slide v-for="(image, index) in images" :key="index">
-			<div class="image-wrapper">
-				<img :src="image.src" :alt="image.title" />
-				<div class="title">{{ image.title }}</div>
-			</div>
-		</swiper-slide>
-	</swiper>
+	<div class="deneme"></div>
+	<div v-if="error">{{ error.message }}</div>
+	<div v-else-if="!images.length">Loading...</div>
+	<div v-else>
+		<swiper
+			:slides-per-view="10"
+			:space-between="7"
+			:breakpoints="breakpoints"
+		>
+			<swiper-slide v-for="(image, index) in images" :key="index">
+				<div class="image-wrapper">
+					<img :src="image.src" :alt="image.title" />
+					<div class="title">{{ image.title }}</div>
+				</div>
+			</swiper-slide>
+		</swiper>
+	</div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
 
-const images = [
-	// Resim URL'lerini ve başlıklarını buraya ekleyin
-	{ src: '/colors_new/clear.png', title: 'CLEAR' },
-	{ src: '/colors_new/natural_white.png', title: 'NATURAL WHITE' },
-	{ src: '/colors_new/white.png', title: 'WHITE' },
-	{ src: '/colors_new/soft_white.png', title: 'Soft White' },
-	{ src: '/colors_new/natural_mist.png', title: 'NATURAL MIST' },
-	{ src: '/colors_new/dark_oak.png', title: 'DARK OAK' },
-	{ src: '/colors_new/black.png', title: 'BLACK' },
-	{ src: '/colors_new/walnut.png', title: 'WALNUT' },
-	{ src: '/colors_new/chocolate_brown.png', title: 'CHOCOLATE BROWN' },
-	{ src: '/colors_new/gray.png', title: 'GRAY' },
-	{ src: '/colors_new/charcoal.png', title: 'CHARCOAL' },
-]
+const images = ref([])
+const error = ref(null)
+const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
+
+const fetchColors = async () => {
+	try {
+		const { data } = await axios.get(`${directusBaseUrl}/items/Colors`)
+		images.value = data.data.map((item) => ({
+			src: `${directusBaseUrl}/assets/${item.color_file}`,
+			title: item.color_name,
+		}))
+	} catch (err) {
+		error.value = err
+		console.error('Colors fetch error:', err)
+	}
+}
+
+onMounted(async () => {
+	await fetchColors()
+})
 
 const breakpoints = {
 	1920: {
@@ -47,24 +64,6 @@ const breakpoints = {
 	320: {
 		slidesPerView: 2,
 	},
-}
-
-const fetchColor = async () => {
-	try {
-		const runtimeConfig = useRuntimeConfig()
-		const response = await axios.get(
-			`${runtimeConfig.public.directusApiUrl}/items/Colors`,
-			{
-				headers: {
-					Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,
-				},
-			}
-		)
-		return response.data.data
-	} catch (error) {
-		console.error('Error fetching products:', error)
-		throw error
-	}
 }
 </script>
 
