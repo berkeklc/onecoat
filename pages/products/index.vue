@@ -17,6 +17,7 @@
 				<img src="~/assets/img/products.png" alt="" />
 			</div>
 		</div>
+		<div v-if="hasSearchParam">var</div>
 		<div class="container">
 			<Colors />
 		</div>
@@ -69,17 +70,29 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { fetchProducts } from '@/services/directus'
-import { useRuntimeConfig } from '#app'
+import { useRuntimeConfig, useRoute } from '#app'
 
 const products = ref([])
 const error = ref(null)
 const config = useRuntimeConfig()
+const route = useRoute()
+
+const hasSearchParam = ref(false)
 
 const getFullImagePath = (imagePath) => {
 	return `${config.public.directusApiUrl}/assets/${imagePath}`
 }
+
+// Watch for changes in the route query to set hasSearchParam
+watch(
+	() => route.query.search,
+	(newVal) => {
+		hasSearchParam.value = !!newVal
+	},
+	{ immediate: true }
+)
 
 onMounted(async () => {
 	try {
@@ -89,11 +102,11 @@ onMounted(async () => {
 		console.error('Fetch products error:', err)
 	}
 })
+
 definePageMeta({
 	layout: 'header2',
 })
 </script>
-
 <style scoped>
 .readmore {
 	text-decoration: underline;

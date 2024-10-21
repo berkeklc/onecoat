@@ -19,13 +19,32 @@
 			</svg>
 		</div>
 
-		<input type="text" placeholder="Search" class="search-input" />
+		<input
+			type="text"
+			placeholder="Search"
+			class="search-input"
+			v-model="searchQuery"
+			@keyup.enter="goToProductsPage"
+		/>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'Search',
+	data() {
+		return {
+			searchQuery: '',
+		}
+	},
+	methods: {
+		goToProductsPage() {
+			if (this.searchQuery.trim() !== '') {
+				// "searchQuery" dolu ise yönlendirme yap
+				window.location.href = `/products?search=${encodeURIComponent(this.searchQuery)}`
+			}
+		},
+	},
 }
 </script>
 

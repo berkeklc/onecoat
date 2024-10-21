@@ -26,7 +26,7 @@
 						<p class="product-subtitle">For Wooden Surfaces</p>
 					</div>
 					<div class="button-container">
-						<nuxt-link :to="'/products/3'" class="buy-now-btn">
+						<nuxt-link :to="'/products/34'" class="buy-now-btn">
 							<font-awesome-icon icon="shopping-cart" /> BUY NOW
 						</nuxt-link>
 					</div>
