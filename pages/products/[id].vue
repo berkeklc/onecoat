@@ -290,25 +290,6 @@ definePageMeta({
 .colors {
 	padding-right: 55px;
 }
-.colors img {
-	width: 100%;
-	box-shadow: 0px 3px 6px #00000029;
-	border-radius: 3px;
-	padding: 3px;
-	margin-bottom: 7px;
-}
-.colors .col-md-3 {
-	padding: 0;
-	width: 20%;
-}
-.colors .image-wrapper {
-	text-decoration: none;
-	text-align: center;
-	font-family: 'Avenir Roman';
-	letter-spacing: 0.7px;
-	font-size: 8px;
-	color: black;
-}
 .psize {
 	font-family: 'Avenir Roman';
 	color: #696d6e;
