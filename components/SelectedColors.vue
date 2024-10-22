@@ -3,15 +3,18 @@
 		<!-- Seçenekleri liste olarak gösteriyoruz -->
 		<div class="selected-option" @click="toggleDropdown">
 			<span v-if="selectedOption" class="content_wrap">
-				<p>{{ getSelectedOptionText }}</p>
-				<img
-					:src="getSelectedOptionImage"
-					class="img-flag"
-					alt="selected option image"
-				/>
+				<p class="text_color">{{ getSelectedOptionText }}</p>
+				<div class="img_wrap">
+					<img
+						:src="getSelectedOptionImage"
+						class="img-flag"
+						alt="selected option image"
+					/>
+					<span class="arrow_iko">></span>
+				</div>
 			</span>
 			<span v-else class="content_wrap">
-				<p>Clear</p>
+				<p class="text_color">Clear</p>
 				<div class="img_wrap">
 					<img
 						src="/colors_new/clear.png"
@@ -140,25 +143,38 @@ export default {
 	cursor: pointer;
 	font-family: 'Avenir Heavy';
 	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .content_wrap {
-	display: grid;
-	grid-template-columns: auto auto;
+	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.img_wrap {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.text_color {
+	margin: 0px;
 }
 
 .arrow_iko {
 	font-size: 24px;
 	color: #2a2c30;
-	margin-left: 10px;
 }
 
 .img-flag {
-	width: 20px;
-	height: 20px;
-	margin-left: 10px;
-	flex-shrink: 0;
+	width: auto;
+	height: 65px;
+	padding-right: 10px;
+	object-fit: cover;
 }
 
 .options-list {
