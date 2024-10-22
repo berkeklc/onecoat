@@ -44,6 +44,7 @@
 				></div>
 				<Social />
 				<!--  <DenemeColors />-->
+				<SelectedColors />
 			</div>
 		</div>
 	</div>

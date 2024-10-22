@@ -2,15 +2,25 @@
 	<div class="custom-select">
 		<!-- Seçenekleri liste olarak gösteriyoruz -->
 		<div class="selected-option" @click="toggleDropdown">
-			<span v-if="selectedOption">
-				{{ getSelectedOptionText }}
+			<span v-if="selectedOption" class="content_wrap">
+				<p>{{ getSelectedOptionText }}</p>
 				<img
 					:src="getSelectedOptionImage"
 					class="img-flag"
 					alt="selected option image"
 				/>
 			</span>
-			<span v-else>Select an option</span>
+			<span v-else class="content_wrap">
+				<p>Clear</p>
+				<div class="img_wrap">
+					<img
+						src="/colors_new/clear.png"
+						class="img-flag"
+						alt="selected option image"
+					/>
+					<span class="arrow_iko">></span>
+				</div>
+			</span>
 		</div>
 
 		<ul v-if="dropdownVisible" class="options-list">
@@ -35,57 +45,57 @@ export default {
 			options: [
 				{
 					src: '/colors_new/clear.png',
-					text: 'CLEAR',
+					text: 'Clear',
 					value: 'option-1',
 				},
 				{
 					src: '/colors_new/natural_white.png',
-					text: 'NATURAL WHITE',
+					text: 'Natural White',
 					value: 'option-2',
 				},
 				{
 					src: '/colors_new/white.png',
-					text: 'WHITE',
+					text: 'White',
 					value: 'option-3',
 				},
 				{
 					src: '/colors_new/natural_mist.png',
-					text: 'NATURAL MIST',
+					text: 'Natural Mist',
 					value: 'option-4',
 				},
 				{
 					src: '/colors_new/dark_oak.png',
-					text: 'DARK OAK',
+					text: 'Dark Oak',
 					value: 'option-5',
 				},
 				{
 					src: '/colors_new/black.png',
-					text: 'BLACK',
+					text: 'Black',
 					value: 'option-6',
 				},
 				{
 					src: '/colors_new/walnut.png',
-					text: 'WALNUT',
+					text: 'Walnut',
 					value: 'option-7',
 				},
 				{
 					src: '/colors_new/chocolate_brown.png',
-					text: 'CHOCOLATE BROWN',
+					text: 'Chocolate Brown',
 					value: 'option-8',
 				},
 				{
 					src: '/colors_new/gray.png',
-					text: 'GRAY',
+					text: 'Gray',
 					value: 'option-9',
 				},
 				{
 					src: '/colors_new/charcoal.png',
-					text: 'CHARCOAL',
+					text: 'Charcoal',
 					value: 'option-10',
 				},
 				{
 					src: '/colors_new/soft_white.png',
-					text: 'SOFT WHİTE',
+					text: 'Soft White',
 					value: 'option-11',
 				},
 			],
@@ -121,23 +131,33 @@ export default {
 .custom-select {
 	position: relative;
 	display: inline-block;
-	width: 250px;
 }
 
 .selected-option {
-	border: 1px solid #ccc;
+	border: 1px solid #2a2c30;
 	padding: 10px;
 	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
+	font-family: 'Avenir Heavy';
+	font-size: 20px;
+}
+
+.content_wrap {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+}
+
+.arrow_iko {
+	font-size: 24px;
+	color: #2a2c30;
+	margin-left: 10px;
 }
 
 .img-flag {
 	width: 20px;
 	height: 20px;
 	margin-left: 10px;
-	flex-shrink: 0; /* Resmin küçülmesini önler */
+	flex-shrink: 0;
 }
 
 .options-list {
@@ -156,8 +176,8 @@ export default {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	justify-content: space-between; /* Boşlukları düzgün dağıtmak için */
-	white-space: nowrap; /* Satırların alt alta geçmesini engeller */
+	justify-content: space-between;
+	white-space: nowrap;
 }
 
 .options-list li:hover {
