@@ -139,7 +139,7 @@ export default {
 
 .selected-option {
 	border: 1px solid #2a2c30;
-	padding: 10px;
+	padding: 5px 20px;
 	cursor: pointer;
 	font-family: 'Avenir Heavy';
 	font-size: 20px;

@@ -226,6 +226,7 @@ definePageMeta({
 .clrs {
 	margin-top: 77px;
 	padding-right: 55px;
+	padding-left: 25px;
 }
 
 .p0 {
