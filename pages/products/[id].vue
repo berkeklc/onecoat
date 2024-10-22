@@ -48,9 +48,7 @@
 								</div>
 
 								<div class="colors row">
-									<h1 class="pftitle clrs">
-										COLOURS ({{ options.length }})
-									</h1>
+									<h1 class="pftitle clrs">COLOURS</h1>
 									<div class="col-md-12">
 										<SelectedColors />
 									</div>
