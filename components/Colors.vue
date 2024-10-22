@@ -19,18 +19,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
+import { useRuntimeConfig, useRoute } from '#app'
 
 const images = ref([])
 const error = ref(null)
-const directusBaseUrl = useRuntimeConfig().public.directusApiUrl
+const runtimeConfig = useRuntimeConfig()
+const directusBaseUrl = runtimeConfig.public.directusApiUrl
 
 const fetchColors = async () => {
 	try {
-		const runtimeConfig = useRuntimeConfig()
+		console.log('Directus API URL:', directusBaseUrl)
+		console.log('Directus API Key:', runtimeConfig.public.directusApiKey)
+
 		const { data } = await axios.get(`${directusBaseUrl}/items/Colors`, {
 			headers: {
 				Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,

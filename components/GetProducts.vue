@@ -52,6 +52,7 @@ const error = ref(null)
 const config = useRuntimeConfig()
 
 const getFullImagePath = (imagePath) => {
+	console.log(`${config.public.directusApiUrl}/assets/${imagePath}`)
 	return `${config.public.directusApiUrl}/assets/${imagePath}`
 }
 
