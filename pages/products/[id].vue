@@ -225,7 +225,9 @@ definePageMeta({
 
 .clrs {
 	margin-top: 77px;
+	padding-right: 55px;
 }
+
 .p0 {
 	padding: 0;
 	color: black;
@@ -286,9 +288,6 @@ definePageMeta({
 	background: #f5f5f5;
 	text-align: center;
 	padding-top: 200px;
-}
-.colors {
-	padding-right: 55px;
 }
 .psize {
 	font-family: 'Avenir Roman';
