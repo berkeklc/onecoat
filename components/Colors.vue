@@ -31,10 +31,9 @@ const runtimeConfig = useRuntimeConfig()
 const directusBaseUrl = runtimeConfig.public.directusApiUrl
 
 const fetchColors = async () => {
+	console.log('Directus API URL:', directusBaseUrl)
+	console.log('Directus API Key:', runtimeConfig.public.directusApiKey)
 	try {
-		console.log('Directus API URL:', directusBaseUrl)
-		console.log('Directus API Key:', runtimeConfig.public.directusApiKey)
-
 		const { data } = await axios.get(`${directusBaseUrl}/items/Colors`, {
 			headers: {
 				Authorization: `Bearer ${runtimeConfig.public.directusApiKey}`,
