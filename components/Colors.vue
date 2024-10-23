@@ -44,6 +44,7 @@ const fetchColors = async () => {
 		images.value = data.data.map((item) => ({
 			src: `${directusBaseUrl}/assets/${item.color_file}`,
 			title: item.color_name,
+			productKey: item.product_id.key,
 		}))
 	} catch (err) {
 		error.value = err
