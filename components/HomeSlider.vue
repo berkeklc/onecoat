@@ -27,7 +27,35 @@
 					</div>
 					<div class="button-container">
 						<nuxt-link :to="'/products/34'" class="buy-now-btn">
-							<font-awesome-icon icon="shopping-cart" /> BUY NOW
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18.972"
+								class="cartsvg"
+								height="19.003"
+								viewBox="0 0 18.972 19.003"
+							>
+								<g
+									id="cart_shop_buy_retail"
+									data-name="cart, shop, buy, retail"
+									transform="translate(-3 -3)"
+								>
+									<path
+										id="Path_112873"
+										data-name="Path 112873"
+										d="M23.189,23a2.189,2.189,0,1,0,2.189,2.189A2.189,2.189,0,0,0,23.189,23Zm0,2.919a.73.73,0,1,1,.73-.73A.73.73,0,0,1,23.189,25.919Z"
+										transform="translate(-4.865 -5.406)"
+										fill="#fff"
+									/>
+									<path
+										id="Path_112874"
+										data-name="Path 112874"
+										d="M13.946,17.594H8.108a.73.73,0,0,1,0-1.459H19.783a.73.73,0,0,0,.72-.61l1.459-8.756a.73.73,0,0,0-.72-.85H9.567a.73.73,0,0,0,0,1.459H20.381l-1.216,7.3H10.073l-4.2-11.2A.73.73,0,0,0,5.189,3H3.73a.73.73,0,0,0,0,1.459h.954L8.514,14.675H8.108a2.182,2.182,0,0,0-.569,4.292,2.193,2.193,0,1,0,4.083.086h2.324a.73.73,0,0,0,0-1.459ZM10.3,19.783a.73.73,0,1,1-.73-.73.73.73,0,0,1,.73.73Z"
+										transform="translate(0 0)"
+										fill="#fff"
+									/>
+								</g>
+							</svg>
+							BUY NOW
 						</nuxt-link>
 					</div>
 					<div class="content">
