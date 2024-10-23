@@ -1,20 +1,24 @@
 <template>
 	<Logo />
 	<div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 headtitle">
-					<h1>PRODUCTS <span class="of">of</span> NATURA</h1>
-					<p>
-						Only one coat protection of all kinds of interior wooden
-						surfaces for flooring and furniture.
-					</p>
+		<div v-if="!hasSearchParam">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 headtitle">
+						<h1>PRODUCTS <span class="of">of</span> NATURA</h1>
+						<p>
+							Only one coat protection of all kinds of interior
+							wooden surfaces for flooring and furniture.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid text-center">
-			<div class="pbg">
-				<img src="~/assets/img/products.png" alt="" />
+		<div v-if="!hasSearchParam">
+			<div class="container-fluid text-center">
+				<div class="pbg">
+					<img src="~/assets/img/products.png" alt="" />
+				</div>
 			</div>
 		</div>
 		<div v-if="error">{{ error.message }}</div>
