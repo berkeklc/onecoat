@@ -22,12 +22,12 @@
 			<Colors />
 		</div>
 		<div v-if="error">{{ error.message }}</div>
-		<div v-else-if="!products.length">Loading...</div>
+		<div v-else-if="!filteredProducts.length">Loading...</div>
 		<div v-else>
 			<div class="container">
 				<div class="row">
 					<div
-						v-for="product in products"
+						v-for="product in filteredProducts"
 						:key="product.id"
 						class="col-md-4 mb-4"
 					>
@@ -75,6 +75,7 @@ import { fetchProducts } from '@/services/directus'
 import { useRuntimeConfig, useRoute } from '#app'
 
 const products = ref([])
+const filteredProducts = ref([])
 const error = ref(null)
 const config = useRuntimeConfig()
 const route = useRoute()
@@ -85,11 +86,23 @@ const getFullImagePath = (imagePath) => {
 	return `${config.public.directusApiUrl}/assets/${imagePath}`
 }
 
-// Watch for changes in the route query to set hasSearchParam
+const filterProducts = (searchTerm) => {
+	if (!searchTerm) {
+		filteredProducts.value = products.value
+	} else {
+		const lowerCaseSearchTerm = searchTerm.toLowerCase()
+		filteredProducts.value = products.value.filter((product) =>
+			product.name.toLowerCase().includes(lowerCaseSearchTerm)
+		)
+	}
+}
+
+// Watch for changes in the route query to set hasSearchParam and filter products
 watch(
 	() => route.query.search,
 	(newVal) => {
 		hasSearchParam.value = !!newVal
+		filterProducts(newVal)
 	},
 	{ immediate: true }
 )
@@ -97,6 +110,7 @@ watch(
 onMounted(async () => {
 	try {
 		products.value = await fetchProducts()
+		filterProducts(route.query.search)
 	} catch (err) {
 		error.value = err
 		console.error('Fetch products error:', err)
