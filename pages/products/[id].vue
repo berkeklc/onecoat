@@ -390,7 +390,7 @@ definePageMeta({
 	padding: 20px 0;
 }
 .buy-now {
-	margin-top: 318px;
+	margin-top: 335px;
 	background-color: #2a2c30;
 	color: #fff;
 	border: none;

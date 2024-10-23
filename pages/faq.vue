@@ -250,7 +250,8 @@ const faqs = ref([
 	.faq-header h1 {
 		font-size: 40px;
 	}
-	.faq-images .faq-images_2 {
+	.faq-images .faq-images_2,
+	.faq-images .faq-images_1 {
 		display: none;
 	}
 	.faq-header .highlight {

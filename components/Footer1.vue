@@ -14,7 +14,8 @@
 						</div>
 					</div>
 					<div class="s s2">
-						<form id="form_mail_abonelik" action="" method="POST">
+						<!--
+                        <form id="form_mail_abonelik" action="" method="POST">
 							<input
 								type="hidden"
 								name="router"
@@ -32,6 +33,43 @@
 									<button>Contact Us</button>
 									<img class="loading" src="" alt="" />
 								</div>
+							</div>
+						</form>
+                        -->
+						<form
+							@submit.prevent="submitForm"
+							id="form_mail_abonelik"
+						>
+							<div class="grid2">
+								<div class="grid2s s1">
+									<input
+										v-model="email"
+										type="email"
+										placeholder="email"
+										required
+									/>
+								</div>
+								<div class="grid2s s2">
+									<button :disabled="loading">
+										{{
+											loading
+												? 'Submitting...'
+												: 'Contact Us'
+										}}
+									</button>
+									<img
+										v-if="loading"
+										class="loading"
+										src=""
+										alt="Loading..."
+									/>
+								</div>
+							</div>
+							<div v-if="successMessage" class="success">
+								{{ successMessage }}
+							</div>
+							<div v-if="errorMessage" class="error">
+								{{ errorMessage }}
 							</div>
 						</form>
 						<div class="text1">
@@ -234,6 +272,38 @@ onMounted(() => {
 		})
 	}
 })
+
+import { ref } from 'vue'
+import axios from 'axios'
+
+const email = ref('')
+const loading = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
+
+const submitForm = async () => {
+	if (!email.value) {
+		errorMessage.value = 'Please enter a valid email'
+		return
+	}
+
+	loading.value = true
+	errorMessage.value = ''
+	successMessage.value = ''
+
+	try {
+		const response = await axios.post('/api/save-email', {
+			email: email.value,
+		})
+		successMessage.value = 'Your email has been saved successfully!'
+		email.value = ''
+	} catch (error) {
+		errorMessage.value = 'An error occurred. Please try again later.'
+		console.error('Form submission error:', error)
+	} finally {
+		loading.value = false
+	}
+}
 </script>
 
 <style scoped>
@@ -503,5 +573,15 @@ a {
 .up-button.show {
 	opacity: 1;
 	visibility: visible;
+}
+
+.success {
+	color: green;
+	margin-top: 10px;
+}
+
+.error {
+	color: red;
+	margin-top: 10px;
 }
 </style>
