@@ -1,7 +1,15 @@
 <template>
 	<div>
-		<div v-if="error">{{ error.message }}</div>
-		<div v-else-if="!product">Loading...</div>
+		<div v-if="error" class="error-message">
+			<h2>Oops! Something went wrong.</h2>
+			<p>{{ error.message }}</p>
+		</div>
+		<div v-else-if="!product" class="skeleton-screen">
+			<div class="skeleton skeleton-title"></div>
+			<div class="skeleton skeleton-text"></div>
+			<div class="skeleton skeleton-text"></div>
+			<div class="skeleton skeleton-image"></div>
+		</div>
 		<div v-else>
 			<div class="container-fluid section">
 				<div class="row">
@@ -78,6 +86,11 @@
 									<div
 										v-if="showDetails"
 										class="details-content"
+										style="
+											position: absolute;
+											background: white;
+											width: 100%;
+										"
 									>
 										<!-- <p v-html="product.desc"></p> -->
 										<div class="msds-buttons">
@@ -357,7 +370,7 @@ definePageMeta({
 	padding: 20px 0;
 }
 .buy-now {
-	margin-top: 335px;
+	margin-top: 318px;
 	background-color: #2a2c30;
 	color: #fff;
 	border: none;
@@ -385,5 +398,69 @@ definePageMeta({
 }
 .bl {
 	border-left: 9px solid white !important;
+}
+
+.error-message {
+	margin-top: 100px;
+	text-align: center;
+	padding: 50px;
+	color: #d9534f;
+	font-family: 'Avenir Roman';
+	background-color: #f2dede;
+	border: 1px solid #ebccd1;
+	border-radius: 5px;
+}
+
+.loading-message {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+	padding: 50px;
+	font-family: 'Avenir Roman';
+	color: #31708f;
+	background-color: #d9edf7;
+	border: 1px solid #bce8f1;
+	border-radius: 5px;
+}
+
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 5px solid #bce8f1;
+	border-top: 5px solid #31708f;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+.skeleton-screen {
+	margin-top: 100px;
+	padding: 20px;
+}
+.skeleton {
+	background-color: #ddd;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.skeleton-title {
+	height: 24px;
+	width: 50%;
+}
+.skeleton-text {
+	height: 16px;
+	width: 100%;
+}
+.skeleton-image {
+	height: 200px;
+	width: 100%;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 </style>
