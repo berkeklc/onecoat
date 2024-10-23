@@ -17,11 +17,10 @@
 				<img src="~/assets/img/products.png" alt="" />
 			</div>
 		</div>
-		<div v-if="hasSearchParam">var</div>
-		<div class="container">
-			<Colors />
-		</div>
 		<div v-if="error">{{ error.message }}</div>
+		<div v-else-if="hasSearchParam && !filteredProducts.length">
+			Sonuç Bulunamadı
+		</div>
 		<div v-else-if="!filteredProducts.length">Loading...</div>
 		<div v-else>
 			<div class="container">
