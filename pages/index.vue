@@ -21,6 +21,7 @@
 				<div class="col-md-5"></div>
 				<AboutHome />
 				<Colors />
+				<!-- <Colors_eski /> -->
 				<GalleryHome />
 				<div class="video">
 					<video
@@ -44,13 +45,15 @@
 				></div>
 				<Social />
 				<!--  <DenemeColors />-->
-				<SelectedColors />
+				<!-- <SelectedColors /> -->
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import Colors_eski from '~/components/Colors_eski.vue'
+
 definePageMeta({
 	layout: 'default',
 })

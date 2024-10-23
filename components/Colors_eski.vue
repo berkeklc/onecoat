@@ -1,10 +1,12 @@
 <template>
 	<swiper :slides-per-view="10" :space-between="7" :breakpoints="breakpoints">
 		<swiper-slide v-for="(image, index) in images" :key="index">
-			<div class="image-wrapper">
-				<img :src="image.src" :alt="image.title" />
-				<div class="title">{{ image.title }}</div>
-			</div>
+			<nuxt-link :to="'/products/34'">
+				<div class="image-wrapper">
+					<img :src="image.src" :alt="image.title" />
+					<div class="title">{{ image.title }}</div>
+				</div>
+			</nuxt-link>
 		</swiper-slide>
 	</swiper>
 </template>

@@ -9,10 +9,12 @@
 			:breakpoints="breakpoints"
 		>
 			<swiper-slide v-for="(image, index) in images" :key="index">
-				<div class="image-wrapper">
-					<img :src="image.src" :alt="image.title" />
-					<div class="title">{{ image.title }}</div>
-				</div>
+				<nuxt-link :to="`/products/${image.productKey}`">
+					<div class="image-wrapper">
+						<img :src="image.src" :alt="image.title" />
+						<div class="title">{{ image.title }}</div>
+					</div>
+				</nuxt-link>
 			</swiper-slide>
 		</swiper>
 	</div>

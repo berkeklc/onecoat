@@ -68,12 +68,11 @@
 								<p class="slider-text_subtitle">
 									One Coat Superior Coverage.
 								</p>
-								<button
-									@click="goToSlide(1)"
+								<nuxt-link
+									:to="'/products/34'"
 									class="show-products-btn"
+									>Show Products</nuxt-link
 								>
-									Show Products
-								</button>
 							</div>
 						</div>
 					</swiper-slide>
@@ -95,12 +94,11 @@
 								<p class="slider-text_subtitle">
 									One Coat Superior Coverage.
 								</p>
-								<button
-									@click="goToSlide(1)"
+								<nuxt-link
+									:to="'/products/34'"
 									class="show-products-btn"
+									>Show Products</nuxt-link
 								>
-									Show Products
-								</button>
 							</div>
 						</div>
 					</swiper-slide>
@@ -124,12 +122,11 @@
 								<p class="slider-text_subtitle">
 									One Coat Superior Coverage.
 								</p>
-								<button
-									@click="goToSlide(1)"
+								<nuxt-link
+									:to="'/products/34'"
 									class="show-products-btn"
+									>Show Products</nuxt-link
 								>
-									Show Products
-								</button>
 							</div>
 						</div>
 					</swiper-slide>
@@ -328,6 +325,7 @@ const goToSlide = (index) => {
 
 .slider-text .show-products-btn {
 	font-size: 10px;
+	text-decoration: none;
 	letter-spacing: 2px;
 	font-family: 'Avenir Roman';
 	background-color: white;
