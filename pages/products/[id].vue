@@ -175,6 +175,7 @@
 				</div>
 			</div>
 		</div>
+		<GetProducts />
 	</div>
 </template>
 
@@ -276,6 +277,7 @@ definePageMeta({
 	margin-right: 10px;
 }
 .breadcrumb {
+	display: none;
 	font-family: 'Avenir Roman';
 	text-decoration: none;
 	font-size: 12px;
@@ -370,6 +372,8 @@ definePageMeta({
 	padding: 20px 0;
 }
 .details-content {
+	position: absolute;
+	width: 350px;
 	margin-top: 10px;
 }
 .size-coverage {
@@ -498,7 +502,7 @@ definePageMeta({
 		rgba(165, 21, 21, 0) 100%
 	);
 	background-size: 400% 100%;
-	animation: shimmer 1.6s infinite linear;
+	animation: shimmer 6s infinite linear;
 	border-radius: 4px;
 }
 </style>
