@@ -5,10 +5,33 @@
 			<p>{{ error.message }}</p>
 		</div>
 		<div v-else-if="!product" class="skeleton-screen">
-			<div class="skeleton skeleton-title"></div>
-			<div class="skeleton skeleton-text"></div>
-			<div class="skeleton skeleton-text"></div>
-			<div class="skeleton skeleton-image"></div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="skeleton skeleton-title shimmer"></div>
+					<div class="skeleton skeleton-subtitle shimmer"></div>
+					<div class="skeleton skeleton-text shimmer"></div>
+					<div class="skeleton skeleton-text shimmer"></div>
+					<div class="skeleton skeleton-size-button shimmer"></div>
+					<div class="skeleton skeleton-size-button shimmer"></div>
+					<div class="skeleton skeleton-category shimmer"></div>
+					<div class="skeleton skeleton-colors shimmer"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="skeleton skeleton-breadcrumb shimmer"></div>
+					<div class="skeleton skeleton-description shimmer"></div>
+					<div class="skeleton skeleton-details-button shimmer"></div>
+					<div class="skeleton skeleton-buy-button shimmer"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="skeleton skeleton-size-coverage shimmer"></div>
+					<div class="skeleton skeleton-size-coverage shimmer"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="skeleton skeleton-image shimmer"></div>
+				</div>
+			</div>
 		</div>
 		<div v-else>
 			<div class="container-fluid section">
@@ -24,8 +47,7 @@
 									</div>
 									<div class="col-md-8 pl0">
 										<div class="sizes">
-											<a
-												href="#"
+											<button
 												:class="{
 													active:
 														activeSize === '1.3L',
@@ -33,10 +55,10 @@
 												@click="
 													changeProductSize('1.3L')
 												"
-												>1.3L</a
 											>
-											<a
-												href="#"
+												1.3L
+											</button>
+											<button
 												:class="{
 													active:
 														activeSize === '360ML',
@@ -44,8 +66,9 @@
 												@click="
 													changeProductSize('360ML')
 												"
-												>360ML</a
 											>
+												360ML
+											</button>
 										</div>
 									</div>
 								</div>
@@ -64,7 +87,7 @@
 							</div>
 
 							<div class="col-md-6">
-								<div class="breadcump">
+								<div class="breadcrumb">
 									<a href="#">Products</a> <Right />
 									<a href="#">Natura Onecoat Wood Oil</a>
 									<Right />
@@ -86,13 +109,7 @@
 									<div
 										v-if="showDetails"
 										class="details-content"
-										style="
-											position: absolute;
-											background: white;
-											width: 100%;
-										"
 									>
-										<!-- <p v-html="product.desc"></p> -->
 										<div class="msds-buttons">
 											<button>MSDS 2K-A</button>
 											<button class="bl">
@@ -101,7 +118,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="buy-now">
+								<button class="buy-now" aria-label="Buy now">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="18.972"
@@ -153,7 +170,7 @@
 						</div>
 					</div>
 					<div class="col-md-6 productarea">
-						<img :src="currentImage" alt="" />
+						<img :src="currentImage" alt="Product Image" />
 					</div>
 				</div>
 			</div>
@@ -184,7 +201,7 @@ const fetchProduct = async (productId) => {
 		if (product.value.image) {
 			currentImage.value = `${directusBaseUrl}/assets/${product.value.image}`
 		} else {
-			currentImage.value = '~/assets/img/naturaproduct.png'
+			currentImage.value = require('@/assets/img/naturaproduct.png')
 		}
 	} catch (err) {
 		error.value = err
@@ -258,14 +275,14 @@ definePageMeta({
 	margin-top: -4px;
 	margin-right: 10px;
 }
-.breadcump {
+.breadcrumb {
 	font-family: 'Avenir Roman';
 	text-decoration: none;
 	font-size: 12px;
 	letter-spacing: 1.2px;
 	color: #696d6e;
 }
-.breadcump a {
+.breadcrumb a {
 	font-family: 'Avenir Roman';
 	text-decoration: none;
 	font-size: 12px;
@@ -325,7 +342,7 @@ definePageMeta({
 	letter-spacing: -2.22px;
 }
 
-.sizes a {
+.sizes button {
 	background: #f7f7f8 0% 0% no-repeat padding-box;
 	border-radius: 2px;
 	font-weight: bold;
@@ -333,9 +350,10 @@ definePageMeta({
 	font-size: 10px;
 	color: #696d6e;
 	padding: 4px 21px;
-	text-decoration: none;
+	border: none;
+	cursor: pointer;
 }
-.sizes a.active {
+.sizes button.active {
 	background: #175e6c 0% 0% no-repeat padding-box;
 	border-radius: 2px;
 	font-weight: bold;
@@ -343,8 +361,6 @@ definePageMeta({
 	font-size: 10px;
 	color: white;
 	padding: 4px 21px;
-
-	text-decoration: none;
 }
 .accordion h1 {
 	cursor: pointer;
@@ -400,45 +416,12 @@ definePageMeta({
 	border-left: 9px solid white !important;
 }
 
-.error-message {
-	margin-top: 100px;
-	text-align: center;
-	padding: 50px;
-	color: #d9534f;
-	font-family: 'Avenir Roman';
-	background-color: #f2dede;
-	border: 1px solid #ebccd1;
-	border-radius: 5px;
-}
-
-.loading-message {
-	display: flex;
-
-	flex-direction: column;
-	align-items: center;
-	padding: 50px;
-	font-family: 'Avenir Roman';
-	color: #31708f;
-	background-color: #d9edf7;
-	border: 1px solid #bce8f1;
-	border-radius: 5px;
-}
-
-.spinner {
-	width: 40px;
-	height: 40px;
-	border: 5px solid #bce8f1;
-	border-top: 5px solid #31708f;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
-
 .skeleton-screen {
 	margin-top: 100px;
 	padding: 20px;
 }
 .skeleton {
-	background-color: #ddd;
+	background-color: #dddddda8;
 	border-radius: 4px;
 	margin-bottom: 10px;
 }
@@ -446,21 +429,76 @@ definePageMeta({
 	height: 24px;
 	width: 50%;
 }
+.skeleton-subtitle {
+	height: 20px;
+	width: 70%;
+}
 .skeleton-text {
 	height: 16px;
 	width: 100%;
+}
+.skeleton-size-button {
+	height: 32px;
+	width: 30%;
+	margin-top: 10px;
+}
+.skeleton-category {
+	height: 24px;
+	width: 40%;
+	margin-top: 20px;
+}
+.skeleton-colors {
+	height: 24px;
+	width: 60%;
+	margin-top: 20px;
+}
+.skeleton-breadcrumb {
+	height: 16px;
+	width: 80%;
+	margin-bottom: 10px;
+}
+.skeleton-description {
+	height: 16px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.skeleton-details-button {
+	height: 24px;
+	width: 30%;
+	margin-top: 20px;
+}
+.skeleton-buy-button {
+	height: 40px;
+	width: 50%;
+	margin-top: 20px;
+}
+.skeleton-size-coverage {
+	height: 24px;
+	width: 50%;
+	margin-bottom: 10px;
 }
 .skeleton-image {
 	height: 200px;
 	width: 100%;
 }
-
-@keyframes spin {
+@keyframes shimmer {
 	0% {
-		transform: rotate(0deg);
+		background-position: -200% 0;
 	}
 	100% {
-		transform: rotate(360deg);
+		background-position: 200% 0;
 	}
+}
+
+.shimmer {
+	background: linear-gradient(
+		90deg,
+		rgba(114, 39, 39, 0) 0%,
+		rgba(56, 56, 56, 0.5) 50%,
+		rgba(165, 21, 21, 0) 100%
+	);
+	background-size: 400% 100%;
+	animation: shimmer 1.6s infinite linear;
+	border-radius: 4px;
 }
 </style>
