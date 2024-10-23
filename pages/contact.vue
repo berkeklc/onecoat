@@ -483,7 +483,7 @@ input[type='submit']:hover {
 	}
 
 	.form-row {
-		gap: 10px;
+		gap: 55px;
 	}
 
 	.input-container input,

@@ -65,7 +65,7 @@
 								<div class="list">
 									<h3>Us</h3>
 									<div><a href="#">We are?</a></div>
-									<div><a href="#">FAQ?</a></div>
+									<div><a href="/faq">FAQ?</a></div>
 								</div>
 							</div>
 							<div class="grid2s">
