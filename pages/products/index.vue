@@ -90,9 +90,9 @@ const filterProducts = (searchTerm) => {
 	if (!searchTerm) {
 		filteredProducts.value = products.value
 	} else {
-		const lowerCaseSearchTerm = searchTerm.toLowerCase()
+		const lowerCaseSearchTerm = searchTerm?.toLowerCase() || ''
 		filteredProducts.value = products.value.filter((product) =>
-			product.name.toLowerCase().includes(lowerCaseSearchTerm)
+			product.name?.toLowerCase().includes(lowerCaseSearchTerm)
 		)
 	}
 }
